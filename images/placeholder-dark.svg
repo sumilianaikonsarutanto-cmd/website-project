@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ™îWÿH(×ìü¹ÛëÀüÕ¡ü¹ÈÓåüû»¯·çóji—DÌo(	
-  Ÿ—™’(gM_‰ images/photos/ knMHTML n src ’îWÿHfO`UD
+  Photo placeholder for dark sections (hero / dinner).
+  Icon only: this image sits behind headline copy, so no label is drawn inside it.
+  The "to be replaced" note is rendered in HTML instead.
+  Replace the img src in index.html once real store photos are added to images/photos/.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-hidden="true">
-  <rect width="1600" height="1000" fill="#241F1D"/>
-  <rect x="32" y="32" width="1536" height="936" fill="none" stroke="#5C4F42" stroke-width="4" stroke-dasharray="20 16"/>
-  <g fill="none" stroke="#C99A45" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="690" y="410" width="220" height="158" rx="12"/>
-    <circle cx="800" cy="493" r="48"/>
-    <path d="M744 410l19-31h74l19 31"/>
+  <rect width="1600" height="1000" fill="#3A322C"/>
+  <rect x="32" y="32" width="1536" height="936" fill="none" stroke="#7A6A57" stroke-width="4" stroke-dasharray="20 16"/>
+  <g fill="none" stroke="#8f7a55" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="690" y="421" width="220" height="158" rx="12"/>
+    <circle cx="800" cy="504" r="48"/>
+    <path d="M744 421l19-31h74l19 31"/>
   </g>
-  <text x="800" y="668" text-anchor="middle" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif" font-size="46" font-weight="700" fill="#D8CDBC">™îWÿHˆš</text>
-  <text x="800" y="722" text-anchor="middle" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif" font-size="28" fill="#9C8F7C">PHOTO PLACEHOLDER</text>
 </svg>

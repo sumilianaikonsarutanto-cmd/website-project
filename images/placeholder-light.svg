@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ™îWÿH(×ìü¹ÛëÀü‹DÌo»¯·çó(	
-  Ÿ—™’(gM_‰ images/photos/ knMHTML n src ’îWÿHfO`UD
+  Photo placeholder for light-background sections.
+  Japanese label is written with numeric character references so this file stays ASCII-safe.
+  Replace the img src in index.html once real store photos are added to images/photos/.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-hidden="true">
   <rect width="1200" height="800" fill="#EFE8D8"/>
@@ -11,6 +12,6 @@
     <circle cx="600" cy="398" r="40"/>
     <path d="M556 330l16-26h56l16 26"/>
   </g>
-  <text x="600" y="536" text-anchor="middle" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif" font-size="40" font-weight="700" fill="#7A6A4F">™îWÿHˆš</text>
-  <text x="600" y="586" text-anchor="middle" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif" font-size="26" fill="#9A8B70">PHOTO PLACEHOLDER</text>
+  <text x="600" y="536" text-anchor="middle" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif" font-size="40" font-weight="700" fill="#7A6A4F">&#x5199;&#x771F;&#x5DEE;&#x3057;&#x66FF;&#x3048;&#x4E88;&#x5B9A;</text>
+  <text x="600" y="586" text-anchor="middle" font-family="'Inter',sans-serif" font-size="26" letter-spacing="2" fill="#9A8B70">PHOTO PLACEHOLDER</text>
 </svg>

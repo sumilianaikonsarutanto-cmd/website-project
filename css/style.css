@@ -51,7 +51,7 @@
   --font-base: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
   --font-en: "Inter", var(--font-base);
   --fs-h1: clamp(2rem, 8.4vw, 4.5rem);
-  --fs-h2: clamp(1.75rem, 7vw, 2.5rem);
+  --fs-h2: clamp(1.75rem, 7vw, 2.25rem);
   --fs-h3: clamp(1.25rem, 3.6vw, 1.5rem);
   --fs-body: 1rem;
   --fs-note: 0.8125rem;
@@ -179,8 +179,12 @@ summary:focus-visible {
   line-height: 1.45;
   letter-spacing: .01em;
   margin-bottom: 24px;
+  text-wrap: pretty;
 }
 .heading--center { text-align: center; }
+
+/* 見出しの改行位置を語句単位で制御する（文中で不自然に折り返さないため） */
+.nb { display: inline-block; }
 
 .lead {
   margin-bottom: 32px;
@@ -207,12 +211,12 @@ summary:focus-visible {
   padding: 1px 8px;
   border: 1px dashed var(--c-gold);
   border-radius: 3px;
-  font-size: .75rem;
+  font-size: .8125rem;
   font-weight: 700;
   line-height: 1.7;
   white-space: nowrap;
-  color: #8a6c28;
-  background: rgba(201, 154, 69, .1);
+  color: #755718;
+  background: rgba(201, 154, 69, .12);
 }
 .chip--dark { color: var(--c-gold); background: rgba(201, 154, 69, .14); }
 
@@ -262,13 +266,15 @@ summary:focus-visible {
 
 .cta-inline { margin-top: 28px; }
 
-/* --- リンク --- */
+/* --- リンク（本文中でも指で押せる高さを確保） --- */
 .link {
-  display: inline-block;
-  border-bottom: 1px solid var(--c-gold);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-weight: 700;
+  box-shadow: inset 0 -1px 0 var(--c-gold);
 }
-.link:hover { color: var(--c-red); border-color: var(--c-red); }
+.link:hover { color: var(--c-red); box-shadow: inset 0 -1px 0 var(--c-red); }
 .link--tel {
   font-family: var(--font-en);
   font-size: 1.125rem;
@@ -298,7 +304,7 @@ summary:focus-visible {
   left: 0;
   bottom: 0;
   padding: 6px 14px;
-  font-size: .75rem;
+  font-size: .8125rem;
   font-weight: 700;
   letter-spacing: .06em;
   color: #fff;
@@ -357,7 +363,12 @@ summary:focus-visible {
 }
 
 /* --- ロゴ（画像ロゴが届いたら .logo__mark を img に置換） --- */
-.logo { display: flex; align-items: center; gap: 10px; }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+}
 .logo__mark {
   display: grid;
   place-items: center;
@@ -379,7 +390,7 @@ summary:focus-visible {
 }
 .logo__sub {
   display: none;
-  font-size: .6875rem;
+  font-size: .75rem;
   letter-spacing: .04em;
   color: var(--c-text-muted);
 }
@@ -424,7 +435,7 @@ summary:focus-visible {
   color: #fff;
   text-align: center;
 }
-.nav__tel-label { display: block; font-size: .75rem; letter-spacing: .08em; }
+.nav__tel-label { display: block; font-size: .8125rem; letter-spacing: .08em; }
 .nav__tel-num {
   display: block;
   font-family: var(--font-en);
@@ -455,7 +466,7 @@ summary:focus-visible {
   .nav__list a:hover { border-color: var(--c-red); }
   .nav__tel {
     margin: 0;
-    padding: 6px 16px;
+    padding: 8px 18px;
     text-align: right;
   }
   .nav__tel-num { font-size: 1.125rem; }
@@ -495,7 +506,7 @@ summary:focus-visible {
 .hamburger__bars::after { top: 7px; }
 .hamburger__label {
   font-family: var(--font-en);
-  font-size: .625rem;
+  font-size: .6875rem;
   font-weight: 600;
   letter-spacing: .06em;
   color: var(--c-text-muted);
@@ -535,6 +546,21 @@ summary:focus-visible {
     linear-gradient(to right, rgba(20, 18, 17, .6), transparent 70%);
 }
 
+/* 実写に差し替えたら HTML 側の1行と合わせて削除できる注記 */
+.hero__ph-note {
+  position: absolute;
+  top: calc(var(--header-h) + 12px);
+  right: var(--gutter);
+  padding: 5px 12px;
+  border: 1px dashed rgba(201, 154, 69, .8);
+  border-radius: 3px;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #e5d8bf;
+  background: rgba(20, 18, 17, .55);
+}
+
 .hero__body {
   position: relative;
   width: 100%;
@@ -546,9 +572,9 @@ summary:focus-visible {
 .hero__eyebrow {
   display: inline-block;
   margin-bottom: 14px;
-  padding: 4px 12px;
+  padding: 5px 12px;
   background: var(--c-red);
-  font-size: .75rem;
+  font-size: .8125rem;
   font-weight: 700;
   letter-spacing: .06em;
 }
@@ -584,7 +610,7 @@ summary:focus-visible {
   gap: 6px 0;
   padding: 10px var(--gutter);
   background: var(--c-red);
-  font-size: .75rem;
+  font-size: .8125rem;
   font-weight: 700;
   letter-spacing: .04em;
 }
@@ -615,7 +641,7 @@ summary:focus-visible {
 
 @media (min-width: 900px) {
   .about__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.12fr .88fr;
     gap: 64px;
     align-items: center;
   }
@@ -727,7 +753,7 @@ summary:focus-visible {
 }
 .tanzaku__price {
   order: 2;
-  font-size: .75rem;
+  font-size: .8125rem;
   color: var(--c-text-muted);
 }
 .tanzaku__item--more {
@@ -878,7 +904,9 @@ summary:focus-visible {
 }
 .access__info .spec { margin-top: 0; }
 .access__info dd .chip { margin-left: 6px; }
-.access__info dd .link { margin-left: 10px; font-size: .875rem; }
+/* 地図リンクは行頭を揃えて独立させる（住所の折り返しでずれないように） */
+.access__info dd .link { width: fit-content; font-size: .9375rem; }
+.access__info dd .link:not(.link--tel) { display: flex; }
 
 @media (min-width: 900px) {
   .access__grid { grid-template-columns: 1fr 1fr; gap: 48px; }
