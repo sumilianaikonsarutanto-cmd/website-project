@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ™îWÿH(×ìü¹ÛëÀü‹DÌo»¯·çó(	
+  Ÿ—™’(gM_‰ images/photos/ knMHTML n src ’îWÿHfO`UD
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-hidden="true">
+  <rect width="1200" height="800" fill="#EFE8D8"/>
+  <rect x="24" y="24" width="1152" height="752" fill="none" stroke="#C99A45" stroke-width="4" stroke-dasharray="18 14"/>
+  <g fill="none" stroke="#A52824" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="510" y="330" width="180" height="130" rx="10"/>
+    <circle cx="600" cy="398" r="40"/>
+    <path d="M556 330l16-26h56l16 26"/>
+  </g>
+  <text x="600" y="536" text-anchor="middle" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif" font-size="40" font-weight="700" fill="#7A6A4F">™îWÿHˆš</text>
+  <text x="600" y="586" text-anchor="middle" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif" font-size="26" fill="#9A8B70">PHOTO PLACEHOLDER</text>
+</svg>
