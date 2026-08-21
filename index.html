@@ -82,6 +82,16 @@
   </div>
 </header>
 
+<!-- ============================================================
+     写真の差し替えルール
+     ・全ての写真は images/photos/ の固定ファイル名を参照している。
+       同じ名前の jpg を置くだけで差し替わる（HTML の編集は不要）。
+     ・ファイルがまだない間は onerror でプレースホルダーSVGに戻るので、
+       表示が壊れず「写真差し替え予定」が出る。
+     ・比率は CSS の .photo 側で固定＋object-fit: cover なので、
+       元写真の縦横比が違ってもレイアウトは変わらない。
+     ・差し替えたら alt の「（写真差し替え予定）」を外す。
+     ============================================================ -->
 <main id="main">
 
 <!-- ============================================================
@@ -90,7 +100,7 @@
      ============================================================ -->
 <section class="hero" id="top">
   <div class="hero__media">
-    <img src="images/placeholder-dark.svg" alt="中房家の料理と店内の様子（写真差し替え予定）" width="1600" height="1000" fetchpriority="high">
+    <img src="images/photos/hero.jpg" alt="中房家の外観（大阪市東淀川区菅原）（写真差し替え予定）" width="1600" height="1000" fetchpriority="high" onerror="this.onerror=null;this.src='images/placeholder-dark.svg';">
     <!-- 実写を入れたらこの1行を削除 -->
     <p class="hero__ph-note">ファーストビュー写真　差し替え予定</p>
   </div>
@@ -145,11 +155,11 @@
 
     <div class="about__media">
       <figure class="photo photo--tall">
-        <img src="images/placeholder-light.svg" alt="中房家の店内で接客するスタッフ（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+        <img src="images/photos/about-staff.jpg" alt="中房家の店内で接客するスタッフ（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
         <figcaption>店内・スタッフ</figcaption>
       </figure>
       <figure class="photo photo--wide about__media-sub">
-        <img src="images/placeholder-light.svg" alt="中房家の外観・店頭の様子（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+        <img src="images/photos/about-exterior.jpg" alt="中房家の外観・店頭の様子（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
         <figcaption>外観</figcaption>
       </figure>
     </div>
@@ -173,7 +183,7 @@
           <p>中華料理から手作りの一品料理まで。「今日は何を食べよう？」と迷うことまで楽しめる、料理の幅広さ。</p>
         </div>
         <figure class="photo photo--sq reason__photo">
-          <img src="images/placeholder-light.svg" alt="中房家の中華料理（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="images/photos/reason-food.jpg" alt="中房家の中華料理（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
         </figure>
       </li>
 
@@ -184,7 +194,7 @@
           <p>しっかり食べたい日にうれしい、ボリュームとコストパフォーマンス。「今日はガッツリいきたい」に応えます。</p>
         </div>
         <figure class="photo photo--sq reason__photo">
-          <img src="images/placeholder-light.svg" alt="ボリュームのある中房家の定食（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="images/photos/reason-volume.jpg" alt="ボリュームのある中房家の定食（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
         </figure>
       </li>
 
@@ -195,7 +205,7 @@
           <p>元気な声掛けと、気持ちのいい接客。料理だけじゃないところが、通いたくなる理由になっています。</p>
         </div>
         <figure class="photo photo--sq reason__photo">
-          <img src="images/placeholder-light.svg" alt="中房家の厨房・調理の様子（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="images/photos/reason-staff.jpg" alt="中房家のスタッフ・接客の様子（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
         </figure>
       </li>
     </ol>
@@ -231,15 +241,15 @@
 
       <div class="menu__photos">
         <figure class="photo photo--wide menu__photo menu__photo--main">
-          <img src="images/placeholder-light.svg" alt="中房家の人気料理・炒飯（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="images/photos/menu-main.jpg" alt="中房家の人気料理・炒飯（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
           <figcaption>看板の一皿</figcaption>
         </figure>
         <figure class="photo photo--sq menu__photo">
-          <img src="images/placeholder-light.svg" alt="中房家の麺料理（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="images/photos/menu-noodles.jpg" alt="中房家の麺料理（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
           <figcaption>麺もの</figcaption>
         </figure>
         <figure class="photo photo--sq menu__photo">
-          <img src="images/placeholder-light.svg" alt="中房家の手作り一品料理（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="images/photos/menu-ippin.jpg" alt="中房家の手作り一品料理（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
           <figcaption>一品料理</figcaption>
         </figure>
       </div>
@@ -257,7 +267,7 @@
 <section class="section lunch" id="lunch">
   <div class="container lunch__grid">
     <figure class="photo photo--wide lunch__photo">
-      <img src="images/placeholder-light.svg" alt="中房家の日替わりランチ・定食（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+      <img src="images/photos/lunch.jpg" alt="中房家の日替わりランチ・定食（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
       <figcaption>ランチ</figcaption>
     </figure>
 
@@ -305,7 +315,7 @@
 
     <div class="night__grid">
       <figure class="photo photo--wide night__photo">
-        <img src="images/placeholder-dark.svg" alt="夜の中房家の店内と料理（写真差し替え予定）" width="1600" height="1000" loading="lazy" decoding="async">
+        <img src="images/photos/night.jpg" alt="夜の中房家の店内と料理・お酒（写真差し替え予定）" width="1600" height="1000" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-dark.svg';">
         <figcaption>夜の店内（写真差し替え予定）</figcaption>
       </figure>
 
@@ -344,7 +354,7 @@
     <div class="seats__grid">
       <div class="scene scene--lead">
         <figure class="photo photo--wide">
-          <img src="images/placeholder-light.svg" alt="中房家の店内全体の様子（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="images/photos/scene-solo.jpg" alt="ひとりでも利用しやすい中房家の店内（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
         </figure>
         <h3 class="scene__title">ひとりで、さっと一皿</h3>
         <p>「今日は一人でしっかり食べたい」ときにも入りやすい、気負わない雰囲気です。</p>
@@ -352,7 +362,7 @@
 
       <div class="scene">
         <figure class="photo photo--sq">
-          <img src="images/placeholder-light.svg" alt="家族で食事ができる中房家の席（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="images/photos/scene-family.jpg" alt="家族で食事ができる中房家の席（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
         </figure>
         <h3 class="scene__title">家族で、いろいろ頼んで</h3>
         <p>料理の種類が多いので、それぞれ好きなものを頼めます。</p>
@@ -360,7 +370,7 @@
 
       <div class="scene">
         <figure class="photo photo--sq">
-          <img src="images/placeholder-light.svg" alt="グループ利用の様子（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async">
+          <img src="images/photos/scene-group.jpg" alt="グループ利用の様子（写真差し替え予定）" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
         </figure>
         <h3 class="scene__title">みんなで、囲んで飲んで</h3>
         <p>大人数でのご利用可否・席の種類は店舗へお問い合わせください。</p>
