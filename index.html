@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中房家｜淡路・菅原の中華料理・大衆居酒屋｜うまいもんを、腹いっぱい。</title>
+<meta name="description" content="大阪市東淀川区菅原の中房家。中華料理から手作りの一品料理まで、ランチも晩ごはんも気軽に楽しめる大衆居酒屋です。料理の豊富さ、ボリューム、コストパフォーマンス、温かい接客が魅力。JR淡路駅から徒歩圏、淡路周辺で食事・飲みのお店をお探しの方へ。">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="./">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#a52824">
+
+<!-- OG（公開ドメイン確定後に URL と og:image を差し替え：要確認） -->
+<meta property="og:type" content="restaurant">
+<meta property="og:site_name" content="中房家">
+<meta property="og:title" content="中房家｜淡路・菅原の中華料理・大衆居酒屋">
+<meta property="og:description" content="うまいもんを、腹いっぱい。中華料理から手作りの一品料理まで。ランチも晩ごはんも、ちょっと一杯も。淡路・菅原の大衆居酒屋。">
+<meta property="og:locale" content="ja_JP">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- 構造化データ：確認できている事実のみ記載。営業時間・価格帯は確認後に追記（要確認） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "中房家",
+  "alternateName": "ちゅうぼうや",
+  "servesCuisine": ["中華料理", "居酒屋"],
+  "telephone": "+81-6-6990-5578",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "JP",
+    "addressRegion": "大阪府",
+    "addressLocality": "大阪市東淀川区",
+    "streetAddress": "菅原7-14-2"
+  }
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<!-- ============================================================
+     Header（WP: header.php）
+     ロゴ画像が用意できたら .logo のテキストを <img> に差し替え
+     ============================================================ -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a class="logo" href="#top" aria-label="中房家 トップへ">
+      <span class="logo__mark" aria-hidden="true">中</span>
+      <span class="logo__text">
+        <span class="logo__name">中房家</span>
+        <span class="logo__sub">淡路・菅原の中華・大衆居酒屋</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="globalNav" aria-label="メインメニュー">
+      <ul class="nav__list">
+        <li><a href="#about">中房家について</a></li>
+        <li><a href="#menu">お品書き</a></li>
+        <li><a href="#lunch">ランチ</a></li>
+        <li><a href="#night">夜の楽しみ方</a></li>
+        <li><a href="#seats">店内</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+      <a class="nav__tel" href="tel:0669905578">
+        <span class="nav__tel-label">お問い合わせ・ご予約</span>
+        <span class="nav__tel-num">06-6990-5578</span>
+      </a>
+    </nav>
+
+    <button class="hamburger" id="navToggle" type="button" aria-controls="globalNav" aria-expanded="false">
+      <span class="hamburger__bars" aria-hidden="true"></span>
+      <span class="hamburger__label">メニュー</span>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     写真の差し替えルール
+     ・全ての写真は images/photos/ の固定ファイル名を参照している。
+       同じ名前の jpg を置くだけで差し替わる（HTML の編集は不要）。
+     ・ファイルがまだない間は onerror でプレースホルダーSVGに戻るので、
+       表示が壊れず「写真差し替え予定」が出る。
+     ・比率は CSS の .photo 側で固定＋object-fit: cover なので、
+       元写真の縦横比が違ってもレイアウトは変わらない。
+     ・写真を入れ替えたときは alt も実際の写真の内容に合わせて書き換える。
+     ============================================================ -->
+<main id="main">
+
+<!-- ============================================================
+     01 ファーストビュー（WP: template-parts/section-hero.php）
+     写真は「料理＋店内＋スタッフの空気感」が伝わる1枚に差し替え
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="hero__media">
+    <img src="images/photos/hero.jpg" alt="夜の中房家の外観と看板（大阪市東淀川区菅原）" width="1600" height="1000" fetchpriority="high" onerror="this.onerror=null;this.src='images/placeholder-dark.svg';">
+  </div>
+
+  <div class="hero__body">
+    <p class="hero__eyebrow">大阪市東淀川区菅原・JR淡路駅から徒歩圏</p>
+    <h1 class="hero__title">うまいもんを、<br>腹いっぱい。</h1>
+    <p class="hero__lead">
+      中華料理から手作りの一品料理まで。<br>
+      ランチも、晩ごはんも、ちょっと一杯も。<br>
+      気取らず楽しめる、淡路・菅原の大衆居酒屋「中房家」。
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="#menu">お品書きを見る</a>
+      <a class="btn btn--ghost" href="tel:0669905578">
+        電話する<span class="btn__note">06-6990-5578</span>
+      </a>
+    </div>
+  </div>
+
+  <p class="hero__strip">
+    <span>中華料理・鳥料理</span>
+    <span>手作りの一品料理</span>
+    <span>ランチ／夜営業</span>
+    <span>ひとりでも、みんなでも</span>
+  </p>
+</section>
+
+<!-- ============================================================
+     02 中房家とは（WP: template-parts/section-about.php）
+     ============================================================ -->
+<section class="section about" id="about">
+  <div class="container about__grid">
+    <div class="about__text">
+      <p class="label">中房家とは</p>
+      <h2 class="heading">
+        お腹いっぱいだけじゃない。<br>
+        <span class="nb">また来たくなる、</span><span class="nb">街の中房家。</span>
+      </h2>
+      <p>
+        しっかり食べたい日も、ちょっと飲みたい日も。中房家は、中華料理から手作りの一品料理まで、
+        気軽に楽しめる淡路・菅原の大衆居酒屋です。
+      </p>
+      <p>
+        「美味しかった」だけじゃなく、「店員さんが元気」「また来たい」。
+        そんな声をいただけることも、中房家が大切にしていることのひとつです。
+      </p>
+      <p class="about__note">
+        ※店舗としての正式なごあいさつ文は、店主様の言葉に差し替え予定です。<span class="chip">要確認</span>
+      </p>
+    </div>
+
+    <div class="about__media">
+      <figure class="photo photo--tall">
+        <img src="images/photos/about-staff.jpg" alt="厨房で調理する中房家のスタッフ" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+        <figcaption>店内・スタッフ</figcaption>
+      </figure>
+      <figure class="photo photo--wide about__media-sub">
+        <img src="images/photos/about-exterior.jpg" alt="中房家の外観・店頭の様子" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+        <figcaption>外観</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     03 選ばれる3つの理由（WP: template-parts/section-reasons.php）
+     均一カードを避け、番号を主役にした交互レイアウト
+     ============================================================ -->
+<section class="section reasons" id="reasons">
+  <div class="container">
+    <p class="label label--center">Why 中房家</p>
+    <h2 class="heading heading--center">中房家が、選ばれる理由。</h2>
+
+    <ol class="reasons__list">
+      <li class="reason">
+        <p class="reason__num" aria-hidden="true">01</p>
+        <div class="reason__body">
+          <h3 class="reason__title">うまい</h3>
+          <p>中華料理から手作りの一品料理まで。「今日は何を食べよう？」と迷うことまで楽しめる、料理の幅広さ。</p>
+        </div>
+        <figure class="photo photo--sq reason__photo">
+          <img src="images/photos/reason-food.jpg" alt="揚げたての唐揚げ" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+        </figure>
+      </li>
+
+      <li class="reason">
+        <p class="reason__num" aria-hidden="true">02</p>
+        <div class="reason__body">
+          <h3 class="reason__title">腹いっぱい</h3>
+          <p>しっかり食べたい日にうれしい、ボリュームとコストパフォーマンス。「今日はガッツリいきたい」に応えます。</p>
+        </div>
+        <figure class="photo photo--sq reason__photo">
+          <img src="images/photos/reason-volume.jpg" alt="ボリュームのある料理の盛り合わせ" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+        </figure>
+      </li>
+
+      <li class="reason">
+        <p class="reason__num" aria-hidden="true">03</p>
+        <div class="reason__body">
+          <h3 class="reason__title">人があったかい</h3>
+          <p>元気な声掛けと、気持ちのいい接客。料理だけじゃないところが、通いたくなる理由になっています。</p>
+        </div>
+        <figure class="photo photo--sq reason__photo">
+          <img src="images/photos/reason-staff.jpg" alt="笑顔で料理とドリンクを運ぶスタッフ" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+        </figure>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     04 人気メニュー（WP: template-parts/section-menu.php）
+     町中華の「壁の短冊メニュー」をモチーフにした一覧＋写真モザイク
+     ※料理名は口コミで名前が挙がっているもの。提供状況・価格は要確認
+     ============================================================ -->
+<section class="section menu" id="menu">
+  <div class="container">
+    <p class="label">お品書き</p>
+    <h2 class="heading">今日は、何食べる？</h2>
+    <p class="lead">
+      中華料理から一品料理まで、いろいろ選べるのが中房家。<br>
+      今日はご飯もの、今日は麺、今日はみんなで一品料理。その日の気分で、好きな一皿を。
+    </p>
+
+    <div class="menu__layout">
+      <ul class="tanzaku" aria-label="中房家の料理（一部）">
+        <li class="tanzaku__item"><span class="tanzaku__name">炒飯</span><span class="tanzaku__price">要確認</span></li>
+        <li class="tanzaku__item"><span class="tanzaku__name">天津麺</span><span class="tanzaku__price">要確認</span></li>
+        <li class="tanzaku__item"><span class="tanzaku__name">麻婆豆腐</span><span class="tanzaku__price">要確認</span></li>
+        <li class="tanzaku__item"><span class="tanzaku__name">酢豚</span><span class="tanzaku__price">要確認</span></li>
+        <li class="tanzaku__item"><span class="tanzaku__name">唐揚げ</span><span class="tanzaku__price">要確認</span></li>
+        <li class="tanzaku__item"><span class="tanzaku__name">あんかけ焼きそば</span><span class="tanzaku__price">要確認</span></li>
+        <li class="tanzaku__item"><span class="tanzaku__name">汁なし担々麺</span><span class="tanzaku__price">要確認</span></li>
+        <li class="tanzaku__item"><span class="tanzaku__name">ラーメン</span><span class="tanzaku__price">要確認</span></li>
+        <li class="tanzaku__item tanzaku__item--more"><span class="tanzaku__name">ほかにも手作りの一品料理を多数</span></li>
+      </ul>
+
+      <div class="menu__photos">
+        <figure class="photo photo--wide menu__photo menu__photo--main">
+          <img src="images/photos/menu-main.jpg" alt="中房家の人気料理・炒飯" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+          <figcaption>看板の一皿</figcaption>
+        </figure>
+        <figure class="photo photo--sq menu__photo">
+          <img src="images/photos/menu-noodles.jpg" alt="野菜と海老をのせた麺料理" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+          <figcaption>麺もの</figcaption>
+        </figure>
+        <figure class="photo photo--sq menu__photo">
+          <img src="images/photos/menu-ippin.jpg" alt="一品料理の餃子" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+          <figcaption>一品料理</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <p class="note">
+      ※上記は口コミで名前が挙がっている料理です。現在のお品書き・価格は店舗確認後に掲載します。<span class="chip">要確認</span>
+    </p>
+  </div>
+</section>
+<!-- ============================================================
+     05 ランチ（WP: template-parts/section-lunch.php）
+     昼＝明るい生成り。夜セクションと明度で対比させ「二面性」を表現
+     ============================================================ -->
+<section class="section lunch" id="lunch">
+  <div class="container lunch__grid">
+    <figure class="photo photo--wide lunch__photo">
+      <img src="images/photos/lunch.jpg" alt="唐揚げの定食" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+      <figcaption>ランチ</figcaption>
+    </figure>
+
+    <div class="lunch__text">
+      <p class="label">Lunch</p>
+      <h2 class="heading">昼は、しっかり。</h2>
+      <p>
+        「今日はガッツリ食べたい」。そんな日のお昼にも、中房家。
+        日替わりランチや定食、麺・ご飯ものなど、しっかり食べたい方に楽しんでいただけるランチをご用意しています。
+      </p>
+      <dl class="spec">
+        <div class="spec__row">
+          <dt>ランチ営業時間</dt>
+          <dd><span class="chip">要確認</span></dd>
+        </div>
+        <div class="spec__row">
+          <dt>ランチの内容</dt>
+          <dd>日替わりランチ・定食・麺・ご飯もの <span class="chip">要確認</span></dd>
+        </div>
+        <div class="spec__row">
+          <dt>価格</dt>
+          <dd><span class="chip">要確認</span></dd>
+        </div>
+      </dl>
+      <p class="note">※口コミでは1,000円前後でのランチ利用例が確認できます（金額は口コミ上の一例で、現在の価格は要確認）。</p>
+      <p class="cta-inline">
+        <a class="btn btn--primary" href="tel:0669905578">今日のランチを電話で確認する</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     06 夜の楽しみ方（WP: template-parts/section-night.php）
+     07 お酒・ドリンクを内包（暗いトーンで連続させる）
+     ============================================================ -->
+<section class="section section--dark night" id="night">
+  <div class="container">
+    <p class="label label--gold">Dinner</p>
+    <h2 class="heading"><span class="nb">夜は、</span><span class="nb">食べて、飲んで、</span><span class="nb">楽しもう。</span></h2>
+    <p class="lead lead--dark">
+      晩ごはんとしてしっかり食べるのも、仲間と料理を囲んで飲むのも。<br>
+      中華料理や手作りの一品料理を楽しみながら、気取らず過ごせるのが中房家です。
+    </p>
+
+    <div class="night__grid">
+      <figure class="photo photo--wide night__photo">
+        <img src="images/photos/night.jpg" alt="手書きの日本酒メニューと日本酒の瓶、一品料理" width="1600" height="1000" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-dark.svg';">
+        <figcaption>夜の店内</figcaption>
+      </figure>
+
+      <div class="drink" id="drink">
+        <h3 class="drink__title">料理と一緒に、もう一杯。</h3>
+        <p>
+          料理に合わせて、お酒も気軽に。口コミでは日本酒を楽しまれている声も確認できます。
+        </p>
+        <ul class="drink__list">
+          <li>日本酒</li>
+          <li>その他ドリンク <span class="chip chip--dark">要確認</span></li>
+        </ul>
+        <p class="note note--dark">※ドリンクの詳しいラインナップ・価格は店舗確認後に掲載します。</p>
+      </div>
+    </div>
+
+    <p class="note note--dark">
+      ※口コミでは夜の利用で2,000〜3,000円程度という声が確認できます（金額は口コミ上の一例で、現在の価格は要確認）。
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     08 店内・利用シーン（WP: template-parts/section-seats.php）
+     席数・座敷・個室・宴会は未確認のため断定しない
+     ============================================================ -->
+<section class="section seats" id="seats">
+  <div class="container">
+    <p class="label">店内・利用シーン</p>
+    <h2 class="heading"><span class="nb">ひとりでも、</span><span class="nb">家族でも、</span><span class="nb">みんなでも。</span></h2>
+    <p class="lead">
+      ふらっと一人で。仕事のあとに仲間と。休日に家族で。<br>
+      どんな使い方でも肩ひじ張らずに過ごせるのが、街の大衆居酒屋のいいところです。
+    </p>
+
+    <div class="seats__grid">
+      <div class="scene scene--lead">
+        <figure class="photo photo--wide">
+          <img src="images/photos/scene-solo.jpg" alt="ひとりでビールを楽しむ様子" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+        </figure>
+        <h3 class="scene__title">ひとりで、さっと一皿</h3>
+        <p>「今日は一人でしっかり食べたい」ときにも入りやすい、気負わない雰囲気です。</p>
+      </div>
+
+      <div class="scene">
+        <figure class="photo photo--sq">
+          <img src="images/photos/scene-family.jpg" alt="テーブルを囲んで乾杯する家族連れ" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+        </figure>
+        <h3 class="scene__title">家族で、いろいろ頼んで</h3>
+        <p>料理の種類が多いので、それぞれ好きなものを頼めます。</p>
+      </div>
+
+      <div class="scene">
+        <figure class="photo photo--sq">
+          <img src="images/photos/scene-group.jpg" alt="ビールで乾杯するグループ" width="1200" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/placeholder-light.svg';">
+        </figure>
+        <h3 class="scene__title">みんなで、囲んで飲んで</h3>
+        <p>大人数でのご利用可否・席の種類は店舗へお問い合わせください。</p>
+      </div>
+    </div>
+
+    <p class="note">※席数・座敷・個室・宴会や貸切の対応は確認中です。<span class="chip">要確認</span></p>
+  </div>
+</section>
+
+<!-- ============================================================
+     09 お客様の声（WP: template-parts/section-voices.php）
+     架空の口コミは作らず、評価が集まっている「傾向」として提示
+     ============================================================ -->
+<section class="section voices" id="voices">
+  <div class="container">
+    <p class="label">お客様の声</p>
+    <h2 class="heading"><span class="nb">「また来たい」が、</span><span class="nb">うれしい。</span></h2>
+    <p class="lead">口コミでくり返しお褒めいただいているのは、この5つです。</p>
+
+    <ul class="voices__list">
+      <li>
+        <h3 class="voices__title">コストパフォーマンス</h3>
+        <p>「この内容でこの価格」という評価を多くいただいています。</p>
+      </li>
+      <li>
+        <h3 class="voices__title">ボリューム</h3>
+        <p>しっかり食べたい方から「お腹いっぱいになる」との声が続いています。</p>
+      </li>
+      <li>
+        <h3 class="voices__title">料理のおいしさ</h3>
+        <p>中華から一品料理まで、味への評価をいただいています。</p>
+      </li>
+      <li>
+        <h3 class="voices__title">メニューの豊富さ</h3>
+        <p>「選ぶのが楽しい」と言っていただけることも多いです。</p>
+      </li>
+      <li>
+        <h3 class="voices__title">スタッフの接客</h3>
+        <p>元気な声掛けや気持ちのいい応対に、うれしい言葉をいただいています。</p>
+      </li>
+    </ul>
+
+    <p class="note">
+      ※Googleマップ・食べログ等でいただいた口コミの傾向をまとめたものです。実際の口コミ本文を掲載する場合は、出典と掲載可否を確認のうえ差し替えます。<span class="chip">要確認</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     10 店舗情報・アクセス（WP: template-parts/section-access.php）
+     店舗情報は「1か所修正すれば済む」ようにこの dl に集約
+     ============================================================ -->
+<section class="section access" id="access">
+  <div class="container">
+    <p class="label">アクセス</p>
+    <h2 class="heading">中房家へのご案内</h2>
+
+    <div class="access__grid">
+      <div class="access__info">
+        <dl class="spec spec--lined">
+          <div class="spec__row">
+            <dt>店名</dt>
+            <dd>中房家（ちゅうぼうや）</dd>
+          </div>
+          <div class="spec__row">
+            <dt>住所</dt>
+            <dd>
+              大阪市東淀川区菅原7-14-2<span class="chip">郵便番号 要確認</span>
+              <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%E5%B8%82%E6%9D%B1%E6%B7%80%E5%B7%9D%E5%8C%BA%E8%8F%85%E5%8E%9F7-14-2+%E4%B8%AD%E6%88%BF%E5%AE%B6" target="_blank" rel="noopener">Googleマップで開く</a>
+            </dd>
+          </div>
+          <div class="spec__row">
+            <dt>電話</dt>
+            <dd><a class="link link--tel" href="tel:0669905578">06-6990-5578</a></dd>
+          </div>
+          <div class="spec__row">
+            <dt>最寄り駅</dt>
+            <dd>JR淡路駅から約522m</dd>
+          </div>
+          <div class="spec__row">
+            <dt>ジャンル</dt>
+            <dd>中華料理・鳥料理・手作り一品料理／大衆居酒屋</dd>
+          </div>
+          <div class="spec__row">
+            <dt>営業時間</dt>
+            <dd><span class="chip">要確認</span></dd>
+          </div>
+          <div class="spec__row">
+            <dt>定休日</dt>
+            <dd><span class="chip">要確認</span></dd>
+          </div>
+          <div class="spec__row">
+            <dt>駐車場</dt>
+            <dd><span class="chip">要確認</span></dd>
+          </div>
+          <div class="spec__row">
+            <dt>お支払い方法</dt>
+            <dd><span class="chip">要確認</span></dd>
+          </div>
+          <div class="spec__row">
+            <dt>ご予約</dt>
+            <dd>お電話にて（受付時間・条件は<span class="chip">要確認</span>）</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="access__map">
+        <iframe
+          title="中房家の地図（大阪市東淀川区菅原7-14-2）"
+          src="https://www.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%B8%82%E6%9D%B1%E6%B7%80%E5%B7%9D%E5%8C%BA%E8%8F%85%E5%8E%9F7-14-2&amp;hl=ja&amp;z=17&amp;output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="note">
+          JR淡路駅から少し歩きます。駅からの徒歩ルート写真を追加すると、初めての方が迷いません。<span class="chip">写真素材要追加</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     11 FAQ（WP: template-parts/section-faq.php）
+     回答が確定していない項目は「要確認」と明記
+     ============================================================ -->
+<section class="section faq" id="faq">
+  <div class="container container--narrow">
+    <p class="label">よくある質問</p>
+    <h2 class="heading"><span class="nb">来店前に、</span><span class="nb">よくいただくご質問。</span></h2>
+
+    <div class="faq__list">
+      <details class="qa">
+        <summary>予約はできますか？</summary>
+        <div class="qa__body"><p>お電話でのご予約を承っています。受付時間や人数の条件については、店舗へご確認ください。<span class="chip">要確認</span></p></div>
+      </details>
+      <details class="qa">
+        <summary>ひとりでも利用できますか？</summary>
+        <div class="qa__body"><p>お一人でのご利用も歓迎しています。詳しい席の状況は店舗へお問い合わせください。<span class="chip">要確認</span></p></div>
+      </details>
+      <details class="qa">
+        <summary>ランチはありますか？</summary>
+        <div class="qa__body"><p>日替わりランチや定食などのランチ営業を行っています。現在の内容・時間は店舗へご確認ください。<span class="chip">要確認</span></p></div>
+      </details>
+      <details class="qa">
+        <summary>テイクアウトはできますか？</summary>
+        <div class="qa__body"><p>過去にテイクアウトのご利用実績はありますが、現在の対応状況は店舗へご確認ください。<span class="chip">要確認</span></p></div>
+      </details>
+      <details class="qa">
+        <summary>駐車場はありますか？</summary>
+        <div class="qa__body"><p>確認中です。<span class="chip">要確認</span></p></div>
+      </details>
+      <details class="qa">
+        <summary>大人数でも利用できますか？</summary>
+        <div class="qa__body"><p>ご利用可能な人数・お席については店舗へお問い合わせください。<span class="chip">要確認</span></p></div>
+      </details>
+      <details class="qa">
+        <summary>支払いにカードや電子マネーは使えますか？</summary>
+        <div class="qa__body"><p>確認中です。<span class="chip">要確認</span></p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     12 最終CTA（WP: template-parts/section-cta.php）
+     ============================================================ -->
+<section class="section final-cta" id="contact">
+  <div class="container container--narrow">
+    <h2 class="final-cta__title"><span class="nb">今日は、</span><span class="nb">中房家で腹いっぱい。</span></h2>
+    <p class="final-cta__lead">
+      美味しいものを気軽に食べたい日も、みんなで楽しく飲みたい日も。<br>
+      淡路・菅原の中房家へ。
+    </p>
+    <div class="final-cta__actions">
+      <a class="btn btn--light btn--lg" href="tel:0669905578">電話する<span class="btn__note">06-6990-5578</span></a>
+      <a class="btn btn--outline-light" href="#access">アクセスを見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     13 Instagram（公式アカウント未確認のため非表示）
+     アカウントが確認できたら以下のコメントを解除して URL を設定
+     ============================================================ -->
+<!--
+<section class="section instagram" id="instagram">
+  <div class="container">
+    <p class="label">Instagram</p>
+    <h2 class="heading">今日の中房家を、Instagramで。</h2>
+    <p class="lead">日々の料理や店の様子はInstagramで発信しています。</p>
+    <p class="cta-inline"><a class="btn btn--primary" href="要確認：公式アカウントURL" target="_blank" rel="noopener">Instagramを見る</a></p>
+  </div>
+</section>
+-->
+
+</main>
+
+<!-- ============================================================
+     14 Footer（WP: footer.php）
+     ============================================================ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <p class="footer__name">中房家</p>
+      <p class="footer__desc">中華料理・鳥料理・手作り一品料理／淡路・菅原の大衆居酒屋</p>
+      <p class="footer__addr">
+        大阪市東淀川区菅原7-14-2<br>
+        JR淡路駅から約522m<br>
+        <a class="link link--tel" href="tel:0669905578">06-6990-5578</a>
+      </p>
+    </div>
+
+    <nav class="footer__nav" aria-label="フッターメニュー">
+      <ul>
+        <li><a href="#about">中房家について</a></li>
+        <li><a href="#reasons">選ばれる理由</a></li>
+        <li><a href="#menu">お品書き</a></li>
+        <li><a href="#lunch">ランチ</a></li>
+        <li><a href="#night">夜の楽しみ方</a></li>
+        <li><a href="#seats">店内・利用シーン</a></li>
+        <li><a href="#voices">お客様の声</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="footer__copy"><small>&copy; 中房家</small></p>
+</footer>
+
+<!-- スマートフォン用 固定CTA（WP: footer.php 内） -->
+<div class="fixed-cta" aria-label="お問い合わせ">
+  <a class="fixed-cta__btn fixed-cta__btn--tel" href="tel:0669905578">電話する</a>
+  <a class="fixed-cta__btn fixed-cta__btn--map" href="#access">アクセス</a>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
