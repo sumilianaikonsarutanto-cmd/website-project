@@ -41,7 +41,7 @@
   /* --- 無彩色 --- */
   --ink:         #333333;   /* 本文 */
   --ink-strong:  #1d2730;   /* 見出し */
-  --ink-mute:    #6d7880;
+  --ink-mute:    #5a646b;   /* 補足文。白・紙色の上で 4.5:1 以上を確保 */
   --line:        #e2e6e3;
   --paper:       #f7f8f6;   /* 背景 */
   --white:       #ffffff;
@@ -157,11 +157,15 @@ button {
 }
 .skip-link:focus { transform: translate(-50%, 0); }
 
-/* 改行の出し分け */
-.br-pc { display: none; }
+/* 改行の出し分け（.br-hero は2カラムになる 960px 以上でのみ改行する） */
+.br-pc,
+.br-hero { display: none; }
 @media (min-width: 768px) {
   .br-pc { display: inline; }
   .br-sp { display: none; }
+}
+@media (min-width: 960px) {
+  .br-hero { display: inline; }
 }
 
 .icon {
@@ -203,7 +207,7 @@ button {
   font-weight: 600;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--green-deep);
 }
 .section-head__label::before {
   content: "";
@@ -347,12 +351,12 @@ button {
 }
 .ph__note { font-size: 13px; line-height: 1.7; }
 
-.ph--hero { aspect-ratio: 4 / 3; }
+.ph--hero { aspect-ratio: 16 / 10; max-height: 340px; }
 .ph--tall { aspect-ratio: 3 / 4; }
 .ph--case { aspect-ratio: 4 / 3; }
 
-@media (min-width: 768px) {
-  .ph--hero { aspect-ratio: 5 / 4; }
+@media (min-width: 960px) {
+  .ph--hero { aspect-ratio: 5 / 4; max-height: none; }
 }
 
 
@@ -397,6 +401,7 @@ button {
   display: none;
   font-size: 11px;
   line-height: 1.4;
+  white-space: nowrap;
   color: var(--ink-mute);
 }
 @media (min-width: 768px) {
@@ -407,13 +412,14 @@ button {
 
 /* --- PCナビ --- */
 .gnav { display: none; }
-@media (min-width: 1080px) {
+@media (min-width: 1180px) {
   .gnav { display: block; }
-  .gnav__list { display: flex; gap: 22px; }
+  .gnav__list { display: flex; gap: 18px; }
   .gnav__link {
     position: relative;
-    font-size: 14.5px;
+    font-size: 14px;
     font-weight: 500;
+    white-space: nowrap;
     color: var(--ink-strong);
   }
   .gnav__link::after {
@@ -430,14 +436,16 @@ button {
 }
 
 .header__cta { display: none; }
-@media (min-width: 1080px) {
-  .header__cta { display: flex; align-items: center; gap: 16px; margin-left: 8px; }
+@media (min-width: 1180px) {
+  .header__cta { display: flex; align-items: center; gap: 14px; margin-left: 4px; }
+  .header__cta .btn { white-space: nowrap; }
   .header__tel { display: flex; align-items: center; gap: 8px; color: var(--navy); }
   .header__tel .icon { font-size: 18px; color: var(--green); }
   .header__tel-num {
     display: block;
     font-family: var(--font-en);
-    font-size: 20px;
+    font-size: 19px;
+    white-space: nowrap;
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: .01em;
@@ -457,7 +465,7 @@ button {
   margin-right: -8px;
   color: var(--navy);
 }
-@media (min-width: 1080px) { .hamburger { display: none; } }
+@media (min-width: 1180px) { .hamburger { display: none; } }
 
 .hamburger__bars {
   position: relative;
@@ -487,14 +495,21 @@ button {
 .hamburger[aria-expanded="true"] .hamburger__bars::before { transform: translateY(7px) rotate(45deg); }
 .hamburger[aria-expanded="true"] .hamburger__bars::after  { transform: translateY(-7px) rotate(-45deg); }
 
-/* --- ドロワー --- */
+/* --- ドロワー ---
+   ヘッダーに backdrop-filter を掛けている関係で position: fixed の基準が
+   ヘッダーになるため、ヘッダー直下に absolute で開く */
 .drawer {
-  position: fixed;
-  inset: var(--header-h) 0 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   z-index: 99;
+  max-height: calc(100vh - var(--header-h));
+  max-height: calc(100dvh - var(--header-h));
   overflow-y: auto;
   padding: 8px var(--gutter) 40px;
   background: var(--white);
+  border-bottom: 1px solid var(--line);
   overscroll-behavior: contain;
 }
 .drawer[hidden] { display: none; }
@@ -517,8 +532,7 @@ button {
 .hero {
   position: relative;
   padding-top: 32px;
-  background:
-    linear-gradient(180deg, var(--green-pale) 0%, var(--green-pale) 58%, var(--white) 58%);
+  background: var(--green-pale);
 }
 
 .hero__inner {
@@ -543,7 +557,7 @@ button {
 .hero__eyebrow .icon { font-size: 15px; color: var(--accent); }
 
 .hero__title {
-  font-size: clamp(30px, 8.6vw, 54px);
+  font-size: clamp(26px, 7.9vw, 46px);
   font-weight: 700;
   line-height: 1.38;
   letter-spacing: .005em;
@@ -572,7 +586,7 @@ button {
 
 /* 事実のみの信頼バー */
 .hero__factsbar {
-  margin-top: 28px;
+  margin-top: 36px;
   background: var(--white);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -616,15 +630,19 @@ button {
 @media (min-width: 960px) {
   .hero {
     padding-top: 0;
+    padding-bottom: 0;
+    /* PC では淡グリーンをわずかに傾けて分割し、右の写真を白地に置く */
     background: linear-gradient(100deg, var(--green-pale) 0%, var(--green-pale) 52%, var(--white) 52%);
   }
   .hero__inner {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
     align-items: center;
     gap: 56px;
     min-height: 560px;
     padding-block: 72px;
   }
+  /* 2カラムになるとコピー欄が狭くなるため、見出しはカラム幅に合わせて縮める */
+  .hero__title { font-size: clamp(34px, 3.9vw, 46px); }
   .hero__lead { font-size: 16.5px; }
 }
 
@@ -690,7 +708,7 @@ button {
   font-weight: 700;
   line-height: 1;
   color: var(--green);
-  opacity: .5;
+  opacity: .8;
 }
 .reason__title {
   margin-top: 12px;
@@ -1210,7 +1228,7 @@ button {
 }
 .form__input:focus { border-color: var(--green); }
 .form__input--area { min-height: 140px; line-height: 1.8; resize: vertical; }
-.form__input::placeholder { color: #a9b2ad; }
+.form__input::placeholder { color: #6f7873; }
 
 .form__privacy { font-size: 12.5px; color: var(--ink-mute); }
 
@@ -1323,6 +1341,7 @@ button {
 
 .fixed-cta__btn {
   display: flex;
+  white-space: nowrap;
   align-items: center;
   justify-content: center;
   gap: 8px;
