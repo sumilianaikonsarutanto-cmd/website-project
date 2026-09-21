@@ -1,0 +1,14 @@
+/*
+Theme Name: ハッピーペイントホーム
+Theme URI: https://happypainthome.jimdofree.com/
+Author: ハッピーペイントホーム（白井工業）
+Description: 大阪市東淀川区の雨漏り修理専門店「ハッピーペイントホーム（白井工業）」のためのテーマ。デザイン・文言は静的 HTML 版と同一。施工事例はカスタム投稿、電話／LINE／メールはカスタマイザーで変更できます。
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.8
+Requires PHP: 8.0
+Text Domain: happypainthome
+License: GNU General Public License v2 or later
+*/
+
+/* 実体のスタイルは assets/css/style.css にあります（functions.php で読み込みます）。 */
