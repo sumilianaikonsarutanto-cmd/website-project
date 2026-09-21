@@ -350,12 +350,12 @@ button {
   background: rgba(255, 255, 255, .88);
   border-radius: 4px;
 }
-.photo--hero { aspect-ratio: 16 / 10; max-height: 340px; }
+.photo--hero { aspect-ratio: 16 / 10; }
 .photo--tall { aspect-ratio: 3 / 4; }
 .photo--case { aspect-ratio: 4 / 3; }
 
 @media (min-width: 960px) {
-  .photo--hero { aspect-ratio: 5 / 4; max-height: none; }
+  .photo--hero { aspect-ratio: 5 / 4; }
 }
 
 
