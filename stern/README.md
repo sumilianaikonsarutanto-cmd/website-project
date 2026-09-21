@@ -46,6 +46,12 @@ python3 -m http.server 4321
 
 ### ZIP化（納品・プレビュー用）
 
+**ブラウザで見るだけなら** `stern` フォルダ一式をZIPにしてください。
+
+**WordPressにテーマとして入れる場合は、このフォルダではなく**
+`STERN_wordpress_theme.zip`（`stern-wordpress/stern`）を使ってください。
+HTML版をテーマとして上げると「style.css がありません」とエラーになります。
+
 **ZIPにするのは `stern` フォルダ一式だけです。**  
 リポジトリ直下の `index.html` / `works.html` / `assets/` / `docs/` は別店舗のサイトなので、含めないでください。
 
