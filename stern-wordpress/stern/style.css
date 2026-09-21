@@ -1,13 +1,9 @@
 /*
-Theme Name: ステルン
-Theme URI: https://github.com/sumilianaikonsarutanto-cmd/website-project
-Author: ステルン
-Description: 大阪市東淀川区の不用品回収・リサイクル回収「ステルン」のテーマ。デザインの本体は assets/css/style.css です。このファイルは WordPress がテーマとして認識するために必要です。
+Theme Name: Stern
+Theme URI: https://example.com/
+Author: Stern
+Description: 大阪市東淀川区の不用品回収「ステルン」WordPressテーマ
 Version: 1.0.0
-Requires at least: 6.0
-Tested up to: 6.8
-Requires PHP: 7.4
 Text Domain: stern
 */
 
-/* 見た目のCSSは assets/css/style.css を読み込みます（functions.php で enqueue）。 */
