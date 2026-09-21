@@ -47,7 +47,7 @@
     });
 
     // PC 幅に戻したときに状態をリセット
-    window.matchMedia('(min-width: 1000px)').addEventListener('change', function (e) {
+    window.matchMedia('(min-width: 1100px)').addEventListener('change', function (e) {
       if (e.matches) setOpen(false);
     });
   }
