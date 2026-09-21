@@ -126,10 +126,14 @@ python3 -m http.server 8000
 
 ---
 
-## 6. WordPress化のときの想定
+## 6. WordPress テーマ
 
-- `header.php` … `.header`（ロゴ・グローバルナビ・電話番号）
-- `footer.php` … `.footer` ＋ スマホ固定CTA
-- `front-page.php` … 各セクションを `get_template_part()` で読み込む
-- `template-parts/section-*.php` … HTML内のコメントに記した単位で分割
-- 店舗基本情報（住所・電話・営業時間）とお品書きは、更新頻度が高いので管理画面から編集できるようにする（テーマオプションまたはカスタム投稿1種類程度に留め、小規模店舗に不要な仕組みは作らない）
+現行デザインを維持したオリジナルテーマを `chuboya/` に同梱しています。
+
+- テーマ名：中房家オリジナルテーマ
+- インストール用ZIP：`chuboya-original-theme.zip`
+- 使い方：WordPress 管理画面 → 外観 → テーマ → 新規追加 → アップロード → ZIPを選んで有効化
+- 文章・写真の変更：管理画面左メニュー「中房家ホームページ設定」
+- 詳しい手順は `chuboya/README.md` を参照
+
+静的HTML（`index.html`）は、デザインの原本として残しています。見た目を変える場合は、静的版とテーマの両方を揃えてください。

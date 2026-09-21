@@ -1,0 +1,16 @@
+/*
+Theme Name: 中房家オリジナルテーマ
+Theme URI: https://github.com/sumilianaikonsarutanto-cmd/website-project
+Author: 中房家
+Description: 大阪市東淀川区菅原の中華料理・大衆居酒屋「中房家」公式サイト用オリジナルテーマ。現行の完成デザインを維持したまま、管理画面から写真・文章・店舗情報を更新できます。
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.6
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: chuboya
+Tags: custom-menu, featured-images, one-column
+
+フロントの見た目は assets/css/style.css が担います。このファイルはテーマ識別用です。
+*/
