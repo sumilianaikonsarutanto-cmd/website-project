@@ -186,14 +186,15 @@
       </div>
 
       <div class="hero__visual">
-        <!-- 写真素材要追加（docs/content-source.md C-1）：
-             スタッフがお客様宅から家具・家電を搬出している横長写真に差し替えてください。
-             差し替え時は下記 div を <img src="assets/img/photo/hero.jpg" alt="…" width="" height=""> に置き換えます。 -->
-        <div class="ph ph--hero" role="img" aria-label="写真差し替え予定：スタッフが家具を搬出している作業風景">
-          <svg class="ph__icon" aria-hidden="true"><use href="#i-camera"></use></svg>
-          <span class="ph__label">写真差し替え予定</span>
-          <span class="ph__note">スタッフによる搬出作業の風景（横長）</span>
-        </div>
+        <!-- デモ画像（docs/content-source.md C-1）：ステルンの実写真ではありません。
+             店舗提供写真の支給後、src / alt / width / height を差し替えてください。 -->
+        <figure class="photo photo--hero">
+          <img class="photo__img"
+               src="assets/img/photo/hero.webp"
+               alt="デモ画像：室内からソファを搬出する作業のイメージ（ステルンの実際の作業写真ではありません）"
+               width="1152" height="864" fetchpriority="high">
+          <figcaption class="photo__badge">デモ画像</figcaption>
+        </figure>
       </div>
     </div>
 
@@ -302,13 +303,14 @@
 
       <div class="service">
         <div class="service__visual reveal">
-          <!-- 写真素材要追加（docs/content-source.md C-2）：
-               回収した家具・家電、または積み込み中の車両の写真（縦長）に差し替えてください。 -->
-          <div class="ph ph--tall" role="img" aria-label="写真差し替え予定：回収した家具・家電、または回収車両の写真">
-            <svg class="ph__icon" aria-hidden="true"><use href="#i-camera"></use></svg>
-            <span class="ph__label">写真差し替え予定</span>
-            <span class="ph__note">回収品または回収車両（縦長）</span>
-          </div>
+          <!-- デモ画像（docs/content-source.md C-2）：店舗提供写真の支給後に差し替え -->
+          <figure class="photo photo--tall">
+            <img class="photo__img"
+                 src="assets/img/photo/service.webp"
+                 alt="デモ画像：家具・家電を積み込んだ回収車両のイメージ（ステルンの実際の車両ではありません）"
+                 width="864" height="1152" loading="lazy">
+            <figcaption class="photo__badge">デモ画像</figcaption>
+          </figure>
         </div>
 
         <div class="service__list">
@@ -394,56 +396,65 @@
       <div class="section-head reveal">
         <p class="section-head__label">Works</p>
         <h2 class="section-head__title">実際の作業をご紹介</h2>
-        <p class="section-head__lead">現在、掲載用の作業写真を準備しています。実際にお引き受けした回収の様子を、作業前・作業後で掲載予定です。</p>
+        <p class="section-head__lead">現在はレイアウト確認用のデモ画像です。実際にお引き受けした回収の様子は、店舗様から写真をご提供いただき次第、差し替えます。</p>
       </div>
 
-      <!-- 要確認（docs/content-source.md C-3）：
-           作業事例は、店舗様から写真・作業内容のご提供をいただいてから掲載します。
-           1件ごとに <article class="case"> を複製し、ph を img に差し替えてください。
-           事例の内容（地域・品目・作業時間など）は、確認できたものだけを記載します。 -->
+      <!-- デモ画像（docs/content-source.md C-3）：実事例の写真・内容の支給後に差し替え -->
       <div class="cases">
         <article class="case reveal">
           <p class="case__label">CASE 01</p>
-          <h3 class="case__title">掲載準備中</h3>
+          <h3 class="case__title">引っ越しに伴う不用品回収<span class="case__demo">（デモ）</span></h3>
           <div class="case__pair">
             <figure class="case__shot">
-              <div class="ph ph--case" role="img" aria-label="写真差し替え予定：作業前の様子">
-                <span class="ph__label">Before</span>
-                <span class="ph__note">作業前の写真</span>
+              <div class="photo photo--case">
+                <img class="photo__img"
+                     src="assets/img/photo/case01-before.webp"
+                     alt="デモ画像：作業前の部屋のイメージ"
+                     width="960" height="720" loading="lazy">
+                <span class="photo__badge">デモ</span>
               </div>
               <figcaption>作業前</figcaption>
             </figure>
             <figure class="case__shot">
-              <div class="ph ph--case" role="img" aria-label="写真差し替え予定：作業後の様子">
-                <span class="ph__label">After</span>
-                <span class="ph__note">作業後の写真</span>
+              <div class="photo photo--case">
+                <img class="photo__img"
+                     src="assets/img/photo/case01-after.webp"
+                     alt="デモ画像：作業後の部屋のイメージ"
+                     width="960" height="720" loading="lazy">
+                <span class="photo__badge">デモ</span>
               </div>
               <figcaption>作業後</figcaption>
             </figure>
           </div>
-          <p class="case__body">お引き受けした回収の内容を掲載します。</p>
+          <p class="case__body">実際の作業内容は、店舗様からのご提供後に掲載します。</p>
         </article>
 
         <article class="case reveal">
           <p class="case__label">CASE 02</p>
-          <h3 class="case__title">掲載準備中</h3>
+          <h3 class="case__title">家具・家電の回収<span class="case__demo">（デモ）</span></h3>
           <div class="case__pair">
             <figure class="case__shot">
-              <div class="ph ph--case" role="img" aria-label="写真差し替え予定：作業前の様子">
-                <span class="ph__label">Before</span>
-                <span class="ph__note">作業前の写真</span>
+              <div class="photo photo--case">
+                <img class="photo__img"
+                     src="assets/img/photo/case02-before.webp"
+                     alt="デモ画像：作業前のキッチン周りのイメージ"
+                     width="960" height="720" loading="lazy">
+                <span class="photo__badge">デモ</span>
               </div>
               <figcaption>作業前</figcaption>
             </figure>
             <figure class="case__shot">
-              <div class="ph ph--case" role="img" aria-label="写真差し替え予定：作業後の様子">
-                <span class="ph__label">After</span>
-                <span class="ph__note">作業後の写真</span>
+              <div class="photo photo--case">
+                <img class="photo__img"
+                     src="assets/img/photo/case02-after.webp"
+                     alt="デモ画像：作業後のキッチン周りのイメージ"
+                     width="960" height="720" loading="lazy">
+                <span class="photo__badge">デモ</span>
               </div>
               <figcaption>作業後</figcaption>
             </figure>
           </div>
-          <p class="case__body">お引き受けした回収の内容を掲載します。</p>
+          <p class="case__body">実際の作業内容は、店舗様からのご提供後に掲載します。</p>
         </article>
       </div>
     </div>

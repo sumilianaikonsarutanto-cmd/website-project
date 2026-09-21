@@ -27,7 +27,8 @@ stern/
 │   ├── css/style.css         全スタイル（先頭に目次あり）
 │   ├── js/main.js            共通スクリプト（約100行・外部ライブラリなし）
 │   └── img/
-│       └── favicon.svg       暫定シンボル（正式ロゴ支給後に差し替え）
+│       ├── favicon.svg       暫定シンボル（正式ロゴ支給後に差し替え）
+│       └── photo/            デモ画像（実写真ではありません）
 └── docs/
     ├── design-notes.md       デザイン意図
     └── content-source.md     出典一覧 / 要確認リスト
@@ -42,6 +43,20 @@ cd stern
 python3 -m http.server 4321
 # → http://localhost:4321/
 ```
+
+### ZIP化（納品・プレビュー用）
+
+**ZIPにするのは `stern` フォルダ一式だけです。**  
+リポジトリ直下の `index.html` / `works.html` / `assets/` / `docs/` は別店舗のサイトなので、含めないでください。
+
+```
+stern/          ← このフォルダを丸ごとZIP
+├── index.html
+├── assets/
+└── docs/
+```
+
+解凍後、`stern/index.html` をブラウザで開けば表示されます。
 
 ---
 
@@ -80,21 +95,14 @@ python3 -m http.server 4321
 
 ### 3-3. 写真を差し替える
 
-現在、写真はすべて差し替え前提の仮枠（`<div class="ph …">`）です。手順は共通です。
+現在入っているのは**レイアウト確認用のデモ画像**です（ステルンの実写真ではありません）。
+画像は `assets/img/photo/` にあり、各写真には「デモ画像」のラベルが付いています。
 
-1. 画像を `assets/img/photo/` に配置（推奨形式：WebP、なければ JPEG）
-2. `index.html` 内の該当する `<div class="ph …">…</div>` を丸ごと `<img>` に置き換える
-3. `alt` に**写真の内容**を書く（SEO とアクセシビリティの両方に効きます）
+店舗様の写真に差し替える手順：
 
-```html
-<!-- 置き換え前 -->
-<div class="ph ph--hero" role="img" aria-label="写真差し替え予定：…">…</div>
-
-<!-- 置き換え後 -->
-<img class="hero__img" src="assets/img/photo/hero.webp"
-     alt="お客様宅からソファを搬出するステルンのスタッフ"
-     width="1200" height="960" fetchpriority="high">
-```
+1. 画像を `assets/img/photo/` に上書き（推奨：WebP、なければ JPEG）
+2. `index.html` の該当する `<img>` の `src` / `alt` / `width` / `height` を更新
+3. 実写真になったら、`<figcaption class="photo__badge">デモ画像</figcaption>` を削除
 
 - `width` / `height` は必ず指定してください（表示ズレ＝CLS の防止）
 - ファーストビュー以外の画像には `loading="lazy"` を付けてください

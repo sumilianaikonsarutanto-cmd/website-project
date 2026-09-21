@@ -321,42 +321,41 @@ button {
   }
 }
 
-/* --- 写真差し替え枠 ---
-   店舗様から写真をご提供いただくまでの仮枠です。
-   差し替え時は .ph の div を <img> に置き換えてください。 */
-.ph {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  width: 100%;
-  padding: 24px;
-  text-align: center;
-  color: var(--ink-mute);
-  background:
-    repeating-linear-gradient(-45deg, rgba(60, 128, 103, .05) 0 10px, transparent 10px 20px),
-    var(--green-pale);
-  border: 1px dashed #c3cfc8;
+/* --- 写真 ---
+   現在はレイアウト確認用のデモ画像です。店舗提供写真の差し替え後も、
+   このクラスはそのまま使えます。 */
+.photo {
+  position: relative;
+  overflow: hidden;
   border-radius: var(--radius-card);
+  background: var(--green-pale);
 }
-.ph__icon { width: 30px; height: 30px; stroke: currentColor; fill: none; opacity: .7; }
-.ph__label {
+.photo__img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo__badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  padding: 4px 10px;
   font-family: var(--font-en);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--green-deep);
+  letter-spacing: .08em;
+  color: var(--navy);
+  background: rgba(255, 255, 255, .88);
+  border-radius: 4px;
 }
-.ph__note { font-size: 13px; line-height: 1.7; }
-
-.ph--hero { aspect-ratio: 16 / 10; max-height: 340px; }
-.ph--tall { aspect-ratio: 3 / 4; }
-.ph--case { aspect-ratio: 4 / 3; }
+.photo--hero { aspect-ratio: 16 / 10; max-height: 340px; }
+.photo--tall { aspect-ratio: 3 / 4; }
+.photo--case { aspect-ratio: 4 / 3; }
 
 @media (min-width: 960px) {
-  .ph--hero { aspect-ratio: 5 / 4; max-height: none; }
+  .photo--hero { aspect-ratio: 5 / 4; max-height: none; }
 }
 
 
@@ -583,6 +582,11 @@ button {
 }
 
 .hero__visual { position: relative; }
+
+/* スマホでは写真を先頭に（設計書どおり）。PCではコピー左・写真右 */
+@media (max-width: 959px) {
+  .hero__visual { order: -1; }
+}
 
 /* 事実のみの信頼バー */
 .hero__factsbar {
@@ -898,6 +902,12 @@ button {
   font-size: 18px;
   font-weight: 700;
   color: var(--navy);
+}
+.case__demo {
+  margin-left: .4em;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-mute);
 }
 .case__pair {
   display: grid;
