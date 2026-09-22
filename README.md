@@ -14,6 +14,10 @@ WordPress テーマとしてインストールできます。静的HTMLでも開
 
 有効化するとテーマ名は「新樹園」です。トップがこの提案ページになります。
 
+## スマホ版の画像
+
+`mobile-preview/` に、スマホ版トップを上から順に画像化したものがあります。`shinjuen-mobile-all.png` が全体、`shinjuen-mobile-01.png` から `14.png` がその分割です。
+
 ## 見方
 
 ```bash
