@@ -1,0 +1,4 @@
+# 提案デモ。正式公開まではクロールさせない。
+# 公開時は Allow に切り替え、sitemap の絶対URLを追加する。
+User-agent: *
+Disallow: /

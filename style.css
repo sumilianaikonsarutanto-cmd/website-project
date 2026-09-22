@@ -1,0 +1,34 @@
+/*
+Theme Name: 新樹園
+Theme URI: https://github.com/sumilianaikonsarutanto-cmd/website-project
+Author: 新樹園ホームページ提案
+Description: 大阪市東淀川区菅原の園芸店「新樹園」の提案デモ。珍しい植物と、相談しやすさと、棚が入れ替わる楽しさを伝える1ページです。
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: shinjuen
+Tags: one-column, custom-colors, featured-images
+*/
+
+/* 見た目の本体は assets/css/style.css。ここはテーマ情報と、管理バーがあるときの位置調整。 */
+
+body.admin-bar .header {
+  top: 32px;
+}
+
+body.admin-bar .drawer {
+  top: calc(var(--header) + 32px);
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar .header {
+    top: 46px;
+  }
+
+  body.admin-bar .drawer {
+    top: calc(var(--header) + 46px);
+  }
+}

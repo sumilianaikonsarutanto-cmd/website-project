@@ -1,144 +1,14 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>大阪市東淀川区の園芸店｜観葉植物・多肉植物・珍しい植物なら新樹園</title>
-<meta name="description" content="大阪市東淀川区菅原の園芸店「新樹園」。草花や観葉植物、多肉植物など、植物との出会いを楽しめる園芸店です。植物選びに迷った方もお気軽にご相談ください。">
-<!-- 提案デモのため検索には出さない。公開時に削除し、canonical / og:url を本番ドメインへ差し替える。 -->
-<meta name="robots" content="noindex, nofollow">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="新樹園">
-<meta property="og:title" content="大阪市東淀川区の園芸店｜観葉植物・多肉植物・珍しい植物なら新樹園">
-<meta property="og:description" content="大阪市東淀川区菅原の園芸店「新樹園」。草花から観葉植物、多肉植物まで。植物選びに迷った方もお気軽にご相談ください。">
-<meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary">
-<meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#263D2C">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "GardenStore",
-  "name": "新樹園",
-  "description": "大阪市東淀川区菅原の園芸店。草花、観葉植物、多肉植物、蘭などを扱う。",
-  "telephone": "+81-6-6327-1587",
-  "address": {
-    "@type": "PostalAddress",
-    "postalCode": "533-0022",
-    "addressCountry": "JP",
-    "addressRegion": "大阪府",
-    "addressLocality": "大阪市東淀川区",
-    "streetAddress": "菅原2丁目9-10"
-  },
-  "areaServed": "大阪市東淀川区"
+<?php
+/**
+ * トップの本文
+ *
+ * @package Shinjuen
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "初心者でも購入できますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "公開されている口コミでは、植物を初めて育てる方でも相談しやすい、という評価が見られます。どれを選べばよいか迷う場合も、店頭でお声がけください。" }
-    },
-    {
-      "@type": "Question",
-      "name": "どんな植物がありますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "草花、花苗、野菜、観葉植物、多肉植物、蘭、胡蝶蘭、樹木・植木、園芸用品、土・肥料などの取り扱いが、公開情報や口コミから確認できます。並ぶ植物は入荷によって変わります。" }
-    },
-    {
-      "@type": "Question",
-      "name": "珍しい植物はありますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "口コミでは、ホームセンターでは見つけにくい植物や、ビザールプランツ、塊根、ビカクシダなど個性的な植物との出会いが評価されています。常に同じ品揃えとは限りません。" }
-    },
-    {
-      "@type": "Question",
-      "name": "電話で植物について相談できますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "お電話は06-6327-1587です。在庫や植物の状態は日によって変わるため、実物を見ながらのご相談は店頭が確実です。" }
-    },
-    {
-      "@type": "Question",
-      "name": "駐車場はありますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "駐車場の有無は、現在の公開情報では確認できていません。お越しの前にお電話でご確認ください。" }
-    },
-    {
-      "@type": "Question",
-      "name": "営業時間と定休日を教えてください。",
-      "acceptedAnswer": { "@type": "Answer", "text": "営業時間と定休日は、店舗確認前のため掲載していません。06-6327-1587までお問い合わせください。" }
-    }
-  ]
-}
-</script>
-</head>
-<body>
-<a class="skip" href="#main">本文へスキップ</a>
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" focusable="false">
-  <symbol id="i-phone" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1z"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.1 6.2 12.2 6.47 12.5a.7.7 0 0 0 1.06 0C12.8 21.2 19 14.1 19 9a7 7 0 0 0-7-7m0 9.6A2.6 2.6 0 1 1 14.6 9 2.6 2.6 0 0 1 12 11.6"/></symbol>
-</svg>
-
-<header class="header">
-  <div class="wrap header__inner">
-    <a class="logo" href="index.html">
-      <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true">
-        <rect width="64" height="64" rx="6" fill="#263D2C"/>
-        <path d="M32 48V28" stroke="#F6F3EA" stroke-width="2.2" stroke-linecap="round"/>
-        <path d="M32 34c-8 0-12-6-12-12 6 0 12 4 12 12z" fill="#C5D6BE"/>
-        <path d="M32 30c8-1 13-7 12-14-6 1-12 6-12 14z" fill="#8FB089"/>
-        <rect x="24" y="48" width="16" height="4" rx="1" fill="#A57C4B"/>
-      </svg>
-      <span class="logo__text">
-        <span class="logo__name">新樹園</span>
-        <span class="logo__sub">東淀川区菅原の園芸店</span>
-      </span>
-    </a>
-
-    <nav class="gnav" aria-label="メインメニュー">
-      <ul class="gnav__list">
-        <li><a class="gnav__link" href="#about">新樹園とは</a></li>
-        <li><a class="gnav__link" href="#reasons">選ばれる理由</a></li>
-        <li><a class="gnav__link" href="#lineup">植物</a></li>
-        <li><a class="gnav__link" href="#arrivals">今週の入荷</a></li>
-        <li><a class="gnav__link" href="#beginners">初めての方</a></li>
-        <li><a class="gnav__link" href="#access">アクセス</a></li>
-      </ul>
-    </nav>
-
-    <a class="header__tel" href="tel:0663271587">06-6327-1587</a>
-    <a class="btn btn--primary header__go" href="#access">店舗へ行く</a>
-
-    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="drawer">
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-      <span class="nav-toggle__bar"></span>
-      <span class="sr-only">メニューを開く</span>
-    </button>
-  </div>
-</header>
-
-<div class="drawer" id="drawer" data-drawer hidden>
-  <nav aria-label="メインメニュー（モバイル）">
-    <a href="#about">新樹園とは</a>
-    <a href="#reasons">選ばれる理由</a>
-    <a href="#lineup">植物</a>
-    <a href="#arrivals">今週の入荷</a>
-    <a href="#beginners">初めての方</a>
-    <a href="#soil">土・園芸用品</a>
-    <a href="#voices">評価</a>
-    <a href="#faq">よくある質問</a>
-    <a href="#access">アクセス</a>
-    <a class="drawer__tel" href="tel:0663271587">06-6327-1587</a>
-  </nav>
-</div>
-
+?>
 <main id="main">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__copy">
@@ -158,7 +28,7 @@
       </ul>
     </div>
     <div class="hero__visual">
-      <img src="assets/img/greenhouse.svg" width="800" height="980" alt="植物が棚に並んだ温室のイラスト。実店舗の写真に差し替えできます。" fetchpriority="high">
+      <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/greenhouse.svg" width="800" height="980" alt="植物が棚に並んだ温室のイラスト。実店舗の写真に差し替えできます。" fetchpriority="high">
       <p class="hero__caption">イラストは仮のビジュアルです。温室の写真に差し替えできます。</p>
     </div>
   </section>
@@ -375,7 +245,7 @@
             <p class="more"><a class="btn btn--primary" href="tel:0663271587">土について相談する</a></p>
           </div>
           <figure class="soil__fig">
-            <img src="assets/img/soil.svg" width="640" height="480" alt="鉢と土のイラスト。オリジナル土の実物写真に差し替えできます。" loading="lazy">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/soil.svg" width="640" height="480" alt="鉢と土のイラスト。オリジナル土の実物写真に差し替えできます。" loading="lazy">
           </figure>
         </div>
       </div>
@@ -524,33 +394,3 @@
     </div>
   </section>
 </main>
-
-<footer class="footer">
-  <div class="wrap footer__grid">
-    <div>
-      <p class="footer__name">新樹園</p>
-      <p>〒533-0022 大阪府大阪市東淀川区菅原2丁目9-10<br>
-        <a href="tel:0663271587">06-6327-1587</a><br>
-        営業時間・定休日：要確認</p>
-    </div>
-    <nav aria-label="フッターメニュー">
-      <a href="#lineup">植物</a>
-      <a href="#arrivals">今週の入荷</a>
-      <a href="#beginners">初めての方</a>
-      <a href="#access">アクセス</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-    </nav>
-  </div>
-  <div class="wrap">
-    <p class="footer__note">このページは新樹園向けの提案デモです。営業時間、価格、在庫、スタッフ紹介など、確認できていない情報は載せていません。</p>
-  </div>
-</footer>
-
-<div class="dock" aria-label="電話とアクセス">
-  <a href="tel:0663271587"><svg aria-hidden="true"><use href="#i-phone"></use></svg>電話する</a>
-  <a href="#access"><svg aria-hidden="true"><use href="#i-pin"></use></svg>アクセス</a>
-</div>
-
-<script src="assets/js/main.js"></script>
-</body>
-</html>
