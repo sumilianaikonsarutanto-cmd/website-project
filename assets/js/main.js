@@ -1,153 +1,93 @@
-/**
- * ハッピーペイントホーム（白井工業）
- * 共通スクリプト（index.html / works.html で共用）
- *
- * 方針：JavaScript は必要最小限。無効でもコンテンツは読める状態を保つ。
- *  1. モバイルナビ（ドロワー）
- *  2. よくある質問のアコーディオン
- *  3. スクロール時のフェードイン
- *  4. 料金分布バーのアニメーション
- *  5. 施工事例の地域フィルター
- *  6. フッターの年号
- */
+/* 新樹園
+   今週の入荷は、店舗で確認できた実在の植物だけを追加する。
+   価格・在庫保証・架空の商品名は入れない。
+   配列が空のあいだは、HTML側の「見本」を表示する。
+
+   追加例:
+   {
+     name: "植物名",
+     note: "ひとこと",
+     arrived: "9月22日入荷",
+     image: "assets/img/arrivals/example.webp",
+     alt: "写真の説明"
+   }
+*/
+const newArrivals = [];
+
 (function () {
-  'use strict';
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const drawer = document.querySelector("[data-drawer]");
 
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function closeNav() {
+    if (!drawer || !toggle) return;
+    drawer.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("nav-open");
+    const label = toggle.querySelector(".sr-only");
+    if (label) label.textContent = "メニューを開く";
+  }
 
-  /* ----------------------------------------------------------------------
-     1. モバイルナビ
-     ---------------------------------------------------------------------- */
-  function initDrawer() {
-    var toggle = document.querySelector('[data-nav-toggle]');
-    var drawer = document.querySelector('[data-drawer]');
-    if (!toggle || !drawer) return;
+  function openNav() {
+    drawer.hidden = false;
+    toggle.setAttribute("aria-expanded", "true");
+    document.body.classList.add("nav-open");
+    const first = drawer.querySelector("a");
+    if (first) first.focus();
+  }
 
-    function setOpen(open) {
-      toggle.setAttribute('aria-expanded', String(open));
-      drawer.classList.toggle('is-open', open);
-      drawer.hidden = !open;
-      document.body.style.overflow = open ? 'hidden' : '';
+  if (toggle && drawer) {
+    const toggleLabel = toggle.querySelector(".sr-only");
+
+    function setToggleLabel(open) {
+      if (toggleLabel) toggleLabel.textContent = open ? "メニューを閉じる" : "メニューを開く";
     }
 
-    toggle.addEventListener('click', function () {
-      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
-    });
-
-    // メニュー内リンクを押したら閉じる
-    drawer.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setOpen(false);
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-        setOpen(false);
-        toggle.focus();
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      if (expanded) closeNav();
+      else {
+        openNav();
+        setToggleLabel(true);
       }
     });
 
-    // PC 幅に戻したときに状態をリセット
-    window.matchMedia('(min-width: 1100px)').addEventListener('change', function (e) {
-      if (e.matches) setOpen(false);
+    drawer.addEventListener("click", (event) => {
+      if (event.target.closest("a")) closeNav();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeNav();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1024) closeNav();
     });
   }
 
-  /* ----------------------------------------------------------------------
-     2. よくある質問のアコーディオン
-     ---------------------------------------------------------------------- */
-  function initFaq() {
-    document.querySelectorAll('[data-faq-q]').forEach(function (btn) {
-      var panel = document.getElementById(btn.getAttribute('aria-controls'));
-      if (!panel) return;
+  const list = document.querySelector("[data-arrivals]");
+  if (list && Array.isArray(newArrivals) && newArrivals.length > 0) {
+    const esc = (value) =>
+      String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
 
-      btn.addEventListener('click', function () {
-        var open = btn.getAttribute('aria-expanded') !== 'true';
-        btn.setAttribute('aria-expanded', String(open));
-        panel.dataset.open = String(open);
-      });
-    });
+    list.classList.add("arrival-scroll");
+    list.innerHTML = newArrivals
+      .map((item) => {
+        const media = item.image
+          ? `<img src="${esc(item.image)}" alt="${esc(item.alt || item.name)}" width="640" height="480" loading="lazy">`
+          : `<div class="arrival__photo" aria-hidden="true">写真</div>`;
+        return `<article class="arrival">
+          ${media}
+          <div class="arrival__body">
+            <h3>${esc(item.name)}</h3>
+            ${item.note ? `<p>${esc(item.note)}</p>` : ""}
+            ${item.arrived ? `<p class="arrival__date">${esc(item.arrived)}</p>` : ""}
+          </div>
+        </article>`;
+      })
+      .join("");
   }
-
-  /* ----------------------------------------------------------------------
-     3. スクロール時のフェードイン ＋ 4. 料金バー
-     ---------------------------------------------------------------------- */
-  function initReveal() {
-    var targets = document.querySelectorAll('.reveal');
-    var bars = document.querySelectorAll('[data-bar]');
-
-    function fillBars() {
-      bars.forEach(function (bar) {
-        bar.style.setProperty('--w', bar.dataset.bar + '%');
-      });
-    }
-
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      targets.forEach(function (el) { el.classList.add('is-visible'); });
-      fillBars();
-      return;
-    }
-
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        if (entry.target.hasAttribute('data-bar-group')) fillBars();
-        io.unobserve(entry.target);
-      });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
-
-    targets.forEach(function (el) { io.observe(el); });
-
-    // 料金バーがフェード対象外の場所にあっても動くように保険をかける
-    var barGroup = document.querySelector('[data-bar-group]');
-    if (barGroup && !barGroup.classList.contains('reveal')) io.observe(barGroup);
-  }
-
-  /* ----------------------------------------------------------------------
-     5. 施工事例の地域フィルター（works.html）
-     ---------------------------------------------------------------------- */
-  function initWorksFilter() {
-    var filter = document.querySelector('[data-filter]');
-    if (!filter) return;
-
-    var items = Array.prototype.slice.call(document.querySelectorAll('[data-area]'));
-    var counter = document.querySelector('[data-filter-count]');
-    var empty = document.querySelector('[data-filter-empty]');
-
-    filter.addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-filter-value]');
-      if (!btn) return;
-
-      var value = btn.dataset.filterValue;
-      filter.querySelectorAll('[data-filter-value]').forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b === btn));
-      });
-
-      var shown = 0;
-      items.forEach(function (item) {
-        var match = value === 'all' || item.dataset.area === value;
-        item.hidden = !match;
-        if (match) shown++;
-      });
-
-      if (counter) counter.textContent = String(shown);
-      if (empty) empty.hidden = shown !== 0;
-    });
-  }
-
-  /* ----------------------------------------------------------------------
-     6. フッターの年号
-     ---------------------------------------------------------------------- */
-  function initYear() {
-    var el = document.querySelector('[data-year]');
-    if (el) el.textContent = String(new Date().getFullYear());
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    initDrawer();
-    initFaq();
-    initReveal();
-    initWorksFilter();
-    initYear();
-  });
 })();
