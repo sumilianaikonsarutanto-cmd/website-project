@@ -66,6 +66,13 @@ const newArrivals = [];
 
   const list = document.querySelector("[data-arrivals]");
   if (list && Array.isArray(newArrivals) && newArrivals.length > 0) {
+    const arrivalSrc = (path) => {
+      const value = String(path || "");
+      if (!value) return "";
+      if (/^(https?:|data:|\/)/.test(value)) return value;
+      const base = window.shinjuenTheme && window.shinjuenTheme.uri ? String(window.shinjuenTheme.uri).replace(/\/$/, "") : "";
+      return base ? base + "/" + value.replace(/^\.\//, "") : value;
+    };
     const esc = (value) =>
       String(value ?? "")
         .replace(/&/g, "&amp;")
@@ -76,8 +83,9 @@ const newArrivals = [];
     list.classList.add("arrival-scroll");
     list.innerHTML = newArrivals
       .map((item) => {
-        const media = item.image
-          ? `<img src="${esc(item.image)}" alt="${esc(item.alt || item.name)}" width="640" height="480" loading="lazy">`
+        const src = arrivalSrc(item.image);
+        const media = src
+          ? `<img src="${esc(src)}" alt="${esc(item.alt || item.name)}" width="640" height="480" loading="lazy">`
           : `<div class="arrival__photo" aria-hidden="true">写真</div>`;
         return `<article class="arrival">
           ${media}

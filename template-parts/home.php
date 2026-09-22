@@ -1,0 +1,396 @@
+<?php
+/**
+ * トップの本文
+ *
+ * @package Shinjuen
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__copy">
+      <p class="eyebrow">大阪市東淀川区・菅原</p>
+      <h1 id="hero-title">
+        <span class="h1-line">珍しい植物も、育てやすい植物も。</span>
+        <span class="h1-line">植物好きが、何度も通いたくなる園芸店。</span>
+      </h1>
+      <p class="hero__lead">大阪市東淀川区・菅原の新樹園。草花から観葉植物、多肉植物まで、植物との出会いを楽しめる園芸店です。植物選びに迷ったときも、お気軽にご相談ください。</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#access">店舗へ行く</a>
+        <a class="btn btn--ghost" href="tel:0663271587">電話で相談する</a>
+      </div>
+      <ul class="hero__facts">
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E6%A8%B9%E5%9C%92+%E5%A4%A7%E9%98%AA%E5%B8%82%E6%9D%B1%E6%B7%80%E5%B7%9D%E5%8C%BA%E8%8F%85%E5%8E%9F2%E4%B8%81%E7%9B%AE9-10" target="_blank" rel="noopener">Googleの口コミ 4.5（51件・調査時点）</a></li>
+        <li>草花・観葉植物・多肉植物・蘭</li>
+      </ul>
+    </div>
+    <div class="hero__visual">
+      <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/greenhouse.svg" width="800" height="980" alt="植物が棚に並んだ温室のイラスト。実店舗の写真に差し替えできます。" fetchpriority="high">
+      <p class="hero__caption">イラストは仮のビジュアルです。温室の写真に差し替えできます。</p>
+    </div>
+  </section>
+
+  <section class="sec sec--white" id="about">
+    <div class="wrap sec__grid">
+      <p class="sec__label">新樹園とは</p>
+      <div class="sec__body reveal">
+        <h2>植物との出会いを、もっと身近に。</h2>
+        <div class="prose">
+          <p>新樹園は、大阪市東淀川区菅原にある園芸店です。</p>
+          <p>草花や観葉植物、多肉植物など、身近な植物から、植物好きの方が探したくなるような珍しい植物まで。「植物を育てるのは初めて」という方も、「次はどんな植物があるかな」と探している方も。植物を選ぶ時間そのものを楽しんでいただけるお店を目指しています。</p>
+          <p>口コミでは、通りに面したガラス張りの温室と、その内外に並ぶ植物の量が、お店の印象として語られています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="reasons">
+    <div class="wrap sec__grid">
+      <p class="sec__label">選ばれる理由</p>
+      <div class="sec__body reveal">
+        <h2>新樹園が、植物好きに選ばれる理由。</h2>
+        <div class="reasons">
+          <article class="reason">
+            <p class="reason__no">01</p>
+            <h3>珍しい植物との出会い</h3>
+            <p>ホームセンターなどでは見つけにくい、珍しい植物や個性的な植物との出会いを楽しめます。</p>
+          </article>
+          <article class="reason">
+            <p class="reason__no">02</p>
+            <h3>植物のことを気軽に相談できる</h3>
+            <p>「これはどこに置けばいい？」「水やりはどうする？」そんな植物に関する疑問も、お気軽にご相談ください。</p>
+          </article>
+          <article class="reason">
+            <p class="reason__no">03</p>
+            <h3>何度訪れても、新しい発見</h3>
+            <p>口コミでは、定期的な新しい植物との出会いが評価されています。次に行ったら何があるかな、という楽しさがあります。</p>
+          </article>
+        </div>
+        <p class="more"><a href="#lineup">植物を見る</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--white" id="lineup">
+    <div class="wrap sec__grid">
+      <p class="sec__label">植物ラインナップ</p>
+      <div class="sec__body reveal">
+        <h2>暮らしに合わせて、植物を選ぶ。</h2>
+        <div class="plants">
+          <article class="plant">
+            <svg class="plant__art" viewBox="0 0 72 72" aria-hidden="true">
+              <path d="M36 58V30" stroke="currentColor" stroke-width="1.6"/>
+              <ellipse cx="28" cy="28" rx="12" ry="7" transform="rotate(-30 28 28)" fill="#8FB089"/>
+              <ellipse cx="44" cy="26" rx="12" ry="7" transform="rotate(24 44 26)" fill="#C5D6BE"/>
+              <circle cx="36" cy="24" r="5" fill="#A57C4B"/>
+              <rect x="30" y="56" width="12" height="6" rx="1" fill="#A57C4B"/>
+            </svg>
+            <h3>草花</h3>
+            <p>季節の草花や花苗。</p>
+          </article>
+          <article class="plant">
+            <svg class="plant__art" viewBox="0 0 72 72" aria-hidden="true">
+              <path d="M36 60V26" stroke="currentColor" stroke-width="1.6"/>
+              <ellipse cx="24" cy="32" rx="14" ry="8" transform="rotate(-36 24 32)" fill="#6E9470"/>
+              <ellipse cx="48" cy="30" rx="14" ry="8" transform="rotate(32 48 30)" fill="#8FB089"/>
+              <ellipse cx="34" cy="22" rx="12" ry="7" transform="rotate(-10 34 22)" fill="#C5D6BE"/>
+              <rect x="28" y="58" width="16" height="6" rx="1" fill="#8C6840"/>
+            </svg>
+            <h3>観葉植物</h3>
+            <p>室内を彩る観葉植物。</p>
+          </article>
+          <article class="plant">
+            <svg class="plant__art" viewBox="0 0 72 72" aria-hidden="true">
+              <ellipse cx="36" cy="34" rx="10" ry="14" fill="#7D9A74"/>
+              <ellipse cx="24" cy="38" rx="8" ry="11" transform="rotate(-28 24 38)" fill="#A8C4A0"/>
+              <ellipse cx="48" cy="38" rx="8" ry="11" transform="rotate(28 48 38)" fill="#C5D6BE"/>
+              <ellipse cx="30" cy="24" rx="6" ry="9" transform="rotate(-16 30 24)" fill="#6E9470"/>
+              <ellipse cx="42" cy="24" rx="6" ry="9" transform="rotate(16 42 24)" fill="#8FB089"/>
+              <rect x="26" y="52" width="20" height="8" rx="1" fill="#A57C4B"/>
+            </svg>
+            <h3>多肉植物</h3>
+            <p>個性的な姿を楽しめる植物。</p>
+          </article>
+          <article class="plant">
+            <svg class="plant__art" viewBox="0 0 72 72" aria-hidden="true">
+              <path d="M36 62V28" stroke="currentColor" stroke-width="1.6"/>
+              <ellipse cx="36" cy="24" rx="8" ry="10" fill="#C5D6BE"/>
+              <ellipse cx="28" cy="28" rx="7" ry="5" transform="rotate(-20 28 28)" fill="#8FB089"/>
+              <ellipse cx="44" cy="28" rx="7" ry="5" transform="rotate(20 44 28)" fill="#8FB089"/>
+              <ellipse cx="36" cy="20" rx="4" ry="6" fill="#A57C4B"/>
+              <path d="M22 48c8-6 20-6 28 0" stroke="#6E9470" stroke-width="1.4" fill="none"/>
+            </svg>
+            <h3>蘭・胡蝶蘭</h3>
+            <p>蘭、胡蝶蘭など。</p>
+          </article>
+          <article class="plant">
+            <svg class="plant__art" viewBox="0 0 72 72" aria-hidden="true">
+              <path d="M24 58V36M36 58V28M48 58V40" stroke="#3E5C48" stroke-width="1.6"/>
+              <ellipse cx="24" cy="32" rx="6" ry="8" fill="#8FB089"/>
+              <ellipse cx="36" cy="24" rx="7" ry="9" fill="#6E9470"/>
+              <ellipse cx="48" cy="36" rx="6" ry="8" fill="#C5D6BE"/>
+              <rect x="16" y="56" width="40" height="8" rx="1" fill="#A57C4B"/>
+            </svg>
+            <h3>野菜・苗</h3>
+            <p>家庭で楽しめる野菜や苗。</p>
+          </article>
+          <article class="plant">
+            <svg class="plant__art" viewBox="0 0 72 72" aria-hidden="true">
+              <path d="M36 60c-2-16 2-24 0-36" stroke="currentColor" stroke-width="1.6" fill="none"/>
+              <path d="M36 30c-14 2-18 14-8 18 6-6 10-8 8-18z" fill="#6E9470"/>
+              <path d="M36 26c12-6 22 2 16 12-8-2-12 2-16-12z" fill="#A8C4A0"/>
+              <path d="M34 40c-10 8-8 18 2 16 0-8 2-12-2-16z" fill="#8C6840"/>
+              <circle cx="36" cy="48" r="6" fill="#C4A27A"/>
+            </svg>
+            <h3>珍しい植物</h3>
+            <p>ビザールプランツなど、その時々の入荷。</p>
+          </article>
+        </div>
+        <p class="note">並ぶ種類は入荷によって変わります。カテゴリーの詳細は、店頭でご確認ください。</p>
+        <p class="more"><a href="#arrivals">現在の入荷を見る</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--green" id="rare">
+    <div class="wrap sec__grid">
+      <p class="sec__label">珍しい植物</p>
+      <div class="sec__body reveal">
+        <h2>「こんな植物、あったんだ。」</h2>
+        <p class="rare__lead">新樹園には、一般的な園芸店やホームセンターではなかなか出会えないような植物が並ぶことがあります。</p>
+        <div class="prose">
+          <p>植物好きの方はもちろん、「少し変わった植物を育ててみたい」という方も、ぜひ店内を覗いてみてください。入荷はその時々で変わるので、今日この場所でしか出会えない、という体験が残ります。</p>
+        </div>
+        <ul class="genres">
+          <li>ビザールプランツ</li>
+          <li>塊根</li>
+          <li>ビカクシダ</li>
+          <li>多肉植物</li>
+          <li>蘭</li>
+        </ul>
+        <p class="note">口コミで触れられているジャンルです。常時同じ植物があるわけではありません。</p>
+        <p class="more"><a href="#arrivals">今週の入荷を見る</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="arrivals">
+    <div class="wrap sec__grid">
+      <p class="sec__label">今週の入荷</p>
+      <div class="sec__body reveal">
+        <h2>今週、新しく入荷した植物。</h2>
+        <div class="arrivals__intro">
+          <div>
+            <div class="prose">
+              <p>口コミでも、訪れるたびに新しい植物と出会えることが楽しみとして語られています。この欄は、いま店頭にある植物を、写真と名前とひとことでお知らせするための場所です。</p>
+              <p>在庫の保証はしません。掲載した植物は、売り切れや入れ替えになることがあります。価格を載せる場合も、店舗で確認できたものだけにします。</p>
+            </div>
+            <p class="note">公式のInstagramは、現時点の公開情報では確認できていません。アカウントが分かり次第、最新の入荷への導線をここに置きます。</p>
+          </div>
+          <div data-arrivals>
+            <article class="arrival" aria-label="入荷情報の掲載見本。実在の商品ではありません。">
+              <div class="arrival__photo">写真</div>
+              <div class="arrival__body">
+                <p class="arrival__kicker">掲載フォーマット（見本）</p>
+                <h3>植物名</h3>
+                <p>ひとことコメント</p>
+                <p class="arrival__date">入荷時期</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--white" id="beginners">
+    <div class="wrap sec__grid">
+      <p class="sec__label">初心者の方へ</p>
+      <div class="sec__body reveal">
+        <div class="beginner">
+          <h2>「植物を育てるの、初めてです。」<br>そんな方もお気軽に。</h2>
+          <div>
+            <div class="prose">
+              <p>植物を育ててみたいけれど、何から決めればいいか分からない。口コミでは、初めての方でも相談しやすい、育て方をその場で教えてもらえた、という評価が繰り返されています。</p>
+            </div>
+            <ul class="worries">
+              <li>どれを選べばいい？</li>
+              <li>水やりはどれくらい？</li>
+              <li>日当たりが少ない部屋でも大丈夫？</li>
+              <li>ベランダで育てたい</li>
+              <li>枯らしてしまいそうで不安</li>
+            </ul>
+            <p class="more"><a class="btn btn--primary" href="tel:0663271587">植物について相談する</a></p>
+            <p class="note">実物を見ながらのご相談は、店頭が確実です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--soil" id="soil">
+    <div class="wrap sec__grid">
+      <p class="sec__label">土・園芸用品</p>
+      <div class="sec__body reveal">
+        <h2>植物を育てる「土」にも、こだわりを。</h2>
+        <div class="soil">
+          <div>
+            <div class="prose">
+              <p>新樹園ではオリジナルの土も取り扱っています。植物を元気に育てるために、植物だけではなく「育てる環境」まで考えて選べるのが新樹園です。</p>
+              <p>成分、使い方、価格は、店舗で確認してから掲載します。口コミでは、このオリジナル土を評価する声があります。</p>
+            </div>
+            <p class="more"><a class="btn btn--primary" href="tel:0663271587">土について相談する</a></p>
+          </div>
+          <figure class="soil__fig">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/soil.svg" width="640" height="480" alt="鉢と土のイラスト。オリジナル土の実物写真に差し替えできます。" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--white" id="voices">
+    <div class="wrap sec__grid">
+      <p class="sec__label">お客様からの評価</p>
+      <div class="sec__body reveal">
+        <h2>植物を選ぶ時間も、楽しんでいただいています。</h2>
+        <div class="voices">
+          <div class="rating">
+            <p class="rating__num">4.5<span>/ 5</span></p>
+            <p class="rating__meta"><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E6%A8%B9%E5%9C%92+%E5%A4%A7%E9%98%AA%E5%B8%82%E6%9D%B1%E6%B7%80%E5%B7%9D%E5%8C%BA%E8%8F%85%E5%8E%9F2%E4%B8%81%E7%9B%AE9-10" target="_blank" rel="noopener">Googleの口コミ 51件</a><br>調査時点の掲載情報です。</p>
+          </div>
+          <ul class="points">
+            <li>
+              <h3>珍しい植物が見つかる</h3>
+              <p>他では見かけにくい植物、ビザールプランツとの出会い。</p>
+            </li>
+            <li>
+              <h3>育て方を教えてもらえる</h3>
+              <p>置き場所や水やりを、その場で聞ける。</p>
+            </li>
+            <li>
+              <h3>初めてでも相談しやすい</h3>
+              <p>植物が初めての人でも入りやすい、という評価。</p>
+            </li>
+            <li>
+              <h3>お買い得な植物がある</h3>
+              <p>手に取りやすい価格だった、という声。商品によって差がある、という指摘もあります。</p>
+            </li>
+            <li>
+              <h3>温室を見て回れる</h3>
+              <p>ガラス張りの店内を、自分のペースで見て回れる。</p>
+            </li>
+          </ul>
+        </div>
+        <p class="note">口コミ本文の転載ではなく、公開されている評価の傾向を整理しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="shop">
+    <div class="wrap sec__grid">
+      <p class="sec__label">店舗紹介</p>
+      <div class="sec__body reveal">
+        <h2>植物のこと、気軽に話せるお店でありたい。</h2>
+        <div class="prose">
+          <p>新樹園は、大阪市東淀川区菅原2丁目9-10にある園芸店です。Googleでは「園芸センター」として掲載されています。</p>
+          <p>通りに面したガラス張りの建物に、草花から園芸用品までが並ぶ。口コミでは、説明が細かく、必要なときに声をかけてもらえる、という接客が繰り返し評価されています。</p>
+        </div>
+        <p class="shop-note">店主のお名前、創業年、スタッフ構成は未確認のため掲載していません。お写真と紹介文をいただければ、この欄に載せられます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--white" id="faq">
+    <div class="wrap sec__grid">
+      <p class="sec__label">よくある質問</p>
+      <div class="sec__body reveal">
+        <h2>来店の前に、よくある質問。</h2>
+        <div class="faq">
+          <details class="faq__item">
+            <summary>初心者でも購入できますか？</summary>
+            <div class="faq__a"><p>公開されている口コミでは、植物を初めて育てる方でも相談しやすい、という評価が見られます。どれを選べばよいか迷う場合も、店頭でお声がけください。</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>どんな植物がありますか？</summary>
+            <div class="faq__a"><p>草花、花苗、野菜、観葉植物、多肉植物、蘭、胡蝶蘭、樹木・植木、園芸用品、土・肥料などの取り扱いが、公開情報や口コミから確認できます。並ぶ植物は入荷によって変わります。</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>珍しい植物はありますか？</summary>
+            <div class="faq__a"><p>口コミでは、ホームセンターでは見つけにくい植物や、ビザールプランツ、塊根、ビカクシダなど個性的な植物との出会いが評価されています。常に同じ品揃えとは限りません。</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>電話で植物について相談できますか？</summary>
+            <div class="faq__a"><p>お電話は <a href="tel:0663271587">06-6327-1587</a> です。在庫や植物の状態は日によって変わるため、実物を見ながらのご相談は店頭が確実です。</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>駐車場はありますか？</summary>
+            <div class="faq__a"><p>駐車場の有無は、現在の公開情報では確認できていません。お越しの前にお電話でご確認ください。</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>支払い方法は何がありますか？</summary>
+            <div class="faq__a"><p>支払い方法は公開情報では確認できていません。店頭でご確認ください。</p></div>
+          </details>
+          <details class="faq__item">
+            <summary>営業時間と定休日を教えてください。</summary>
+            <div class="faq__a"><p>営業時間と定休日は、店舗確認前のため掲載していません。<a href="tel:0663271587">06-6327-1587</a> までお問い合わせください。</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="access">
+    <div class="wrap sec__grid">
+      <p class="sec__label">アクセス</p>
+      <div class="sec__body reveal">
+        <h2>新樹園へのアクセス</h2>
+        <div class="access">
+          <div>
+            <p class="access__name">新樹園</p>
+            <address>
+              〒533-0022<br>
+              大阪府大阪市東淀川区菅原2丁目9-10<br>
+              <a href="tel:0663271587">TEL 06-6327-1587</a>
+            </address>
+            <p class="note">JR淡路駅から徒歩約15分、という案内が公開情報にあります。</p>
+            <dl class="facts">
+              <div>
+                <dt>営業時間</dt>
+                <dd class="pending">要確認</dd>
+              </div>
+              <div>
+                <dt>定休日</dt>
+                <dd class="pending">要確認</dd>
+              </div>
+              <div>
+                <dt>駐車場</dt>
+                <dd class="pending">要確認</dd>
+              </div>
+            </dl>
+            <p class="more"><a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%96%B0%E6%A8%B9%E5%9C%92+%E5%A4%A7%E9%98%AA%E5%B8%82%E6%9D%B1%E6%B7%80%E5%B7%9D%E5%8C%BA%E8%8F%85%E5%8E%9F2%E4%B8%81%E7%9B%AE9-10" target="_blank" rel="noopener">Googleマップで道順を見る</a></p>
+          </div>
+          <div class="map">
+            <iframe title="新樹園の地図。大阪府大阪市東淀川区菅原2丁目9-10" src="https://maps.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E6%9D%B1%E6%B7%80%E5%B7%9D%E5%8C%BA%E8%8F%85%E5%8E%9F2%E4%B8%81%E7%9B%AE9-10&amp;hl=ja&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <h2 id="visit-title">今日は、どんな植物に出会えるでしょう。</h2>
+      <p>植物を探している方も、何を選べばいいか迷っている方も。まずはお気軽に、新樹園へお越しください。</p>
+      <div class="closing__actions">
+        <a class="btn btn--light" href="#access">新樹園へ行く</a>
+        <a class="btn btn--line" href="tel:0663271587">電話で相談する</a>
+      </div>
+      <p class="closing__tel"><a href="tel:0663271587">06-6327-1587</a></p>
+      <p class="note">営業時間は確認後に掲載します。お越しの前に、お電話でご確認ください。</p>
+    </div>
+  </section>
+</main>
