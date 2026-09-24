@@ -1,0 +1,5 @@
+# 営業提案用デモ。正式公開時は index に切り替えてください。
+User-agent: *
+Disallow: /
+
+Sitemap: https://matushita-house.co.jp/sitemap.xml
