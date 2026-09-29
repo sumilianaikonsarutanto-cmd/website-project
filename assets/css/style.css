@@ -356,7 +356,7 @@ h1, h2, h3, .logo__name, .history__year, .strength__num, .flow__num {
   height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  object-position: center 36%;
+  object-position: center;
 }
 
 .hero__figure figcaption {

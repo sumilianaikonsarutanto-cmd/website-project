@@ -83,7 +83,7 @@
 
 | ファイル | 元ファイル | 使い方 |
 | --- | --- | --- |
-| `assets/img/hero/storefront.jpg` | `hekimen_big5.jpg` | ファーストビュー |
+| `assets/img/hero/wall-sign.jpg` | `hekimen_big19.jpg` | ファーストビュー |
 | `assets/img/works/wall-shop.jpg` | `hekimen_big7.jpg` | 店舗看板 |
 | `assets/img/works/wall-large.jpg` | `hekimen_big3.jpg` | 壁面看板 |
 | `assets/img/works/led.jpg` | `led4_big.jpg` | LEDサイン |
