@@ -79,11 +79,13 @@
 
 ## 6. 写真
 
-すべて現行サイト `images/` の掲載写真です。ストック写真や生成画像は使っていません。
+施工事例以降の写真は、現行サイト `images/` の掲載写真です。ストック写真は使っていません。
+
+ファーストビューだけは、提案用に生成したイメージです。施工実績としては掲載していません。店名の KURA は実在の施工先ではありません。
 
 | ファイル | 元ファイル | 使い方 |
 | --- | --- | --- |
-| `assets/img/hero/wall-sign.jpg` | `hekimen_big19.jpg` | ファーストビュー |
+| `assets/img/hero/facade.jpg` | 生成画像 | ファーストビュー（提案イメージ） |
 | `assets/img/works/wall-shop.jpg` | `hekimen_big7.jpg` | 店舗看板 |
 | `assets/img/works/wall-large.jpg` | `hekimen_big3.jpg` | 壁面看板 |
 | `assets/img/works/led.jpg` | `led4_big.jpg` | LEDサイン |
