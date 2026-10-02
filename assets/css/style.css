@@ -323,23 +323,48 @@ button, summary { font-family: inherit; }
 
 /* Hero -------------------------------------------------------------------- */
 
-.hero { padding: 36px 0 28px; }
+.hero { padding: 0 0 0; }
+
+.hero__body {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 32px 0 0;
+}
 
 .hero__eyebrow {
-  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 500;
+  letter-spacing: 0.16em;
   color: var(--navy);
+}
+
+.hero__eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--accent);
+  flex: none;
 }
 
 .hero__title {
   margin: 0;
-  font-size: clamp(32px, 5vw, 52px);
-  line-height: 1.35;
+  font-size: clamp(32px, 8vw, 36px);
+  line-height: 1.3;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   color: var(--navy);
+}
+
+.hero__em {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .hero__lead {
@@ -358,49 +383,62 @@ button, summary { font-family: inherit; }
 .hero__actions .btn { width: 100%; }
 
 .hero__meta {
-  margin: 16px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 18px 0 0;
   padding: 0;
   list-style: none;
   color: var(--muted);
   font-size: 13.5px;
 }
 
-.hero__meta li + li { margin-top: 2px; }
-
-.hero__board {
-  margin-top: 32px;
-  background: var(--beige);
+.hero__stage {
+  margin-top: 28px;
+  background: var(--navy);
   padding: 22px 16px 18px;
+}
+
+.hero__side {
+  margin: 0 0 14px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  letter-spacing: 0.24em;
 }
 
 .hero__prints {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   gap: 12px;
+  width: 100%;
 }
 
 .hero__shot {
   margin: 0;
-  width: min(180px, 46%);
-  background: var(--paper);
-  padding: 8px 8px 10px;
+  width: calc(50% - 8px);
+  max-width: 210px;
+  background: #fff;
+  padding: 7px 7px 8px;
 }
 
 .hero__shot img { width: 100%; height: auto; display: block; }
 
 .hero__shot figcaption {
-  margin-top: 6px;
+  margin-top: 7px;
   font-size: 12px;
-  line-height: 1.4;
-  color: var(--muted);
-  letter-spacing: 0.04em;
+  line-height: 1.3;
+  color: var(--navy);
+  letter-spacing: 0.08em;
 }
 
 .hero__note {
-  margin: 12px 0 0;
+  margin: 14px 0 0;
   text-align: center;
   font-size: 12px;
-  color: var(--muted);
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.68);
 }
 
 /* Certs ------------------------------------------------------------------- */
@@ -1179,33 +1217,50 @@ button, summary { font-family: inherit; }
 
   .header__cta { display: inline-flex; }
 
-  .hero { padding: 56px 0 48px; }
-
   .hero__inner {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-    gap: 40px;
-    align-items: center;
+    grid-template-columns: minmax(0, 1.15fr) minmax(440px, 0.85fr);
+    align-items: stretch;
+    min-height: 640px;
   }
 
-  .hero__board { margin-top: 0; padding: 28px 18px 22px; }
-
-  .hero__prints {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .hero__shot { width: calc(50% - 8px); max-width: 230px; }
-
-  .hero__meta {
+  .hero__body {
+    width: auto;
+    margin: 0;
+    padding: 72px 48px 64px max(32px, calc((100vw - 1120px) / 2));
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px 18px;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .hero__meta li + li { margin-top: 0; }
+  .hero__title { font-size: clamp(40px, 3.6vw, 54px); }
+
+  .hero__stage {
+    position: relative;
+    margin-top: 0;
+    padding: 56px 48px 40px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero__side {
+    position: absolute;
+    left: 26px;
+    top: 50%;
+    margin: 0;
+    writing-mode: vertical-rl;
+    transform: translateY(-50%);
+    letter-spacing: 0.38em;
+  }
+
+  .hero__prints { gap: 20px; align-items: flex-start; max-width: 460px; }
+
+  .hero__shot { width: calc(50% - 10px); }
+
+  .hero__shot--drop { margin-top: 52px; }
+
+  .hero__note { text-align: left; margin-top: 22px; padding-left: 4px; }
 
   .reasons { grid-template-columns: 1fr 1fr; }
 
