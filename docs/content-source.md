@@ -39,6 +39,8 @@
 | `assets/img/works/` | https://taketoshi.net/sekoujirei.htm |
 | `assets/img/staff/` | https://taketoshi.net/kaisha.htm |
 | `assets/img/shop/store.gif` | https://taketoshi.net/access.htm （看板は旧店名） |
+| `assets/img/hero/storefront.jpg` | 提案時にご提供いただいた店舗前の写真（看板は旧店名） |
+| `assets/img/hero/toilet.jpg` `bath.jpg` | ファーストビュー案A用の生成イメージ。施工実績ではない |
 | `assets/img/shop/map.png` | OpenStreetMap の地図タイル。ピンは Google マップの座標。© OpenStreetMap contributors |
 
 ## 口コミ

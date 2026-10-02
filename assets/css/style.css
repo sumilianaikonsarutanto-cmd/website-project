@@ -323,7 +323,57 @@ button, summary { font-family: inherit; }
 
 /* Hero -------------------------------------------------------------------- */
 
-.hero { padding: 0 0 0; }
+.fv-pick {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 0 0 22px;
+}
+
+.fv-pick p {
+  margin: 0 6px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.fv-pick a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  background: transparent;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.fv-pick a[aria-current="true"] {
+  background: var(--navy);
+  color: #fff;
+}
+
+body:has(#fv-generated:target) .fv-pick a[href="#fv-photo"] {
+  background: transparent;
+  color: var(--navy);
+}
+
+body:has(#fv-generated:target) .fv-pick a[href="#fv-generated"] {
+  background: var(--navy);
+  color: #fff;
+}
+
+.hero { padding: 0; scroll-margin-top: var(--header); }
+
+.hero--generated { display: none; }
+
+#fv-generated:target { display: block; }
+
+#fv-generated:target + .hero--photo { display: none; }
 
 .hero__body {
   width: min(1120px, calc(100% - 40px));
@@ -438,7 +488,29 @@ button, summary { font-family: inherit; }
   text-align: center;
   font-size: 12px;
   letter-spacing: 0.04em;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.68);
+}
+
+.hero__frame {
+  margin: 0 auto;
+  max-width: 520px;
+  background: #fff;
+  padding: 8px 8px 10px;
+}
+
+.hero__frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero__frame figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--navy);
+  letter-spacing: 0.08em;
 }
 
 /* Certs ------------------------------------------------------------------- */
@@ -1261,6 +1333,14 @@ button, summary { font-family: inherit; }
   .hero__shot--drop { margin-top: 52px; }
 
   .hero__note { text-align: left; margin-top: 22px; padding-left: 4px; }
+
+  .hero--photo .hero__stage { padding-right: 56px; }
+
+  .hero--photo .hero__frame { max-width: none; }
+
+  .hero--generated .hero__prints { max-width: 500px; }
+
+  .hero--generated .hero__shot { max-width: none; }
 
   .reasons { grid-template-columns: 1fr 1fr; }
 

@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/works/toilet-wa-after.png">
+<link rel="preload" as="image" href="assets/img/hero/storefront.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -110,7 +110,7 @@
 
 <header class="header">
   <div class="container header__bar">
-    <a class="logo" href="#top">
+    <a class="logo" href="#fv-photo">
       <span class="logo__mark" aria-hidden="true">武</span>
       <span class="logo__text">
         <span class="logo__name">武住設</span>
@@ -162,9 +162,14 @@
 
 <main id="main">
 
-  <section class="hero" id="top">
+  <section class="hero hero--generated" id="fv-generated">
     <div class="hero__inner">
       <div class="hero__body">
+        <div class="fv-pick">
+          <p>写真の案</p>
+          <a href="#fv-generated">案A　生成イメージ</a>
+          <a href="#fv-photo">案B　店舗の写真</a>
+        </div>
         <p class="hero__eyebrow">大阪市東淀川区・小松</p>
         <h1 class="hero__title">住まいの「困った」、<span class="hero__em">まず武住設に。</span></h1>
         <p class="hero__lead">水まわり・ガス・電気まで。<br>東淀川区の暮らしを身近に支える住宅設備店。</p>
@@ -181,18 +186,52 @@
         </ul>
       </div>
       <div class="hero__stage">
-        <p class="hero__side">施工の一例</p>
+        <p class="hero__side">イメージ</p>
         <div class="hero__prints">
           <figure class="hero__shot">
-            <img src="assets/img/works/toilet-wa-after.png" width="230" height="330" alt="和式便器から取り替えたあとの洋式トイレ" fetchpriority="high">
-            <figcaption>トイレの取替</figcaption>
+            <img src="assets/img/hero/toilet.jpg" width="864" height="1152" alt="洋式トイレの給水を確認している作業着の人。提案用のイメージ写真" fetchpriority="high">
+            <figcaption>トイレまわり</figcaption>
           </figure>
           <figure class="hero__shot hero__shot--drop">
-            <img src="assets/img/works/bath-steel-after.png" width="230" height="330" alt="ステンレス浴槽を設置したあとの浴室" fetchpriority="high">
-            <figcaption>浴槽の取替</figcaption>
+            <img src="assets/img/hero/bath.jpg" width="864" height="1152" alt="浴室の混合水栓を調整している作業着の人。提案用のイメージ写真">
+            <figcaption>浴室の水栓</figcaption>
           </figure>
         </div>
-        <p class="hero__note">写真は公式サイトの施工事例です</p>
+        <p class="hero__note">提案用のイメージです。武住設の施工写真ではありません。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero hero--photo" id="fv-photo">
+    <div class="hero__inner">
+      <div class="hero__body">
+        <div class="fv-pick">
+          <p>写真の案</p>
+          <a href="#fv-generated">案A　生成イメージ</a>
+          <a href="#fv-photo" aria-current="true">案B　店舗の写真</a>
+        </div>
+        <p class="hero__eyebrow">大阪市東淀川区・小松</p>
+        <h1 class="hero__title">住まいの「困った」、<span class="hero__em">まず武住設に。</span></h1>
+        <p class="hero__lead">水まわり・ガス・電気まで。<br>東淀川区の暮らしを身近に支える住宅設備店。</p>
+        <div class="hero__actions">
+          <a class="btn btn--accent" href="tel:0663703731">
+            <svg aria-hidden="true"><use href="#i-phone"></use></svg>電話で相談する
+          </a>
+          <a class="btn btn--line" href="#works">施工事例を見る</a>
+        </div>
+        <ul class="hero__meta">
+          <li>東淀川区を中心に対応</li>
+          <li>8:30–19:00</li>
+          <li>日曜・祝日定休</li>
+        </ul>
+      </div>
+      <div class="hero__stage">
+        <p class="hero__side">店舗にて</p>
+        <figure class="hero__frame">
+          <img src="assets/img/hero/storefront.jpg" width="604" height="452" alt="タケトシ電設の看板の前に立つ三人。江口商店街の店舗前" fetchpriority="high">
+          <figcaption>江口商店街の店舗前</figcaption>
+        </figure>
+        <p class="hero__note">看板は、店名を変える前のタケトシ電設です。</p>
       </div>
     </div>
   </section>
