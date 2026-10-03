@@ -323,57 +323,7 @@ button, summary { font-family: inherit; }
 
 /* Hero -------------------------------------------------------------------- */
 
-.fv-pick {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 10px;
-  margin: 0 0 22px;
-}
-
-.fv-pick p {
-  margin: 0 6px 0 0;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-}
-
-.fv-pick a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 36px;
-  padding: 0 12px;
-  border: 1px solid var(--navy);
-  color: var(--navy);
-  background: transparent;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-
-.fv-pick a[aria-current="true"] {
-  background: var(--navy);
-  color: #fff;
-}
-
-body:has(#fv-generated:target) .fv-pick a[href="#fv-photo"] {
-  background: transparent;
-  color: var(--navy);
-}
-
-body:has(#fv-generated:target) .fv-pick a[href="#fv-generated"] {
-  background: var(--navy);
-  color: #fff;
-}
-
 .hero { padding: 0; scroll-margin-top: var(--header); }
-
-.hero--generated { display: none; }
-
-#fv-generated:target { display: block; }
-
-#fv-generated:target + .hero--photo { display: none; }
 
 .hero__body {
   width: min(1120px, calc(100% - 40px));
@@ -494,7 +444,7 @@ body:has(#fv-generated:target) .fv-pick a[href="#fv-generated"] {
 
 .hero__frame {
   margin: 0 auto;
-  max-width: 520px;
+  width: 100%;
   background: #fff;
   padding: 8px 8px 10px;
 }
@@ -1310,7 +1260,7 @@ body:has(#fv-generated:target) .fv-pick a[href="#fv-generated"] {
   .hero__stage {
     position: relative;
     margin-top: 0;
-    padding: 56px 48px 40px 72px;
+    padding: 40px 40px 32px 72px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1332,15 +1282,7 @@ body:has(#fv-generated:target) .fv-pick a[href="#fv-generated"] {
 
   .hero__shot--drop { margin-top: 52px; }
 
-  .hero__note { text-align: left; margin-top: 22px; padding-left: 4px; }
-
-  .hero--photo .hero__stage { padding-right: 56px; }
-
-  .hero--photo .hero__frame { max-width: none; }
-
-  .hero--generated .hero__prints { max-width: 500px; }
-
-  .hero--generated .hero__shot { max-width: none; }
+  .hero__note { text-align: left; margin-top: 18px; padding-left: 4px; }
 
   .reasons { grid-template-columns: 1fr 1fr; }
 

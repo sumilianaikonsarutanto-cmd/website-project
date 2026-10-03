@@ -32,15 +32,14 @@
 
 ## 写真
 
-すべて公式サイトの掲載画像。生成画像や他店の写真は使っていない。
+施工事例・スタッフ・店舗外観は公式サイトの掲載画像。ファーストビューだけ、ご指定のイメージ写真を使っている。
 
 | ファイル | 出典 |
 | --- | --- |
 | `assets/img/works/` | https://taketoshi.net/sekoujirei.htm |
 | `assets/img/staff/` | https://taketoshi.net/kaisha.htm |
 | `assets/img/shop/store.gif` | https://taketoshi.net/access.htm （看板は旧店名） |
-| `assets/img/hero/storefront.jpg` | 提案時にご提供いただいた店舗前の写真（看板は旧店名） |
-| `assets/img/hero/toilet.jpg` `bath.jpg` | ファーストビュー案A用の生成イメージ。施工実績ではない |
+| `assets/img/hero/sink.jpg` | ファーストビュー用にご指定いただいたイメージ写真。施工実績ではない |
 | `assets/img/shop/map.png` | OpenStreetMap の地図タイル。ピンは Google マップの座標。© OpenStreetMap contributors |
 
 ## 口コミ
