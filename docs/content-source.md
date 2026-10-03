@@ -27,7 +27,7 @@
 | 見積もり | お宅へ伺い、現場を見てから | 公式 |
 | 遠方 | 東淀川区中心。お受けできない場合がある | 公式 |
 | 他店購入品 | 取付・取替は不可 | 公式 |
-| 登録 | ガス機器設置スペシャリストの店 / 関西電力・大阪市水道局認定工事店 / 大阪ガス簡易内管施工登録店 | 公式トップ |
+| 登録 | 快適な住まい造りの電化・住設アドバイザー / ガス機器設置スペシャリストの店 / 関西電力・大阪市水道局認定工事店 / 大阪ガス簡易内管施工登録店 | ご提供画像の文言。後の三つは公式トップにもある |
 | Google評価 | 4.8 | 資料。件数は資料間で一致しないため未掲載 |
 
 ## 写真
@@ -39,6 +39,7 @@
 | `assets/img/works/` | https://taketoshi.net/sekoujirei.htm |
 | `assets/img/staff/` | https://taketoshi.net/kaisha.htm |
 | `assets/img/shop/store.gif` | https://taketoshi.net/access.htm （看板は旧店名） |
+| `assets/img/shop/certificates.png` | ご提供の店内写真。登録証の名義は変更前のタケトシ電設 |
 | `assets/img/hero/sink.jpg` | ファーストビュー用にご指定いただいたイメージ写真。施工実績ではない |
 | `assets/img/shop/map.png` | OpenStreetMap の地図タイル。ピンは Google マップの座標。© OpenStreetMap contributors |
 
