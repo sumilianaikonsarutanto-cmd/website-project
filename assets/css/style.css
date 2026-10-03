@@ -433,15 +433,6 @@ button, summary { font-family: inherit; }
   letter-spacing: 0.08em;
 }
 
-.hero__note {
-  margin: 14px 0 0;
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.68);
-}
-
 .hero__frame {
   margin: 0 auto;
   width: 100%;
@@ -1281,8 +1272,6 @@ button, summary { font-family: inherit; }
   .hero__shot { width: calc(50% - 10px); }
 
   .hero__shot--drop { margin-top: 52px; }
-
-  .hero__note { text-align: left; margin-top: 18px; padding-left: 4px; }
 
   .reasons { grid-template-columns: 1fr 1fr; }
 
