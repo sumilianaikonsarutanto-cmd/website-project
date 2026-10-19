@@ -13,7 +13,8 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary">
 <meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#1E2933">
+<meta name="theme-color" content="#0C6EC4">
+<link rel="preload" as="image" href="assets/img/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -106,13 +107,21 @@
   <symbol id="i-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 10h3l4-3v10l-4-3H4z"/><path d="M16 9.5a4 4 0 0 1 0 5M18.5 7a7 7 0 0 1 0 10"/></symbol>
   <symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a3.5 3.5 0 0 0-4.8 4.8L4 17l3 3 5.7-5.7a3.5 3.5 0 0 0 4.8-4.8L15 12l-3-3z"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4.2 2.8 7.2 7 8.8 4.2-1.6 7-4.6 7-8.8V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-logo" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 21h24M6.5 21l2-6h15l2 6M12 15l1-3h6l1 3"/><circle cx="10" cy="21" r="1.6" fill="currentColor" stroke="none"/><circle cx="22" cy="21" r="1.6" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-spray" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M8 10h6v10H8zM10 10V7h2V4"/><path d="M16 6h2M16 9h3M16 12h2"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3s6 6.2 6 10.2A6 6 0 0 1 6 13.2C6 9.2 12 3 12 3z"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="8" cy="15" r="3.2"/><path d="M11 15h9l-2 2M18 15v2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
 </svg>
 
 <header class="header" id="top">
   <div class="container header__inner">
     <a class="logo" href="#top">
-      <span class="logo__name">薩摩自動車</span>
-      <span class="logo__sub">東淀川区豊里 · 1975年開業</span>
+      <svg class="logo__mark" aria-hidden="true"><use href="#i-logo"></use></svg>
+      <span>
+        <span class="logo__name">薩摩自動車</span>
+        <span class="logo__sub">東淀川区豊里 · 1975年開業</span>
+      </span>
     </a>
 
     <nav class="gnav" aria-label="メインメニュー">
@@ -126,8 +135,8 @@
     </nav>
 
     <a class="header__tel" href="tel:0663276164">
-      <span class="header__tel-label">お電話</span>
-      <span class="header__tel-num">06-6327-6164</span>
+      <svg aria-hidden="true"><use href="#i-phone"></use></svg>
+      06-6327-6164
     </a>
     <a class="btn btn--primary header__cta" href="#status" data-cta="primary">
       <span data-when="paused">受付状況</span>
@@ -158,9 +167,9 @@
 
 <main id="main">
   <section class="hero" aria-labelledby="hero-title">
-    <div class="container hero__grid">
-      <div class="hero__copy">
-        <p class="eyebrow">東淀川区豊里の整備工場</p>
+    <img class="hero__photo" src="assets/img/hero.jpg" alt="整備士がお客様に、開いたボンネットの前で点検内容を説明している様子" width="1536" height="1024">
+    <div class="container">
+      <div class="hero__inner">
         <h1 id="hero-title">車のことなら、<br>まず薩摩自動車へ。</h1>
         <p class="hero__sub">車検・整備・修理から、鈑金・コーティング・車の購入・売却まで。<br>
         <strong>お車の状態とご希望を伺い、必要なことを分かりやすくご提案します。</strong></p>
@@ -168,37 +177,33 @@
           <a class="btn btn--primary" href="#status" data-cta="primary">
             <span data-when="paused">受付状況を確認する</span>
             <span data-when="open" hidden>車について相談する</span>
+            <svg aria-hidden="true"><use href="#i-arrow"></use></svg>
           </a>
-          <a class="btn btn--ghost" href="tel:0663276164">
+          <a class="btn btn--line" href="tel:0663276164">
             <svg aria-hidden="true"><use href="#i-phone"></use></svg>
             電話で問い合わせる
           </a>
         </div>
-        <dl class="ticket">
-          <div>
-            <dt>開業</dt>
-            <dd>1975年5月7日</dd>
-          </div>
-          <div>
-            <dt>認証</dt>
-            <dd>近畿運輸局長 7586A</dd>
-          </div>
-          <div>
-            <dt>代車</dt>
-            <dd>無料 11台<small>ガソリン代は別</small></dd>
-          </div>
-        </dl>
       </div>
-
-      <figure class="frame frame--hero">
-        <div class="frame__visual">
-          <span class="frame__mark">写真 01</span>
-          <p class="frame__shot">整備士が、<br>車を点検しているところ</p>
-          <span class="frame__meta">実写に差し替え</span>
-        </div>
-      </figure>
     </div>
   </section>
+
+  <div class="trustbar">
+    <dl class="container trustbar__inner">
+      <div>
+        <dt>開業</dt>
+        <dd>1975年5月7日</dd>
+      </div>
+      <div>
+        <dt>認証</dt>
+        <dd>近畿運輸局長 7586A</dd>
+      </div>
+      <div>
+        <dt>代車</dt>
+        <dd>無料 11台<small>ガソリン代は別</small></dd>
+      </div>
+    </dl>
+  </div>
 
   <!-- 受付状況: 再開後は本文を差し替えるか削除し、body の data-accepting-new を true にする -->
   <section class="section status" id="status" aria-labelledby="status-title">
@@ -225,23 +230,23 @@
         <p class="eyebrow">こんなとき</p>
         <h2 id="problems-title">車のことで、こんなお悩みありませんか？</h2>
       </div>
-      <div class="problem-grid">
-        <article class="problem">
+      <div class="card-grid">
+        <article class="icon-card problem">
           <svg class="problem__icon" aria-hidden="true"><use href="#i-car"></use></svg>
           <h3>車検、どこに頼めばいいか分からない</h3>
           <p>車の専門知識がないと、整備工場選びそのものが不安になります。</p>
         </article>
-        <article class="problem">
+        <article class="icon-card problem">
           <svg class="problem__icon" aria-hidden="true"><use href="#i-sound"></use></svg>
           <h3>車から変な音がする</h3>
           <p>原因が分からないからこそ、まず相談したい。</p>
         </article>
-        <article class="problem">
+        <article class="icon-card problem">
           <svg class="problem__icon" aria-hidden="true"><use href="#i-tool"></use></svg>
           <h3>修理が必要なのか分からない</h3>
           <p>本当に必要な整備なのか、きちんと説明してほしい。</p>
         </article>
-        <article class="problem">
+        <article class="icon-card problem">
           <svg class="problem__icon" aria-hidden="true"><use href="#i-shield"></use></svg>
           <h3>車を安心して任せたい</h3>
           <p>価格だけでなく、信頼できるところにお願いしたい。</p>
@@ -251,13 +256,12 @@
     </div>
   </section>
 
-  <section class="section section--navy" id="reasons" aria-labelledby="reasons-title">
-    <div class="container">
-      <div class="section__head">
-        <p class="eyebrow">選ばれる理由</p>
-        <h2 id="reasons-title">「ちゃんと見て、ちゃんと伝える。」<br>それが薩摩自動車の強みです。</h2>
-        <p class="lead">車のことは、専門知識がなければ分からないことがたくさんあります。だからこそ、お車の状態を確認し、必要な対応を分かりやすくお伝えすることを大切にしています。</p>
-      </div>
+  <section class="band" id="reasons" aria-labelledby="reasons-title">
+    <img class="band__photo" src="assets/img/workshop.jpg" alt="" width="1536" height="1024">
+    <div class="container band__inner">
+      <p class="kicker">REASON</p>
+      <h2 id="reasons-title">「ちゃんと見て、ちゃんと伝える。」<br>それが薩摩自動車の強みです。</h2>
+      <p class="lead">車のことは、専門知識がなければ分からないことがたくさんあります。だからこそ、お車の状態を確認し、必要な対応を分かりやすくお伝えすることを大切にしています。</p>
       <ol class="reason-list">
         <li class="reason">
           <p class="reason__no">01</p>
@@ -285,7 +289,7 @@
           <span data-when="paused">受付状況を確認する</span>
           <span data-when="open" hidden>車について相談する</span>
         </a>
-        <a class="btn btn--ghost" href="tel:0663276164">
+        <a class="btn btn--line" href="tel:0663276164">
           <svg aria-hidden="true"><use href="#i-phone"></use></svg>
           電話で問い合わせる
         </a>
@@ -293,39 +297,45 @@
     </div>
   </section>
 
-  <section class="section" id="services" aria-labelledby="services-title">
+  <section class="section section--soft" id="services" aria-labelledby="services-title">
     <div class="container">
-      <div class="section__head">
-        <p class="eyebrow">サービス</p>
-        <h2 id="services-title">車のことなら、幅広くご相談いただけます。</h2>
+      <div class="section__head section__head--center">
+        <h2 id="services-title">車のことなら、<br>幅広くご相談いただけます。</h2>
+        <p class="kicker">SERVICE</p>
         <p class="lead">東淀川区豊里で、車検・整備・修理・鈑金・コーティング・中古車・廃車までご相談いただけます。料金はお車の状態を確認してからのお見積りです。お見積りは無料です。</p>
       </div>
-      <ol class="service-list">
-        <li>
+      <div class="icon-grid">
+        <article class="icon-card">
+          <div class="icon-card__mark"><svg aria-hidden="true"><use href="#i-car"></use></svg></div>
           <h3>車検</h3>
           <p>車検と定期点検。国の認証を受けた整備士が点検・整備します。車検をご利用のお客様には、室内清掃と洗車が無料です。</p>
-        </li>
-        <li>
+        </article>
+        <article class="icon-card">
+          <div class="icon-card__mark"><svg aria-hidden="true"><use href="#i-tool"></use></svg></div>
           <h3>整備・修理</h3>
           <p>故障修理と一般整備。タイヤ交換、パンク修理、オイル交換、ガラス交換なども案内しています。</p>
-        </li>
-        <li>
+        </article>
+        <article class="icon-card">
+          <div class="icon-card__mark"><svg aria-hidden="true"><use href="#i-spray"></use></svg></div>
           <h3>鈑金・塗装</h3>
           <p>気になるキズやへこみから、大きな損傷まで。お見積りは無料です。</p>
-        </li>
-        <li>
+        </article>
+        <article class="icon-card">
+          <div class="icon-card__mark"><svg aria-hidden="true"><use href="#i-drop"></use></svg></div>
           <h3>コーティング</h3>
           <p>紫外線で塗装が傷みやすい車を、長くきれいに乗りたい方へ。ボディーコーティングのご相談ができます。</p>
-        </li>
-        <li>
+        </article>
+        <article class="icon-card">
+          <div class="icon-card__mark"><svg aria-hidden="true"><use href="#i-key"></use></svg></div>
           <h3>新車・中古車</h3>
           <p>新車・中古車の取り寄せに対応しています。使い方やご予算に合わせて、一台を一緒に探します。古物商許可 第1546号。</p>
-        </li>
-        <li>
+        </article>
+        <article class="icon-card">
+          <div class="icon-card__mark"><svg aria-hidden="true"><use href="#i-shield"></use></svg></div>
           <h3>下取り・廃車</h3>
           <p>買い替えや、不要になった車の査定・下取り。廃車も無料です。お見積りは無料です。</p>
-        </li>
-      </ol>
+        </article>
+      </div>
       <ul class="also">
         <li><strong>代車</strong>　11台。無料。ガソリン代は別途です。</li>
         <li><strong>レンタカー・カーリース</strong>　ご相談いただけます。</li>
@@ -344,15 +354,9 @@
     </div>
   </section>
 
-  <section class="section section--white philosophy" id="philosophy" aria-labelledby="philosophy-title">
+  <section class="section philosophy" id="philosophy" aria-labelledby="philosophy-title">
     <div class="container philosophy__grid">
-      <figure class="frame frame--tall">
-        <div class="frame__visual">
-          <span class="frame__mark">写真 02</span>
-          <p class="frame__shot">整備士が、<br>お客様へ状態を<br>説明しているところ</p>
-          <span class="frame__meta">実写に差し替え</span>
-        </div>
-      </figure>
+      <img class="philosophy__photo" src="assets/img/explain.jpg" alt="整備士がお客様に点検内容を説明している様子" width="1536" height="1024">
       <div class="philosophy__body">
         <p class="eyebrow">整備するだけじゃない</p>
         <h2 id="philosophy-title">整備するだけじゃない。<br>あなたの車に必要なことを、一緒に考える。</h2>
@@ -368,14 +372,14 @@
     </div>
   </section>
 
-  <section class="section" id="voices" aria-labelledby="voices-title">
+  <section class="section section--soft" id="voices" aria-labelledby="voices-title">
     <div class="container">
-      <div class="section__head">
-        <p class="eyebrow">お客様の声</p>
-        <h2 id="voices-title">「お願いしてよかった」が、私たちの励みです。</h2>
+      <div class="section__head section__head--center">
+        <h2 id="voices-title">「お願いしてよかった」が、<br>私たちの励みです。</h2>
+        <p class="kicker">VOICE</p>
         <p class="lead">技術の高さだけではなく、対応そのものを評価する声が目立ちます。ここには、確認できた評価の傾向だけをまとめています。</p>
       </div>
-      <p class="rating"><span>調査時点のGoogle評価 <b>4.6</b></span><span>口コミ 14件</span></p>
+      <p class="rating rating--center"><span>調査時点のGoogle評価 <b>4.6</b></span><span>口コミ 14件</span></p>
       <div class="voice-grid">
         <article class="voice">
           <h3>親切で、丁寧な対応</h3>
@@ -400,8 +404,9 @@
     </div>
   </section>
 
-  <section class="section section--white" id="about" aria-labelledby="about-title">
+  <section class="section" id="about" aria-labelledby="about-title">
     <div class="container">
+      <img class="about__photo" src="assets/img/shop.jpg" alt="薩摩自動車の店舗外観" width="1536" height="1024">
       <div class="about__grid">
         <div class="about__story">
           <p class="eyebrow">薩摩自動車について</p>
@@ -423,68 +428,41 @@
           <div><dt>許可</dt><dd>古物商許可 第1546号</dd></div>
         </dl>
       </div>
-      <div class="about__photos">
-        <figure class="frame">
-          <div class="frame__visual">
-            <span class="frame__mark">写真 03</span>
-            <p class="frame__shot">店舗の外観</p>
-            <span class="frame__meta">実写に差し替え</span>
-          </div>
-        </figure>
-        <figure class="frame">
-          <div class="frame__visual">
-            <span class="frame__mark">写真 04</span>
-            <p class="frame__shot">スタッフの写真</p>
-            <span class="frame__meta">実写に差し替え</span>
-          </div>
-        </figure>
-      </div>
       <p class="note">定休日は、公式サイトの店舗概要と各ページの案内をまとめたものです。月ごとの休業は<a href="https://www.car-satsuma.jp/topics/" target="_blank" rel="noopener noreferrer">お知らせ</a>をご確認ください。</p>
     </div>
   </section>
 
-  <section class="section" id="gallery" aria-labelledby="gallery-title">
+  <section class="section section--soft" id="gallery" aria-labelledby="gallery-title">
     <div class="container">
       <div class="section__head">
-        <p class="eyebrow">仕事の様子</p>
         <h2 id="gallery-title">車と向き合う、私たちの仕事。</h2>
-        <p class="lead">整備しているところ、点検、お客様への説明、工場、外観。公開時には、店舗の写真をこの枠に入れます。</p>
+        <p class="kicker">WORKS</p>
+        <p class="lead">点検、説明、工場、鈑金、コーティング。車と向き合っているところを写真でまとめています。</p>
       </div>
-      <div class="gallery__grid">
-        <figure class="frame">
-          <div class="frame__visual">
-            <span class="frame__mark">写真 05</span>
-            <p class="frame__shot">整備士が<br>作業しているところ</p>
-            <span class="frame__meta">実写に差し替え</span>
-          </div>
+      <div class="work-grid">
+        <figure class="work">
+          <img src="assets/img/under.jpg" alt="リフトに上げた車の下で整備している様子" width="1536" height="1024">
+          <figcaption>車の下から、状態を確認しているところ</figcaption>
         </figure>
-        <figure class="frame">
-          <div class="frame__visual">
-            <span class="frame__mark">写真 06</span>
-            <p class="frame__shot">車を点検しているところ</p>
-            <span class="frame__meta">実写に差し替え</span>
-          </div>
+        <figure class="work">
+          <img src="assets/img/hands.jpg" alt="エンジンルームを工具で整備している手元" width="1536" height="1024">
+          <figcaption>工具と、整備の手元</figcaption>
         </figure>
-        <figure class="frame">
-          <div class="frame__visual">
-            <span class="frame__mark">写真 07</span>
-            <p class="frame__shot">お客様への説明</p>
-            <span class="frame__meta">実写に差し替え</span>
-          </div>
+        <figure class="work">
+          <img src="assets/img/body.jpg" alt="鈑金塗装の作業" width="1536" height="1024">
+          <figcaption>鈑金・塗装</figcaption>
         </figure>
-        <figure class="frame">
-          <div class="frame__visual">
-            <span class="frame__mark">写真 08</span>
-            <p class="frame__shot">工場の中</p>
-            <span class="frame__meta">実写に差し替え</span>
-          </div>
+        <figure class="work">
+          <img src="assets/img/coating.jpg" alt="ボディーコーティングの作業" width="1536" height="1024">
+          <figcaption>コーティング</figcaption>
         </figure>
-        <figure class="frame">
-          <div class="frame__visual">
-            <span class="frame__mark">写真 09</span>
-            <p class="frame__shot">工具と、整備の手元</p>
-            <span class="frame__meta">実写に差し替え</span>
-          </div>
+        <figure class="work">
+          <img src="assets/img/inspect.jpg" alt="整備士がボンネットを開けてエンジンを見ている様子" width="1536" height="1024">
+          <figcaption>エンジンを点検しているところ</figcaption>
+        </figure>
+        <figure class="work">
+          <img src="assets/img/workshop.jpg" alt="整備工場の中。リフトに車が上がっている" width="1536" height="1024">
+          <figcaption>工場の中</figcaption>
         </figure>
       </div>
     </div>
@@ -559,29 +537,39 @@
     </div>
   </section>
 
-  <section class="section section--navy cta-final" id="contact" aria-labelledby="contact-title">
-    <div class="container">
-      <p class="eyebrow">ご相談</p>
-      <h2 id="contact-title">車のことで困ったら、<br>まず薩摩自動車へ。</h2>
-      <p class="lead">
-        <span data-when="paused">新規の整備・修理・車検は、現在お受けできない場合があります。受付状況をご確認のうえ、お電話ください。公式LINEでもご連絡いただけます。返信までお時間をいただくことがあります。</span>
-        <span data-when="open" hidden>「これって修理が必要？」「どこに相談すればいい？」そんな車のお悩みから、お気軽にご相談ください。</span>
-      </p>
-      <div class="actions">
-        <a class="btn btn--primary" href="#status" data-cta="primary">
-          <span data-when="paused">受付状況を確認する</span>
-          <span data-when="open" hidden>車について相談する</span>
-        </a>
-        <a class="btn btn--ghost" href="tel:0663276164">
-          <svg aria-hidden="true"><use href="#i-phone"></use></svg>
-          電話で問い合わせる
-        </a>
+  <section class="section cta-final" id="contact" aria-labelledby="contact-title">
+    <div class="container cta-final__grid">
+      <div>
+        <h2 id="contact-title">車のことで困ったら、<br>まず薩摩自動車へ。</h2>
+        <p class="lead">
+          <span data-when="paused">新規の整備・修理・車検は、現在お受けできない場合があります。受付状況をご確認のうえ、お電話ください。公式LINEでもご連絡いただけます。返信までお時間をいただくことがあります。</span>
+          <span data-when="open" hidden>「これって修理が必要？」「どこに相談すればいい？」そんな車のお悩みから、お気軽にご相談ください。</span>
+        </p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#status" data-cta="primary">
+            <span data-when="paused">受付状況を確認する</span>
+            <span data-when="open" hidden>車について相談する</span>
+          </a>
+          <a class="btn btn--ghost" href="tel:0663276164">
+            <svg aria-hidden="true"><use href="#i-phone"></use></svg>
+            電話で問い合わせる
+          </a>
+        </div>
+        <p class="note">
+          <a href="https://page.line.me/623wphew" target="_blank" rel="noopener noreferrer">公式LINE</a>
+          ・
+          <a href="https://www.instagram.com/hachi1695" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </p>
       </div>
-      <p class="note">
-        <a href="https://page.line.me/623wphew" target="_blank" rel="noopener noreferrer">公式LINE</a>
-        ・
-        <a href="https://www.instagram.com/hachi1695" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </p>
+      <div class="device" aria-hidden="true">
+        <div class="device__screen">
+          <img src="assets/img/hero.jpg" alt="" width="1536" height="1024">
+          <div class="device__copy">
+            <p>車のことなら、<br>まず薩摩自動車へ。</p>
+            <span>受付状況を確認する</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -589,7 +577,10 @@
 <footer class="footer">
   <div class="container footer__grid">
     <div>
-      <p class="footer__name">薩摩自動車</p>
+      <div class="footer__brand">
+        <svg aria-hidden="true"><use href="#i-logo"></use></svg>
+        <p class="footer__name">薩摩自動車</p>
+      </div>
       <p>〒533-0013<br>大阪府大阪市東淀川区豊里1丁目5-31<br>
       TEL <a href="tel:0663276164">06-6327-6164</a><br>
       営業時間 9:00〜18:00（12:00〜13:00はお昼休憩）</p>
@@ -615,7 +606,7 @@
     </div>
   </div>
   <div class="container footer__meta">
-    <p>このページは、薩摩自動車様へのご提案用デモです。文章と数値は公式サイトおよび公開情報に基づいています。写真は未支給のため、差し替え用の枠を置いています。受付状況・口コミ原文・定休日の表記は、公開前に店舗様へご確認ください。</p>
+    <p>このページは、薩摩自動車様へのご提案用デモです。文章と数値は公式サイトおよび公開情報に基づいています。写真の一部は提案用のイメージで、店舗の写真へ差し替えできます。受付状況・口コミ原文・定休日の表記は、公開前に店舗様へご確認ください。</p>
     <p>© 薩摩自動車</p>
   </div>
 </footer>
