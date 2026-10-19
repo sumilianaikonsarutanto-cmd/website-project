@@ -1,20 +1,27 @@
 (function () {
   var body = document.body;
-  var accepting = body.getAttribute("data-accepting-new") === "true";
-
-  if (accepting) {
-    document.querySelectorAll("[data-when='paused']").forEach(function (el) {
-      el.hidden = true;
-    });
-    document.querySelectorAll("[data-when='open']").forEach(function (el) {
-      el.hidden = false;
-    });
-    document.querySelectorAll("[data-cta='primary'], [data-cta='dock']").forEach(function (el) {
-      el.setAttribute("href", "#contact");
-    });
-    var status = document.getElementById("status");
-    if (status) status.hidden = true;
+  var intake = body.getAttribute("data-intake");
+  if (intake !== "paused" && intake !== "partial" && intake !== "open") {
+    intake = body.getAttribute("data-accepting-new") === "true" ? "open" : "paused";
   }
+
+  document.querySelectorAll("[data-when]").forEach(function (el) {
+    var when = el.getAttribute("data-when");
+    var parent = el.parentElement;
+    var hasPartial = parent && parent.querySelector("[data-when='partial']");
+    var show = false;
+    if (when === "open") show = intake === "open";
+    else if (when === "partial") show = intake === "partial";
+    else show = intake === "paused" || (intake === "partial" && !hasPartial);
+    el.hidden = !show;
+  });
+
+  var ctaHref = intake === "open" ? "#contact" : "#status";
+  document.querySelectorAll("[data-cta]").forEach(function (el) {
+    el.setAttribute("href", ctaHref);
+  });
+  var status = document.getElementById("status");
+  if (status) status.hidden = intake === "open";
 
   var toggle = document.querySelector("[data-nav-toggle]");
   var drawer = document.getElementById("drawer");
