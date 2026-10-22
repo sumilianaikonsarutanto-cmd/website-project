@@ -1,0 +1,529 @@
+/* おそうじのブライトホーム — ファーストビュー提案
+   紙色の地に、料金と電話だけをアクセントカラーで置く。
+   写真は壁かけエアコンの吹き出し口。文字は写真に載せない。 */
+
+:root {
+  --paper: #f4f1eb;
+  --ink: #1a2421;
+  --muted: #4d5e58;
+  --line: #ddd6cb;
+  --accent: #0f5340;
+  --accent-press: #0c4334;
+  --white: #fffcf8;
+  --header: 72px;
+  --pad-x: 64px;
+  --serif: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --sans: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  --num: "Barlow", "Zen Kaku Gothic New", sans-serif;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -40px;
+  background: var(--ink);
+  color: var(--white);
+  padding: 8px 12px;
+  z-index: 10;
+}
+.skip:focus { top: 12px; }
+
+/* Header — サービス領域を残すため一段に抑える */
+.header {
+  height: var(--header);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 0 32px 0 var(--pad-x);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.brand__mark {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.brand__name {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.nav {
+  margin-left: auto;
+  display: flex;
+  gap: 26px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.nav a:hover { color: var(--ink); }
+
+.header__tel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-decoration: none;
+  line-height: 1.2;
+  padding: 6px 0 6px 8px;
+}
+
+.header__tel-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.header__tel-short { display: none; }
+
+.header__tel-num {
+  font-family: var(--num);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* First view */
+.fv {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(380px, 0.85fr);
+  min-height: calc(100vh - var(--header));
+  min-height: calc(100dvh - var(--header));
+}
+
+.fv__copy {
+  padding: 44px 52px 36px var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 1.32;
+  letter-spacing: 0.03em;
+}
+
+h1 span { display: inline; }
+
+.lead {
+  margin: 0 0 28px;
+  max-width: 36em;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--ink);
+}
+
+/* 料金はカードにせず、明細のように置く */
+.price { margin: 0 0 18px; }
+
+.price__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 2px;
+}
+
+.price__head h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+}
+
+.price__head p {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.price__list { margin: 0; }
+
+.price__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 11px 0 10px;
+  border-top: 1px solid var(--line);
+}
+
+.price__row:last-child { border-bottom: 1px solid var(--line); }
+
+.price__row dt {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.price__row dd {
+  margin: 0;
+  font-family: var(--num);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.price__row small {
+  margin-left: 3px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.price__note {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.assure {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+}
+
+.assure li {
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0 16px 0 0;
+  margin: 0 16px 0 0;
+  line-height: 1.4;
+}
+
+.assure li + li {
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 26px;
+}
+
+.cta {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 248px;
+  min-height: 64px;
+  padding: 10px 26px 12px;
+  background: var(--accent);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.cta:hover { background: var(--accent-press); }
+
+.cta__label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+}
+
+.cta__num {
+  font-family: var(--num);
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.actions__meta {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.text-link {
+  color: var(--ink);
+  text-underline-offset: 3px;
+  width: fit-content;
+}
+
+.area {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 46em;
+}
+
+.area__label {
+  display: inline-block;
+  margin-right: 10px;
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+}
+
+/* 写真は枠の中に置き、紙の余白を残す */
+.fv__visual {
+  position: relative;
+  margin: 28px 28px 28px 0;
+  background: #d9d3cb;
+  min-height: 420px;
+}
+
+.fv__visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.fv__visual figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  padding: 9px 14px 10px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+}
+
+.fv__visual figcaption span {
+  color: rgba(244, 241, 235, 0.68);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 1200px) {
+  h1 { font-size: 44px; }
+  /* 「洗う。」だけが落ちて一行にならないように、ここで改行する */
+  h1 span { display: block; }
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 980px) {
+  :root { --pad-x: 28px; --header: 64px; }
+
+  .fv { grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr); }
+
+  h1 { font-size: 36px; }
+
+  .fv__copy { padding: 32px 28px 28px var(--pad-x); }
+
+  .price__row dd { font-size: 34px; }
+
+  .nav { display: none; }
+
+  .header__inner { padding-right: 20px; }
+}
+
+@media (max-width: 760px) {
+  .fv {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .fv__visual {
+    order: -1;
+    height: 132px;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .fv__copy {
+    padding: 22px 20px 32px;
+    max-width: none;
+  }
+
+  .eyebrow { margin-bottom: 10px; letter-spacing: 0.08em; line-height: 1.6; }
+
+  h1 {
+    margin-bottom: 12px;
+    font-size: 32px;
+    line-height: 1.32;
+    letter-spacing: 0.02em;
+  }
+
+  h1 span { display: block; }
+
+  .lead {
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .price { margin-bottom: 8px; }
+
+  .price__row { padding: 8px 0 7px; }
+
+  .price__row dd { font-size: 30px; }
+
+  .price__note { margin-top: 8px; }
+
+  /* 電話を先に見せ、安心材料はその下 */
+  .actions { order: 1; margin-bottom: 16px; }
+  .assure { order: 2; }
+  .area { order: 3; }
+
+  .assure {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin: 4px 0 0;
+    border: 0;
+  }
+
+  .assure li,
+  .assure li + li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 13px;
+  }
+
+  .assure li:not(:last-child)::after {
+    content: "／";
+    margin-left: 10px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .cta {
+    width: 100%;
+    min-height: 64px;
+    align-items: flex-start;
+  }
+
+  .header__tel-label,
+  .header__tel-num { display: none; }
+
+  .header__tel-short {
+    display: inline;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+  }
+
+  .header__tel {
+    background: var(--accent);
+    color: var(--white);
+    padding: 11px 14px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .brand__name { font-size: 13.5px; letter-spacing: 0.02em; }
+
+  .area { font-size: 13.5px; padding-top: 14px; }
+}
+
+@media (max-width: 380px) {
+  .header__tel-num { font-size: 13px; }
+  .brand__name { font-size: 12.5px; }
+  h1 { font-size: 29px; }
+  .price__row dd { font-size: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
