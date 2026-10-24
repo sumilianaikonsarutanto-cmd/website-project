@@ -1,0 +1,14 @@
+/*
+Theme Name: ツナグWEB製作
+Theme URI: https://example.com/
+Author: ツナグWEB製作
+Description: 中小企業向けWeb制作ブランド「ツナグWEB製作」公式サイトテーマ。静的 HTML 版と同じデザイン。連絡先はカスタマイザーで設定できます。
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.8
+Requires PHP: 8.0
+Text Domain: tsunagu-web
+License: GNU General Public License v2 or later
+*/
+
+/* 実体のスタイルは assets/css/style.css にあります（functions.php で読み込みます）。 */

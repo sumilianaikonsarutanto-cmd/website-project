@@ -1,9 +1,27 @@
 # ツナグWEB製作｜公式サイト
 
 中小企業・地域密着型事業者向けWeb制作ブランド「ツナグWEB製作」の公式ホームページです。
-HTML / CSS / JavaScript のみ（ビルド不要）。
 
 コンセプト：**価値をつなぐ。見せ方を変える。** / Connect Value. Design Impact.
+
+静的 HTML 版と、WordPress テーマ版の両方を同梱しています。
+
+---
+
+## いちばん早く使う（WordPress）
+
+1. リポジトリ直下の **`tsunagu-web.zip`** をダウンロード
+2. WordPress 管理画面 → **外観 → テーマ → 新規追加 → テーマのアップロード**
+3. ZIP をインストールして **有効化**
+4. **外観 → カスタマイズ → ツナグWEB製作** でメール／電話／LINE を設定
+
+詳しい ZIP の作り方・注意点は [`ZIPの作り方.txt`](ZIPの作り方.txt) を参照。
+
+テーマの実体パス:
+
+```
+wp-content/themes/tsunagu-web/
+```
 
 ---
 
@@ -11,77 +29,68 @@ HTML / CSS / JavaScript のみ（ビルド不要）。
 
 ```
 .
-├── index.html                 トップ（1ページ完結）
-├── 404.html                   404ページ
-├── assets/
-│   ├── css/style.css          全スタイル（トークン先頭）
-│   ├── js/main.js             共通スクリプト（外部ライブラリなし）
-│   └── img/
-│       ├── favicon.svg
-│       ├── hero/              ファーストビュー用写真
-│       ├── atmosphere/        セクション用雰囲気写真（サンプル）
-│       └── og/og.jpg          OGP画像
-└── docs/
-    ├── design-notes.md        デザイン意図
-    └── content-source.md      掲載情報 / 要確認リスト
+├── index.html                 静的トップ（確認・プレビュー用）
+├── 404.html                   静的404
+├── tsunagu-web.zip            WordPress にそのままアップロード可能なテーマ ZIP
+├── ZIPの作り方.txt
+├── assets/                    静的版の CSS / JS / 画像
+├── docs/
+│   ├── design-notes.md
+│   └── content-source.md
+└── wp-content/themes/tsunagu-web/   WordPress テーマ本体
+    ├── style.css              テーマ宣言
+    ├── functions.php
+    ├── header.php / footer.php
+    ├── front-page.php         公式トップ
+    ├── 404.php / page.php / index.php
+    ├── inc/helpers.php
+    ├── inc/customizer.php
+    └── assets/                CSS / JS / 画像
 ```
 
-### 表示方法
+### 静的版の表示
 
 ```bash
 python3 -m http.server 4321
 # → http://localhost:4321/
 ```
 
-`index.html` を直接開いても確認できます。
+---
+
+## WordPress での設定
+
+### 連絡先（必須・公開前）
+
+**外観 → カスタマイズ → ツナグWEB製作 → 連絡先**
+
+| 項目 | 説明 |
+| --- | --- |
+| メールアドレス | 設定後、問い合わせフォームが有効（mailto 下書き） |
+| 電話番号 | 数字のみ（リンク用）と表示用 |
+| LINE URL | 任意 |
+
+未設定の連絡手段は表示・送信しません（仮の番号は入れないでください）。
+
+### その他
+
+- **ブランド名 / タグライン / 住所** … 同パネルの「ブランド」
+- **実績制作価格の表示** … 「価格表示」（既定 `49,800`）。通常価格ではありません
+- 本番ドメインは WordPress のサイト URL が OGP / canonical に使われます
+
+サーバーサイドのメール送信（Contact Form 7 等）が必要な場合は、別途プラグイン設定が必要です。現状のフォームはメール設定後に `mailto:` で下書きを開きます。
 
 ---
 
-## 公開前に必ず設定すること
+## 静的版の連絡先設定
 
-### 1. 連絡先（捏造しない）
-
-電話・メール・LINE は未設定のままです。フォームは**送信先があるときだけ**有効化されます。
-
-どちらか一方で設定してください。
-
-**A. `index.html` の meta**
-
-```html
-<meta name="tsunagu:email" content="info@example.com">
-<meta name="tsunagu:tel" content="09012345678">
-<meta name="tsunagu:tel-display" content="090-1234-5678">
-<meta name="tsunagu:line" content="https://lin.ee/xxxxx">
-```
-
-**B. `assets/js/main.js` 先頭、または HTML 内で**
-
-```html
-<script>
-  window.TSUNAGU_CONTACT = {
-    email: 'info@example.com',
-    tel: '09012345678',
-    telDisplay: '090-1234-5678',
-    line: 'https://lin.ee/xxxxx'
-  };
-</script>
-```
-
-メール設定後、フォームは `mailto:` で下書きを開きます。サーバーサイド送信が必要な場合は別途実装が必要です。
-
-### 2. ドメイン / OGP
-
-`index.html` の `canonical` / `og:url` / `og:image` / 構造化データの `url` を本番ドメインに置換してください（現在は `https://example.com/` の仮値）。
-
-### 3. 事業者情報
-
-フッターに住所・登記情報などを追記する場合は、確認済みの事実のみを掲載してください。
+WordPress を使わない場合は、従来どおり `index.html` の meta または `TSUNAGU_CONTACT` を設定してください（詳細は以前の手順と同じ）。
 
 ---
 
 ## デザインの変え方
 
-`assets/css/style.css` 先頭の `:root` がトークンです。
+`assets/css/style.css`（静的）または  
+`wp-content/themes/tsunagu-web/assets/css/style.css`（WP）先頭の `:root` がトークンです。
 
 ```css
 :root {
@@ -99,18 +108,8 @@ python3 -m http.server 4321
 ## 実装の要点
 
 - モバイルファースト / セマンティック HTML / 見出し階層
-- 画像は `width` `height` 指定、FV以外は `loading="lazy"`
-- `prefers-reduced-motion` 対応
-- キーボード操作・`:focus-visible`
 - 実績数値・推薦コメント・実在顧客名は未確認のため非掲載
-- Works セクションは **コンセプト制作 / 架空案件** と明記
-- 写真は Unsplash のストック（サンプル）— 顧客写真ではない
+- Works は **コンセプト制作 / 架空案件** と明記
+- `prefers-reduced-motion` 対応
 
-詳細は [`docs/design-notes.md`](docs/design-notes.md) / [`docs/content-source.md`](docs/content-source.md) を参照。
-
----
-
-## 実績制作価格について
-
-サイト上の **49,800円（税込）** は「実績制作価格」の参考値です。
-全案件がこの金額で完了することを意味しません。範囲・追加費用・ドメインサーバー等は相談時に確認します。
+詳細は [`docs/design-notes.md`](docs/design-notes.md) / [`docs/content-source.md`](docs/content-source.md)。
