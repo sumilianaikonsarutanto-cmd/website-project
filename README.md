@@ -1,46 +1,54 @@
-# ハッピーペイントホーム（白井工業）ホームページ
+# ツナグWEB製作｜公式サイト
 
-大阪市東淀川区の雨漏り修理専門店「ハッピーペイントホーム（白井工業）」のホームページです。
-HTML / CSS / JavaScript のみで構成しています（ビルド不要）。
+中小企業・地域密着型事業者向けWeb制作ブランド「ツナグWEB製作」の公式ホームページです。
 
----
+コンセプト：**価値をつなぐ。見せ方を変える。** / Connect Value. Design Impact.
 
-## 1. 制作区分：【既存サイトなし＝新規制作】
-
-プロジェクト内に既存の HTML / CSS / JS / 画像は存在しませんでした（`README.md` のみ）。
-ただし公式サイト（Jimdo）は稼働中のため、**そこに掲載されている文言・数値・写真を一次資料**として扱い、
-店舗が自ら選んだ言葉（「雨漏りは塗装では止まりません」「自分の家ならどう直すか」など）は原文のまま引き継いでいます。
-
-- なぜこのデザインになったのか → [`docs/design-notes.md`](docs/design-notes.md)
-- 掲載情報の出典と **要確認リスト** → [`docs/content-source.md`](docs/content-source.md)
+静的 HTML 版と、WordPress テーマ版の両方を同梱しています。
 
 ---
 
-## 2. ファイル構成
+## いちばん早く使う（WordPress）
+
+1. リポジトリ直下の **`tsunagu-web.zip`** をダウンロード
+2. WordPress 管理画面 → **外観 → テーマ → 新規追加 → テーマのアップロード**
+3. ZIP をインストールして **有効化**
+4. **外観 → カスタマイズ → ツナグWEB製作** でメール／電話／LINE を設定
+
+詳しい ZIP の作り方・注意点は [`ZIPの作り方.txt`](ZIPの作り方.txt) を参照。
+
+テーマの実体パス:
+
+```
+wp-content/themes/tsunagu-web/
+```
+
+---
+
+## ファイル構成
 
 ```
 .
-├── index.html                   トップページ（1ページ完結）
-├── works.html                   施工事例一覧（全35件・地域フィルター付き）
-├── assets/
-│   ├── css/style.css            全スタイル（先頭に目次あり）
-│   ├── js/main.js               共通スクリプト（約130行）
-│   └── img/
-│       ├── favicon.svg
-│       ├── craft/               現場写真（4点）
-│       ├── staff/               代表写真（1点）
-│       ├── line/                LINE 友だち追加 QR
-│       └── works/               施工事例写真（35点）
-└── docs/
-    ├── design-notes.md          デザイン意図
-    ├── content-source.md        出典一覧 / 要確認リスト
-    └── works-data.json          施工事例データ（WordPress移行用）
+├── index.html                 静的トップ（確認・プレビュー用）
+├── 404.html                   静的404
+├── tsunagu-web.zip            WordPress にそのままアップロード可能なテーマ ZIP
+├── ZIPの作り方.txt
+├── assets/                    静的版の CSS / JS / 画像
+├── docs/
+│   ├── design-notes.md
+│   └── content-source.md
+└── wp-content/themes/tsunagu-web/   WordPress テーマ本体
+    ├── style.css              テーマ宣言
+    ├── functions.php
+    ├── header.php / footer.php
+    ├── front-page.php         公式トップ
+    ├── 404.php / page.php / index.php
+    ├── inc/helpers.php
+    ├── inc/customizer.php
+    └── assets/                CSS / JS / 画像
 ```
 
-### 表示方法
-
-そのままブラウザで `index.html` を開けます。
-ローカルサーバーで確認する場合：
+### 静的版の表示
 
 ```bash
 python3 -m http.server 4321
@@ -49,116 +57,59 @@ python3 -m http.server 4321
 
 ---
 
-## 3. 修正のしかた（変更箇所 早見表）
+## WordPress での設定
 
-### 3-1. デザインのトーンを変える
+### 連絡先（必須・公開前）
 
-`assets/css/style.css` の先頭にある `:root` のデザイントークンを変更してください。
-色・書体・余白・角丸がすべてここに集約されています。
+**外観 → カスタマイズ → ツナグWEB製作 → 連絡先**
+
+| 項目 | 説明 |
+| --- | --- |
+| メールアドレス | 設定後、問い合わせフォームが有効（mailto 下書き） |
+| 電話番号 | 数字のみ（リンク用）と表示用 |
+| LINE URL | 任意 |
+
+未設定の連絡手段は表示・送信しません（仮の番号は入れないでください）。
+
+### その他
+
+- **ブランド名 / タグライン / 住所** … 同パネルの「ブランド」
+- **実績制作価格の表示** … 「価格表示」（既定 `49,800`）。通常価格ではありません
+- 本番ドメインは WordPress のサイト URL が OGP / canonical に使われます
+
+サーバーサイドのメール送信（Contact Form 7 等）が必要な場合は、別途プラグイン設定が必要です。現状のフォームはメール設定後に `mailto:` で下書きを開きます。
+
+---
+
+## 静的版の連絡先設定
+
+WordPress を使わない場合は、従来どおり `index.html` の meta または `TSUNAGU_CONTACT` を設定してください（詳細は以前の手順と同じ）。
+
+---
+
+## デザインの変え方
+
+`assets/css/style.css`（静的）または  
+`wp-content/themes/tsunagu-web/assets/css/style.css`（WP）先頭の `:root` がトークンです。
 
 ```css
 :root {
-  --navy:   #0d2b4e;   /* 主色 */
-  --orange: #ef7215;   /* アクセント（CTA） */
-  --paper:  #f6f4f0;   /* 背景の紙色 */
-  --container: 1180px; /* コンテンツ最大幅 */
+  --bg: #101110;
+  --bg-sub: #1B1D1A;
+  --bg-light: #F0EEE6;
+  --text: #F5F3EC;
+  --accent: #C8F169;
+  --text-mute: #AAAFA5;
 }
 ```
 
-### 3-2. 店舗情報を変更する
-
-静的 HTML のため、以下は該当箇所を置換してください（出現箇所は少数です）。
-
-| 変更したいもの | 検索する文字列 | 出現箇所 |
-| --- | --- | --- |
-| 電話番号（固定） | `0665999208`（リンク）／`06-6599-9208`（表示） | ヘッダー・FV・固定CTA・お問い合わせ・会社概要・フッター |
-| 電話番号（携帯） | `09058810531` ／ `090-5881-0531` | お問い合わせ・会社概要・フッター |
-| LINE | `https://lin.ee/nVTAZSSq` | 各CTA・フッター |
-| メール | `happypainthome0987@gmail.com` | お問い合わせ・会社概要・フッター・構造化データ |
-| Instagram | `https://www.instagram.com/happypainthome/` | お問い合わせ・フッター・構造化データ |
-| 住所 | `西淡路4-24-11` | 会社概要・フッター・構造化データ |
-| 公開ドメイン | `https://happypainthome.jimdofree.com/` | `canonical` / OGP / 構造化データ |
-
-> 電話番号は `href="tel:..."` と表示テキストの**2か所**がセットです。両方を変更してください。
-
-### 3-3. 施工事例を追加・変更する
-
-1. 写真を `assets/img/works/work-XX.jpg` として追加（**正方形に近い比率**を推奨。グリッドが 1:1 で表示されます）
-2. `works.html` の `.works__grid` 内に `<article class="work">` を1つ追加（既存カードをコピーして編集）
-3. `data-area` に `osaka-city`（大阪市内）／`osaka`（大阪府内）／`other`（近隣府県）を指定
-4. トップページにも載せる場合は `index.html` の `.works__grid` にも追加
-5. `docs/works-data.json` にも追記（WordPress 移行時のインポート元になります）
-
-### 3-4. よくある質問を追加する
-
-`index.html` の `.faq__list` に `.faq__item` をコピーして追加し、
-`aria-controls` と対応する `id`（`faq-a9` など）を**重複しない値**に変更してください。
-あわせて `<head>` の FAQPage 構造化データにも同じ質問・回答を追記します。
-
 ---
 
-## 4. 実装の要点
+## 実装の要点
 
-### レスポンシブ
-- スマートフォン優先で設計。本文 17px / 行間 1.95（主要読者が40〜70代のため大きめ）
-- 320px 〜 1920px で横スクロールが発生しないことを確認済み
-- タップ領域は最小 48px、画面下部の固定CTA（電話／LINE）は 62px
+- モバイルファースト / セマンティック HTML / 見出し階層
+- 実績数値・推薦コメント・実在顧客名は未確認のため非掲載
+- Works は **コンセプト制作 / 架空案件** と明記
+- `prefers-reduced-motion` 対応
 
-### アクセシビリティ
-- スキップリンク、`:focus-visible` のフォーカスリング
-- ハンバーガー・FAQ は `aria-expanded` / `aria-controls` で状態を通知
-- 施工事例フィルターは `aria-pressed`
-- すべての画像に内容を説明する `alt`
-- `prefers-reduced-motion: reduce` でアニメーションを停止
-
-### SEO
-- `title` / `meta description` / `canonical` / OGP
-- 構造化データ：`RoofingContractor`（トップ）、`FAQPage`（トップ）、`BreadcrumbList`（施工事例）
-- 見出しは `h1` → `h2` → `h3` の階層を厳守
-- すべての `img` に `width` / `height` を指定（レイアウトシフト対策）、ファーストビュー以外は `loading="lazy"`
-
-> 構造化データに `aggregateRating` は入れていません。公開時点の正確な評価・件数が確認できてからの追加を推奨します。
-
-### JavaScript
-`assets/js/main.js` の1ファイルのみ（外部ライブラリなし）。
-JavaScript が無効でも、コンテンツはすべて読める状態を保っています
-（FAQ の回答だけが開けなくなりますが、本文は HTML に存在します）。
-
----
-
-## 5. WordPress 化について
-
-指示があり次第、現在のデザイン・レイアウト・機能を維持したまま下記構成へ変換できるよう、
-HTML をセクション単位で区切ってあります。
-
-| 変換先 | 対応する現在の箇所 |
-| --- | --- |
-| `header.php` | `<head>` 〜 `</header>`（ドロワー含む） |
-| `footer.php` | `<footer>` 〜 `</body>`（固定CTA含む） |
-| `front-page.php` | `index.html` の `<main>` 内 |
-| `archive-works.php` / `single-works.php` | `works.html`（カスタム投稿「施工事例」） |
-| `page.php` / `404.php` | 共通レイアウトを流用 |
-| `assets/` | そのまま `assets/` へ配置 |
-
-管理画面から更新することになる情報：
-
-- 施工事例 → カスタム投稿タイプ + カスタムフィールド（地域／工事内容／費用／築年数／原因）。
-  初期データは `docs/works-data.json` からインポートできます
-- 電話番号・住所・LINE・営業時間 → テーマオプション（1か所で管理し全テンプレートから参照）
-- お客様の声 → カスタム投稿タイプ（現在は掲載枠のみ用意）
-
-小規模店舗サイトのため、ページビルダーや過剰なプラグイン構成は想定していません。
-
----
-
-## 6. 公開前の確認事項
-
-**必ず [`docs/content-source.md`](docs/content-source.md) の「要確認リスト」をご確認ください。**
-特に次の項目は、店舗様の確認なしに公開しないでください。
-
-- 年間施工件数・平均施工単価（公式サイトと外部媒体で表記が異なります）
-- Googleマップの評価・口コミ件数
-- 雨漏り保証の適用条件
-- 施工事例写真の掲載許可の範囲
-- 正式なロゴデータ（現在は暫定の SVG で再現しています）
-- 公開ドメイン（`canonical` / OGP / 構造化データの URL）
+詳細は [`docs/design-notes.md`](docs/design-notes.md) / [`docs/content-source.md`](docs/content-source.md)。

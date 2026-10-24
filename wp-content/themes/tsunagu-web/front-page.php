@@ -1,0 +1,680 @@
+<?php
+/**
+ * トップページ。静的 HTML 版 index.html と同一の構成・文言です。
+ */
+if (!defined('ABSPATH')) {
+    exit;
+}
+get_header();
+?>
+<main id="main">
+
+  <!-- ===== 01 HERO ===== -->
+  <section class="hero" id="top" data-hero aria-labelledby="hero-title">
+    <div class="hero__media" aria-hidden="true">
+      <img
+        src="<?php echo esc_url( tsn_asset('img/hero/craft-hands.jpg') ); ?>"
+        alt=""
+        width="1800"
+        height="1200"
+        fetchpriority="high"
+        decoding="async">
+      <div class="hero__veil"></div>
+    </div>
+
+    <div class="hero__grid">
+      <div class="hero__content">
+        <p class="hero__brand">ツナグ<span>WEB</span>製作</p>
+        <p class="hero__label">Web Design / Brand Experience</p>
+        <h1 id="hero-title" class="hero__title">
+          <span class="line">いい仕事を、</span>
+          <span class="line">ちゃんと<em>伝わる</em></span>
+          <span class="line">形に。</span>
+        </h1>
+        <p class="hero__sub">
+          技術も、こだわりも、人柄も。<br>
+          その会社にしかない価値を、伝わるホームページへ。
+        </p>
+        <p class="hero__note">
+          中小企業・地域密着型事業者のためのホームページ制作。<br>
+          魅力を整理し、デザインと情報設計で、問い合わせにつながるWebサイトをつくります。
+        </p>
+        <div class="hero__actions cta-row">
+          <a class="btn btn--primary" href="#contact">ホームページ制作を相談する <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#works">制作コンセプトを見る</a>
+        </div>
+      </div>
+
+      <aside class="hero__side" aria-label="このサイトで分かること">
+        <div class="hero__side-item">
+          <p class="hero__side-num">01 / For</p>
+          <p class="hero__side-text">建設・設備・自動車・店舗など、現場の強みがある事業者へ</p>
+        </div>
+        <div class="hero__side-item">
+          <p class="hero__side-num">02 / Focus</p>
+          <p class="hero__side-text">見た目だけでなく、スマホ表示と問い合わせ導線を設計</p>
+        </div>
+        <div class="hero__side-item">
+          <p class="hero__side-num">03 / Approach</p>
+          <p class="hero__side-text">つくる前に、伝えるべき価値と優先情報を整理します</p>
+        </div>
+      </aside>
+    </div>
+
+    <p class="hero__tagline en" aria-hidden="true">Connect Value. Design Impact.</p>
+    <a class="hero__scroll" href="#problem" aria-label="課題セクションへスクロール">
+      <span>Scroll</span>
+      <span class="hero__scroll-line" aria-hidden="true"></span>
+    </a>
+  </section>
+
+  <!-- ===== 02 PROBLEM ===== -->
+  <section class="section section--light" id="problem" aria-labelledby="problem-title">
+    <div class="container">
+      <div class="problem__intro">
+        <div class="section__head" style="margin-bottom:0">
+          <p class="section__label">Problem</p>
+          <h2 id="problem-title" class="section__title reveal">その魅力、<br>Webで伝わっていますか？</h2>
+          <p class="section__lead reveal reveal-delay-1">
+            現場の技術や対応力に自信があるのに、ホームページではそれが伝わらない——。中小企業でよくあるギャップです。見た目の問題だけでなく、「何を、どの順で、誰に伝えるか」が整理されていないことが少なくありません。
+          </p>
+        </div>
+        <figure class="problem__visual clip-reveal reveal reveal-delay-2">
+          <img src="<?php echo esc_url( tsn_asset('img/atmosphere/roof.jpg') ); ?>" alt="作業現場の雰囲気を示す参考写真（サンプル）" width="1200" height="800" loading="lazy" decoding="async">
+        </figure>
+      </div>
+
+      <div class="problem__list">
+        <article class="problem__item reveal">
+          <p class="problem__num">01</p>
+          <div>
+            <h3>仕事の質はある。でもWebで伝わらない</h3>
+            <p>施工の丁寧さや対応の速さが、写真の並べ方や文章の優先順位で埋もれてしまう。強みが「ある」のに「見えない」状態です。</p>
+          </div>
+        </article>
+        <article class="problem__item reveal reveal-delay-1">
+          <p class="problem__num">02</p>
+          <div>
+            <h3>スマホで見ると、情報が分かりにくい</h3>
+            <p>問い合わせの多くはスマートフォンから。文字が小さい、メニューが辿れない、電話ボタンが埋もれている——これだけで機会を逃します。</p>
+          </div>
+        </article>
+        <article class="problem__item reveal reveal-delay-2">
+          <p class="problem__num">03</p>
+          <div>
+            <h3>施工内容やサービスの特徴が伝わらない</h3>
+            <p>対応できる工事、料金の目安、流れ、エリア。お客様が判断に必要な情報が散らばっていると、比較の土俵にすら上がれません。</p>
+          </div>
+        </article>
+        <article class="problem__item reveal reveal-delay-3">
+          <p class="problem__num">04</p>
+          <div>
+            <h3>問い合わせまでの道筋が弱い</h3>
+            <p>興味を持った瞬間に、電話・フォーム・LINEへ自然につながる配置がない。最後の一歩が、いちばん大切です。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 PHILOSOPHY ===== -->
+  <section class="section" id="philosophy" aria-labelledby="philosophy-title">
+    <div class="container">
+      <div class="philosophy__layout">
+        <div>
+          <p class="section__label">Philosophy</p>
+          <h2 id="philosophy-title" class="section__title reveal">つくる前に、<br>伝えるべき価値を考える。</h2>
+          <p class="philosophy__quote reveal reveal-delay-1">Connect Value.<br>Design Impact.</p>
+          <div class="philosophy__body reveal reveal-delay-2">
+            <p>ホームページ制作は、見た目を整える作業ではありません。<strong>その企業が持つ価値を整理し、伝わる形に変え、顧客との接点をつくること</strong>が目的です。</p>
+            <p>誰に向けて書くのか。最初に何を見せるのか。どこで安心してもらい、どこで問い合わせてもらうのか。デザインの前に、この設計があります。</p>
+          </div>
+          <dl class="philosophy__name reveal reveal-delay-3">
+            <dt>「<span>ツナグ</span>」の意味</dt>
+            <dd>企業と顧客、技術と価値、地域とサービスをつなぐ。抽象的な物語で終わらせず、具体的な構成・導線・表現に落とし込みます。</dd>
+          </dl>
+        </div>
+
+        <div class="philosophy__points">
+          <article class="philosophy__point reveal">
+            <p class="philosophy__point-num">01</p>
+            <div>
+              <h3>公開情報と特徴を読み解く</h3>
+              <p>既存サイト、チラシ、口コミ、現場写真。すでに持っている素材から「伝わる軸」を見つけます。</p>
+            </div>
+          </article>
+          <article class="philosophy__point reveal reveal-delay-1">
+            <p class="philosophy__point-num">02</p>
+            <div>
+              <h3>スマホと問い合わせを前提にする</h3>
+              <p>読みやすさ、タップ領域、電話・相談への導線。デザインの美しさと使いやすさを両立させます。</p>
+            </div>
+          </article>
+          <article class="philosophy__point reveal reveal-delay-2">
+            <p class="philosophy__point-num">03</p>
+            <div>
+              <h3>業種ごとの「知りたい」に合わせる</h3>
+              <p>建設と美容室では、お客様が見るポイントが違います。業種に応じた情報設計を行います。</p>
+            </div>
+          </article>
+          <article class="philosophy__point reveal reveal-delay-3">
+            <p class="philosophy__point-num">04</p>
+            <div>
+              <h3>導入しやすい進め方を大切にする</h3>
+              <p>中小企業が無理なく始められるよう、範囲と費用の見通しを話し合いながら進めます。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 SERVICES ===== -->
+  <section class="section section--light" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__label">Services</p>
+        <h2 id="services-title" class="section__title reveal">提供サービス</h2>
+        <p class="section__lead reveal reveal-delay-1">
+          いま対応できる範囲を明確にしています。未確定の拡張サービスは、確定事項として記載していません。
+        </p>
+      </div>
+
+      <div class="services__list">
+        <article class="service reveal">
+          <p class="service__num">01</p>
+          <div>
+            <h3 class="service__title">ホームページ新規制作</h3>
+            <p class="service__meta">New Website</p>
+          </div>
+          <p class="service__text">事業内容の整理からデザイン、公開まで。初めてホームページを持つ方向けに、必要な情報を過不足なく構成します。</p>
+        </article>
+        <article class="service reveal reveal-delay-1">
+          <p class="service__num">02</p>
+          <div>
+            <h3 class="service__title">既存サイトのリニューアル</h3>
+            <p class="service__meta">Renewal</p>
+          </div>
+          <p class="service__text">古い印象、分かりにくさ、スマホ非対応。現状の課題を洗い出し、伝わる構成へ組み直します。</p>
+        </article>
+        <article class="service reveal">
+          <p class="service__num">03</p>
+          <div>
+            <h3 class="service__title">スマートフォン対応・表示改善</h3>
+            <p class="service__meta">Mobile UX</p>
+          </div>
+          <p class="service__text">文字サイズ、余白、メニュー、CTA配置を見直し、スマートフォンでもストレスなく読める表示に整えます。</p>
+        </article>
+        <article class="service reveal reveal-delay-1">
+          <p class="service__num">04</p>
+          <div>
+            <h3 class="service__title">情報設計・問い合わせ導線の改善</h3>
+            <p class="service__meta">Information Design</p>
+          </div>
+          <p class="service__text">お客様が知りたい順に情報を並べ、電話・フォーム・相談へ自然につながる導線を設計します。</p>
+        </article>
+        <article class="service reveal">
+          <p class="service__num">05</p>
+          <div>
+            <h3 class="service__title">特徴を伝えるデザインとコンテンツ設計</h3>
+            <p class="service__meta">Content &amp; Design</p>
+          </div>
+          <p class="service__text">強み、サービス内容、実績の見せ方、写真の使い方まで。その会社らしい言葉とビジュアルに落とし込みます。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 05 INDUSTRIES ===== -->
+  <section class="section section--sub" id="industries" aria-labelledby="industries-title">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__label">Industries</p>
+        <h2 id="industries-title" class="section__title reveal">業種が違えば、<br>伝え方も違う。</h2>
+        <p class="section__lead reveal reveal-delay-1">
+          お客様が知りたい情報も、問い合わせのきっかけも、業種ごとに異なります。実在の制作実績ではなく、業種別の設計方針としてご覧ください。
+        </p>
+      </div>
+
+      <p class="industries__note reveal">写真は雰囲気を伝えるためのサンプル素材です。特定の顧客・施工実績を示すものではありません。</p>
+
+      <div class="industries__grid">
+        <article class="industry reveal">
+          <div class="industry__img" aria-hidden="true">
+            <img src="<?php echo esc_url( tsn_asset('img/atmosphere/paint.jpg') ); ?>" alt="" width="1200" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="industry__body">
+            <p class="industry__label">Construction</p>
+            <h3>建設・塗装・リフォーム</h3>
+            <p>施工内容、対応エリア、事例の見せ方、相談の流れ。信頼につながる情報を優先して配置します。</p>
+            <div class="industry__tags">
+              <span>施工内容</span><span>対応エリア</span><span>相談の流れ</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="industry reveal reveal-delay-1">
+          <div class="industry__img" aria-hidden="true">
+            <img src="<?php echo esc_url( tsn_asset('img/atmosphere/facility.jpg') ); ?>" alt="" width="1200" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="industry__body">
+            <p class="industry__label">Facility</p>
+            <h3>水道・電気・ガス設備</h3>
+            <p>対応できる工事、エリア、緊急時の連絡手段。迷わず行動できる導線を重視します。</p>
+            <div class="industry__tags">
+              <span>対応工事</span><span>地域</span><span>緊急連絡</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="industry reveal">
+          <div class="industry__img" aria-hidden="true">
+            <img src="<?php echo esc_url( tsn_asset('img/atmosphere/auto.jpg') ); ?>" alt="" width="1200" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="industry__body">
+            <p class="industry__label">Automotive</p>
+            <h3>自動車整備・販売・バイク</h3>
+            <p>サービス内容、店舗の特徴、車両情報の見せ方。来店・相談につながる構成にします。</p>
+            <div class="industry__tags">
+              <span>サービス</span><span>店舗の特徴</span><span>車両情報</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="industry reveal reveal-delay-1">
+          <div class="industry__img" aria-hidden="true">
+            <img src="<?php echo esc_url( tsn_asset('img/atmosphere/salon.jpg') ); ?>" alt="" width="1200" height="800" loading="lazy" decoding="async">
+          </div>
+          <div class="industry__body">
+            <p class="industry__label">Local Service</p>
+            <h3>美容室・飲食・地域サービス</h3>
+            <p>メニュー、料金、アクセス、予約方法。来店前の不安を減らす情報を分かりやすく並べます。</p>
+            <div class="industry__tags">
+              <span>メニュー</span><span>料金</span><span>予約・アクセス</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 06 WORKS / CONCEPTS ===== -->
+  <section class="section" id="works" aria-labelledby="works-title">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__label">Works / Concepts</p>
+        <h2 id="works-title" class="section__title reveal">提案の質で、<br>信頼をつくる。</h2>
+        <p class="section__lead reveal reveal-delay-1">
+          現時点で掲載できる実案件は限られるため、業種別に設計したコンセプトデザインを公開しています。架空案件であり、実在企業の実績ではありません。
+        </p>
+      </div>
+
+      <div class="works__banner reveal">
+        <strong>コンセプト制作 / 架空案件</strong>
+        <p>デザインの完成度と情報設計の考え方を示すためのサンプルです。実在の顧客名・成果数値・推薦コメントは掲載していません。</p>
+      </div>
+
+      <div class="works__list">
+        <!-- Concept 01 -->
+        <article class="work reveal">
+          <div class="work__preview">
+            <div class="device" aria-hidden="true">
+              <div class="device__chrome">
+                <span class="device__dot"></span><span class="device__dot"></span><span class="device__dot"></span>
+                <span class="device__url">concept / painting-co</span>
+              </div>
+              <div class="device__screen">
+                <div class="mock-a">
+                  <div class="mock-a__nav">
+                    <span class="mock-a__brand">塗り継ぎ塗装</span>
+                    <span>施工事例 / 料金 / 相談</span>
+                  </div>
+                  <div class="mock-a__hero">
+                    <p class="mock-a__title">住まいの塗装を、<br>長く持つ仕上がりへ。</p>
+                    <div class="mock-a__photo"></div>
+                  </div>
+                  <div class="mock-a__bar">
+                    <span>対応エリア明示</span>
+                    <span>施工の流れ</span>
+                    <span>相談CTA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work__phone" aria-hidden="true">
+              <div class="work__phone-notch"></div>
+              <div class="work__phone-screen phone-a"></div>
+            </div>
+          </div>
+          <div class="work__body">
+            <p class="work__badge">Concept 01 — Fiction</p>
+            <h3 class="work__title">地域塗装店向けコンセプト</h3>
+            <p class="work__text">「何を塗れるか」より先に、安心材料（エリア・流れ・相談）を見せる構成。スマホでは電話導線を常に近くに置きます。</p>
+            <ul class="work__points">
+              <li>ファーストビューで業種と相談先を同時提示</li>
+              <li>施工事例は比較しやすい記録型レイアウト</li>
+              <li>架空屋号「塗り継ぎ塗装」— 実在しません</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Concept 02 -->
+        <article class="work work--reverse reveal">
+          <div class="work__preview">
+            <div class="device" aria-hidden="true">
+              <div class="device__chrome">
+                <span class="device__dot"></span><span class="device__dot"></span><span class="device__dot"></span>
+                <span class="device__url">concept / auto-garage</span>
+              </div>
+              <div class="device__screen">
+                <div class="mock-b">
+                  <div class="mock-b__top">
+                    <span class="mock-b__logo">GARAGE NORTH</span>
+                    <span>SERVICE / ACCESS</span>
+                  </div>
+                  <div class="mock-b__main">
+                    <div class="mock-b__copy">
+                      <h4>車の調子を、<br>近所で相談できる店へ。</h4>
+                      <p>整備内容と店舗の人柄が先に伝わる構成。</p>
+                      <span class="mock-b__cta">来店相談</span>
+                    </div>
+                    <div class="mock-b__visual"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work__phone" aria-hidden="true">
+              <div class="work__phone-notch"></div>
+              <div class="work__phone-screen phone-b"></div>
+            </div>
+          </div>
+          <div class="work__body">
+            <p class="work__badge">Concept 02 — Fiction</p>
+            <h3 class="work__title">自動車整備工場向けコンセプト</h3>
+            <p class="work__text">専門用語を減らし、来店の心理ハードルを下げる。サービス一覧とアクセスを同じ視線の流れに置きます。</p>
+            <ul class="work__points">
+              <li>ダーク基調で整備の現場感を表現</li>
+              <li>サービス・車検・アクセスの優先順位を明確化</li>
+              <li>架空屋号「GARAGE NORTH」— 実在しません</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Concept 03 -->
+        <article class="work reveal">
+          <div class="work__preview">
+            <div class="device" aria-hidden="true">
+              <div class="device__chrome">
+                <span class="device__dot"></span><span class="device__dot"></span><span class="device__dot"></span>
+                <span class="device__url">concept / salon-local</span>
+              </div>
+              <div class="device__screen">
+                <div class="mock-c">
+                  <div class="mock-c__side">
+                    <p class="mock-c__brand">糸側</p>
+                    <p class="mock-c__meta">HAIR / RESERVE</p>
+                  </div>
+                  <div class="mock-c__main">
+                    <h4>日常の髪型を、<br>静かに整える。</h4>
+                    <p>メニュー・料金・予約を最短距離で。</p>
+                    <div class="mock-c__strip"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work__phone" aria-hidden="true">
+              <div class="work__phone-notch"></div>
+              <div class="work__phone-screen phone-c"></div>
+            </div>
+          </div>
+          <div class="work__body">
+            <p class="work__badge">Concept 03 — Fiction</p>
+            <h3 class="work__title">地域美容室向けコンセプト</h3>
+            <p class="work__text">世界観を出しつつ、メニュー・料金・予約を埋もれさせない。余白と縦書きで、店舗の空気感を先に伝えます。</p>
+            <ul class="work__points">
+              <li>エディトリアルな文字組みで世界観を提示</li>
+              <li>予約・アクセス情報を見失わない情報設計</li>
+              <li>架空屋号「糸側」— 実在しません</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 07 PROCESS ===== -->
+  <section class="section section--light" id="process" aria-labelledby="process-title">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__label">Process</p>
+        <h2 id="process-title" class="section__title reveal">相談から公開まで、<br>分かりやすく。</h2>
+        <p class="section__lead reveal reveal-delay-1">
+          実際の進め方の骨格です。納期や修正回数など、案件ごとに異なる条件はヒアリング後にご案内します。
+        </p>
+      </div>
+
+      <ol class="process__list">
+        <li class="process__item reveal">
+          <p class="process__num"></p>
+          <h3 class="process__title">お問い合わせ・相談</h3>
+          <p class="process__text">現状の課題、希望、既存サイトの有無など、ざっくりした相談で構いません。無理な売り込みはしません。</p>
+        </li>
+        <li class="process__item reveal reveal-delay-1">
+          <p class="process__num"></p>
+          <h3 class="process__title">ヒアリング・現状分析</h3>
+          <p class="process__text">事業内容、強み、お客様像、競合、使える写真や文章を整理。公開情報も踏まえて方針を立てます。</p>
+        </li>
+        <li class="process__item reveal">
+          <p class="process__num"></p>
+          <h3 class="process__title">構成・デザイン提案</h3>
+          <p class="process__text">ページ構成とデザイン方針をご提案。伝わる順番と、問い合わせまでの流れを先に合意します。</p>
+        </li>
+        <li class="process__item reveal reveal-delay-1">
+          <p class="process__num"></p>
+          <h3 class="process__title">制作・確認・修正</h3>
+          <p class="process__text">実装しながら確認ポイントを共有。文言・写真・導線を整え、公開前のチェックを行います。</p>
+        </li>
+        <li class="process__item reveal">
+          <p class="process__num"></p>
+          <h3 class="process__title">公開・納品</h3>
+          <p class="process__text">公開作業と、更新時に必要な案内をお渡しします。その後の改善相談も必要に応じてご相談ください。</p>
+        </li>
+      </ol>
+      <p class="process__note reveal">※ スケジュールや修正の回数は、制作範囲と素材の準備状況によって変わります。確定条件はお見積り時にご説明します。</p>
+    </div>
+  </section>
+
+  <!-- ===== 08 PRICE ===== -->
+  <section class="section" id="price" aria-labelledby="price-title">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__label">Price</p>
+        <h2 id="price-title" class="section__title reveal">費用は、透明に。</h2>
+        <p class="section__lead reveal reveal-delay-1">
+          安さだけを前面に出しません。いまお伝えできる金額の位置づけと、確認が必要な項目を分けて提示します。
+        </p>
+      </div>
+
+      <div class="price__layout">
+        <div class="price__panel reveal">
+          <p class="price__kicker">Reference — 実績制作価格</p>
+          <div class="price__amount">
+            <strong><?php echo esc_html( tsn_info('price_ref') ); ?></strong>
+            <span>円（税込）</span>
+          </div>
+          <p class="price__caption">
+            これは「すべての制作が必ずこの金額で完了する」通常価格ではありません。<strong style="color:var(--text)">実績制作価格</strong>としての参考値です。内容・ページ数・素材状況により変動します。
+          </p>
+          <ul class="price__checks">
+            <li>対象範囲は案件ごとに定義します</li>
+            <li>追加ページ・大きな仕様変更は別途の可能性があります</li>
+            <li>ドメイン・サーバー・更新保守は確認事項です</li>
+          </ul>
+        </div>
+
+        <div class="price__aside reveal reveal-delay-1">
+          <h3>お見積り前に確認すること</h3>
+          <p>断定できない条件は、曖昧なまま掲載しません。相談時に次を整理します。</p>
+          <ul>
+            <li>新規かリニューアルか、必要なページ構成</li>
+            <li>写真・原稿の有無とご用意いただける範囲</li>
+            <li>ドメイン・サーバーの手配状況</li>
+            <li>公開後の更新方法（ご自身 / 依頼）</li>
+            <li>特別な機能（予約システム等）の要否</li>
+          </ul>
+          <a class="btn btn--primary" href="#contact">費用について相談する <span class="btn__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 09 FAQ ===== -->
+  <section class="section section--light" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__label">FAQ</p>
+        <h2 id="faq-title" class="section__title reveal">よくある質問</h2>
+      </div>
+
+      <div class="faq__list">
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a1">
+            ホームページ制作を初めて依頼するのですが大丈夫ですか？
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-a1" data-open="false">
+            はい。初めての方を前提に、ヒアリングから公開まで順を追ってご案内します。専門用語はできるだけかみ砕いて説明します。
+          </div>
+        </div>
+
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a2">
+            どのような情報や写真が必要ですか？
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-a2" data-open="false">
+            会社名・連絡先・サービス内容・対応エリアなど基本情報と、現場や店舗の写真があると制作が進みやすくなります。写真が少ない場合も、構成案の段階で必要な素材を整理してお伝えします。
+          </div>
+        </div>
+
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a3">
+            制作費以外に費用はかかりますか？
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-a3" data-open="false">
+            ドメイン取得・サーバー・メール設定・追加ページ・大きな仕様変更などは別途かかる場合があります。お見積りの段階で、確定している費用と確認が必要な項目を分けてご説明します。
+          </div>
+        </div>
+
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a4">
+            公開後に文章や写真を変更できますか？
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-a4" data-open="false">
+            更新しやすい構成を意識して制作します。ご自身で更新できる範囲、または変更依頼が必要な範囲は、納品時に整理してお伝えします。
+          </div>
+        </div>
+
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a5">
+            既存ホームページのリニューアルも相談できますか？
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-a5" data-open="false">
+            はい。現状サイトの課題整理から、情報の再構成・スマホ表示改善・問い合わせ導線の見直しまでご相談いただけます。
+          </div>
+        </div>
+
+        <div class="faq__item reveal">
+          <button class="faq__q" type="button" data-faq-q aria-expanded="false" aria-controls="faq-a6">
+            制作期間はどのくらいですか？
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a" id="faq-a6" data-open="false">
+            内容や素材のご準備状況によって異なります。ヒアリング後に、想定スケジュールをご提案します。未確定の日数を断定することはありません。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10 CONTACT ===== -->
+  <section class="section section--sub" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__label">Contact</p>
+        <h2 id="contact-title" class="section__title reveal">次は、あなたの会社の<br>価値を伝える番です。</h2>
+      </div>
+
+      <div class="contact__layout">
+        <div class="reveal">
+          <p class="contact__lead">
+            制作の相談、既存サイトの改善、費用の質問——どれもお気軽に。まずは話を聞くだけでも構いません。
+          </p>
+
+          <div class="contact__paths">
+            <div class="contact__path">
+              <p class="contact__path-label">New Site</p>
+              <p>はじめてのホームページ制作のご相談</p>
+            </div>
+            <div class="contact__path">
+              <p class="contact__path-label">Renewal</p>
+              <p>既存サイトの改善・リニューアルのご相談</p>
+            </div>
+            <div class="contact__path">
+              <p class="contact__path-label">Pricing</p>
+              <p>費用感や制作範囲についてのご質問</p>
+            </div>
+          </div>
+
+          <div class="contact__channels" data-contact-channels>
+            <!-- JS: 連絡先が設定されている場合のみ実リンクを描画 -->
+          </div>
+
+          <div class="contact__config" data-contact-empty>
+            <h3>連絡先は差し替え設定です</h3>
+            <p>
+              電話・メール・LINE が未設定のため、送信可能なフォームは有効化していません。
+              WordPress 管理画面の <strong>外観 → カスタマイズ → ツナグWEB製作 → 連絡先</strong> で設定してください。
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <form class="contact-form is-disabled" data-contact-form novalidate>
+            <div class="field">
+              <label for="name">お名前 / 会社名</label>
+              <input id="name" name="name" type="text" autocomplete="organization" required disabled>
+            </div>
+            <div class="field">
+              <label for="email">メールアドレス</label>
+              <input id="email" name="email" type="email" autocomplete="email" required disabled>
+            </div>
+            <div class="field">
+              <label for="topic">ご相談内容</label>
+              <select id="topic" name="topic" required disabled>
+                <option value="">選択してください</option>
+                <option value="new">新規ホームページ制作</option>
+                <option value="renewal">リニューアル・改善</option>
+                <option value="price">費用について</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">メッセージ</label>
+              <textarea id="message" name="message" required disabled placeholder="現状の課題や、知りたいことをご記入ください"></textarea>
+            </div>
+            <p class="form-note">カスタマイザーでメールを設定すると、このフォームからメール下書きを作成できます。サーバー送信（Contact Form 7 等）が必要な場合は別途設定してください。</p>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+            <button class="btn btn--primary" type="submit" disabled>お問い合わせ（準備中）</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<?php
+get_footer();
