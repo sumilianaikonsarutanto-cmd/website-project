@@ -54,6 +54,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 12px);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -197,6 +198,8 @@ h4 {
   line-height: 1.35;
   letter-spacing: 0.04em;
   text-wrap: balance;
+  line-break: strict;
+  word-break: keep-all;
 }
 
 .section__lead {
@@ -540,8 +543,8 @@ h4 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(16, 17, 16, 0.96) 0%, rgba(16, 17, 16, 0.78) 42%, rgba(16, 17, 16, 0.35) 72%, rgba(16, 17, 16, 0.55) 100%),
-    linear-gradient(to top, rgba(16, 17, 16, 0.9) 0%, transparent 42%);
+    linear-gradient(105deg, rgba(16, 17, 16, 0.97) 0%, rgba(16, 17, 16, 0.86) 38%, rgba(16, 17, 16, 0.55) 68%, rgba(16, 17, 16, 0.72) 100%),
+    linear-gradient(to top, rgba(16, 17, 16, 0.92) 0%, transparent 42%);
   z-index: 1;
 }
 
@@ -557,10 +560,11 @@ h4 {
 
 .hero__brand {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 3.2vw, 2rem);
+  font-size: clamp(1.7rem, 4.2vw, 2.65rem);
   font-weight: 600;
-  letter-spacing: 0.16em;
-  margin-bottom: 1.6rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 1.35rem;
+  line-height: 1.2;
 }
 
 .hero__brand span {
@@ -590,14 +594,16 @@ h4 {
 .hero__title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.35rem, 8.2vw, 5.4rem);
-  line-height: 1.18;
+  font-size: clamp(2.1rem, 7.2vw, 4.6rem);
+  line-height: 1.2;
   letter-spacing: 0.06em;
   max-width: 9.5em;
 }
 
 .hero__title .line {
   display: block;
+  width: max-content;
+  max-width: 100%;
 }
 
 .hero__title em {
@@ -702,8 +708,9 @@ h4 {
     justify-self: end;
     width: min(100%, 320px);
     border-left: 1px solid var(--line);
-    padding-left: 1.75rem;
+    padding: 1.25rem 0 1.25rem 1.75rem;
     margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, rgba(16, 17, 16, 0.55), rgba(16, 17, 16, 0.2));
   }
 
   .hero__side-item {
@@ -956,6 +963,8 @@ h4 {
   font-weight: 600;
   letter-spacing: 0.05em;
   line-height: 1.4;
+  line-break: strict;
+  word-break: keep-all;
 }
 
 .service__text {
