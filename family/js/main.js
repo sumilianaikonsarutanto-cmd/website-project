@@ -73,23 +73,20 @@ function render(options = {}) {
   if (preserveScroll) view.scrollTop = previousScroll;
   else view.scrollTop = 0;
 
-  if (options.focusKey) {
-    const target = view.querySelector(`[data-focus-key="${CSS.escape(options.focusKey)}"]`);
-    if (target) target.focus();
-  } else if (state.route === 'chat') {
+  if (state.route === 'chat') {
     const input = document.querySelector('#chat-input');
     if (input) {
       resizeInput(input);
       const end = input.value.length;
       input.setSelectionRange(end, end);
-      input.focus();
     }
-  } else if (!preserveScroll) {
-    const heading = view.querySelector('h1');
-    if (heading) {
-      heading.setAttribute('tabindex', '-1');
-      heading.focus({ preventScroll: true });
-    }
+  }
+
+  if (options.focusKey) {
+    const target = view.querySelector(`[data-focus-key="${CSS.escape(options.focusKey)}"]`);
+    if (target) target.focus();
+  } else if (state.route === 'chat') {
+    document.querySelector('#chat-input')?.focus({ preventScroll: true });
   }
 
   if (state.route === 'chat') {
@@ -104,7 +101,11 @@ function syncChrome(route) {
     else el.removeAttribute('aria-current');
   });
   const back = document.querySelector('[data-back]');
-  if (back) back.hidden = route === 'home';
+  if (back) {
+    const hide = route === 'home';
+    back.hidden = hide;
+    back.tabIndex = hide ? -1 : 0;
+  }
   const title = document.querySelector('[data-top-title]');
   if (title) title.textContent = route === 'calendar' ? 'カレンダー' : 'うちの予定';
 }
