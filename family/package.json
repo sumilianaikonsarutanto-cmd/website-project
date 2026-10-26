@@ -1,0 +1,6 @@
+{
+  "name": "uchi-no-yotei",
+  "private": true,
+  "type": "module",
+  "description": "家族向け予定管理（STEP 1: カレンダーとチャットの画面）"
+}
