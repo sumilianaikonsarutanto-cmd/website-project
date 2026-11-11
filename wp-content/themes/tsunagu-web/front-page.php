@@ -183,7 +183,7 @@ get_header();
       <div class="services__list">
         <article class="service reveal">
           <p class="service__num">01</p>
-          <div>
+          <div class="service__head">
             <h3 class="service__title">ホームページ新規制作</h3>
             <p class="service__meta">New Website</p>
           </div>
@@ -191,7 +191,7 @@ get_header();
         </article>
         <article class="service reveal reveal-delay-1">
           <p class="service__num">02</p>
-          <div>
+          <div class="service__head">
             <h3 class="service__title">既存サイトのリニューアル</h3>
             <p class="service__meta">Renewal</p>
           </div>
@@ -199,24 +199,24 @@ get_header();
         </article>
         <article class="service reveal">
           <p class="service__num">03</p>
-          <div>
-            <h3 class="service__title">スマートフォン対応・表示改善</h3>
+          <div class="service__head">
+            <h3 class="service__title">スマートフォン対応・<br>表示改善</h3>
             <p class="service__meta">Mobile UX</p>
           </div>
           <p class="service__text">文字サイズ、余白、メニュー、CTA配置を見直し、スマートフォンでもストレスなく読める表示に整えます。</p>
         </article>
         <article class="service reveal reveal-delay-1">
           <p class="service__num">04</p>
-          <div>
-            <h3 class="service__title">情報設計・問い合わせ導線の改善</h3>
+          <div class="service__head">
+            <h3 class="service__title">情報設計・問い合わせ<br>導線の改善</h3>
             <p class="service__meta">Information Design</p>
           </div>
           <p class="service__text">お客様が知りたい順に情報を並べ、電話・フォーム・相談へ自然につながる導線を設計します。</p>
         </article>
         <article class="service reveal">
           <p class="service__num">05</p>
-          <div>
-            <h3 class="service__title">特徴を伝えるデザインとコンテンツ設計</h3>
+          <div class="service__head">
+            <h3 class="service__title">特徴を伝えるデザインと<br>コンテンツ設計</h3>
             <p class="service__meta">Content &amp; Design</p>
           </div>
           <p class="service__text">強み、サービス内容、実績の見せ方、写真の使い方まで。その会社らしい言葉とビジュアルに落とし込みます。</p>
@@ -327,16 +327,22 @@ get_header();
                 <div class="mock-a">
                   <div class="mock-a__nav">
                     <span class="mock-a__brand">塗り継ぎ塗装</span>
-                    <span>施工事例 / 料金 / 相談</span>
+                    <div class="mock-a__nav-links" aria-hidden="true">
+                      <span>施工事例</span><span>料金</span><span>相談</span>
+                    </div>
                   </div>
                   <div class="mock-a__hero">
-                    <p class="mock-a__title">住まいの塗装を、<br>長く持つ仕上がりへ。</p>
-                    <div class="mock-a__photo"></div>
+                    <div class="mock-a__copy">
+                      <p class="mock-a__title">住まいの塗装を、<br>長く持つ仕上がりへ。</p>
+                      <p class="mock-a__lead">外壁・屋根塗装の流れと対応エリアを、最初の画面で伝えます。</p>
+                      <span class="mock-a__cta">無料で相談する</span>
+                    </div>
+                    <div class="mock-a__photo" role="img" aria-label="住宅の塗装工事を想起させるサンプル写真"></div>
                   </div>
                   <div class="mock-a__bar">
                     <span>対応エリア明示</span>
                     <span>施工の流れ</span>
-                    <span>相談CTA</span>
+                    <span>電話・相談CTA</span>
                   </div>
                 </div>
               </div>
@@ -370,15 +376,20 @@ get_header();
                 <div class="mock-b">
                   <div class="mock-b__top">
                     <span class="mock-b__logo">GARAGE NORTH</span>
-                    <span>SERVICE / ACCESS</span>
+                    <div class="mock-b__nav" aria-hidden="true">
+                      <span>SERVICE</span><span>PRICE</span><span>ACCESS</span>
+                    </div>
                   </div>
                   <div class="mock-b__main">
                     <div class="mock-b__copy">
                       <h4>車の調子を、<br>近所で相談できる店へ。</h4>
-                      <p>整備内容と店舗の人柄が先に伝わる構成。</p>
+                      <p>整備内容・車検・アクセスを先に見せ、来店のハードルを下げます。</p>
+                      <div class="mock-b__chips" aria-hidden="true">
+                        <span>車検</span><span>一般整備</span><span>オイル交換</span>
+                      </div>
                       <span class="mock-b__cta">来店相談</span>
                     </div>
-                    <div class="mock-b__visual"></div>
+                    <div class="mock-b__visual" role="img" aria-label="自動車整備の雰囲気を示すサンプル写真"></div>
                   </div>
                 </div>
               </div>
@@ -393,7 +404,7 @@ get_header();
             <h3 class="work__title">自動車整備工場向けコンセプト</h3>
             <p class="work__text">専門用語を減らし、来店の心理ハードルを下げる。サービス一覧とアクセスを同じ視線の流れに置きます。</p>
             <ul class="work__points">
-              <li>ダーク基調で整備の現場感を表現</li>
+              <li>明るめのトーンで整備の現場感と信頼感を両立</li>
               <li>サービス・車検・アクセスの優先順位を明確化</li>
               <li>架空屋号「GARAGE NORTH」— 実在しません</li>
             </ul>
@@ -412,12 +423,16 @@ get_header();
                 <div class="mock-c">
                   <div class="mock-c__side">
                     <p class="mock-c__brand">糸側</p>
-                    <p class="mock-c__meta">HAIR / RESERVE</p>
+                    <p class="mock-c__meta">HAIR SALON</p>
                   </div>
                   <div class="mock-c__main">
                     <h4>日常の髪型を、<br>静かに整える。</h4>
-                    <p>メニュー・料金・予約を最短距離で。</p>
-                    <div class="mock-c__strip"></div>
+                    <p>メニュー・料金・アクセス・予約まで、来店前に必要な情報を最短距離で。</p>
+                    <div class="mock-c__strip" role="img" aria-label="美容室の店内を想起させるサンプル写真"></div>
+                    <div class="mock-c__foot">
+                      <span>MENU / PRICE / ACCESS</span>
+                      <span class="mock-c__reserve">予約する</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -432,8 +447,8 @@ get_header();
             <h3 class="work__title">地域美容室向けコンセプト</h3>
             <p class="work__text">世界観を出しつつ、メニュー・料金・予約を埋もれさせない。余白と縦書きで、店舗の空気感を先に伝えます。</p>
             <ul class="work__points">
-              <li>エディトリアルな文字組みで世界観を提示</li>
-              <li>予約・アクセス情報を見失わない情報設計</li>
+              <li>余白と写真で上品な世界観を提示</li>
+              <li>メニュー・料金・予約導線を見失わない情報設計</li>
               <li>架空屋号「糸側」— 実在しません</li>
             </ul>
           </div>
@@ -489,41 +504,124 @@ get_header();
     <div class="container">
       <div class="section__head">
         <p class="section__label">Price</p>
-        <h2 id="price-title" class="section__title reveal">費用は、透明に。</h2>
+        <h2 id="price-title" class="section__title reveal">選べる、2つの料金プラン。</h2>
         <p class="section__lead reveal reveal-delay-1">
-          安さだけを前面に出しません。いまお伝えできる金額の位置づけと、確認が必要な項目を分けて提示します。
+          初期費用を抑えて始めたい方と、制作後の月額を抑えたい方。どちらもドメイン・サーバー・保守管理・軽微な修正を含みます。価格はすべて税込です。
         </p>
       </div>
 
-      <div class="price__layout">
-        <div class="price__panel reveal">
-          <p class="price__kicker">Reference — 実績制作価格</p>
-          <div class="price__amount">
-            <strong><?php echo esc_html( tsn_info('price_ref') ); ?></strong>
-            <span>円（税込）</span>
+      <div class="plans">
+        <article class="plan reveal" aria-labelledby="plan-a-title">
+          <p class="plan__kicker">Plan A — 実績制作価格</p>
+          <h3 id="plan-a-title" class="plan__name">月額サブスクプラン</h3>
+          <p class="plan__lead">ホームページを持ちたいけれど、最初に大きな費用をかけるのは不安——そんな事業者様向けの特別プランです。</p>
+          <div class="plan__price-block">
+            <p class="plan__label">初期制作費</p>
+            <p class="plan__price plan__price--zero">
+              <span class="plan__num">0</span><span class="plan__unit">円</span>
+            </p>
+            <p class="plan__label">月額料金</p>
+            <p class="plan__price">
+              <span class="plan__num">5,500</span><span class="plan__unit">円<span class="plan__tax">（税込）</span></span>
+            </p>
           </div>
-          <p class="price__caption">
-            これは「すべての制作が必ずこの金額で完了する」通常価格ではありません。<strong style="color:var(--text)">実績制作価格</strong>としての参考値です。内容・ページ数・素材状況により変動します。
-          </p>
-          <ul class="price__checks">
-            <li>対象範囲は案件ごとに定義します</li>
-            <li>追加ページ・大きな仕様変更は別途の可能性があります</li>
-            <li>ドメイン・サーバー・更新保守は確認事項です</li>
+          <p class="plan__note">制作実績を増やすための実績制作価格です。初期費用0円でホームページを始められます。</p>
+          <ul class="plan__list">
+            <li>ホームページ制作費：0円</li>
+            <li>初期費用：0円</li>
+            <li>ドメイン費用：込み</li>
+            <li>サーバー費用：込み</li>
+            <li>保守管理：込み</li>
+            <li>軽微な修正対応：込み</li>
+            <li>大幅な変更・機能追加・ページ追加：別途相談</li>
           </ul>
-        </div>
+          <a class="btn btn--ghost" href="#contact">月額プランを相談する</a>
+        </article>
 
-        <div class="price__aside reveal reveal-delay-1">
-          <h3>お見積り前に確認すること</h3>
-          <p>断定できない条件は、曖昧なまま掲載しません。相談時に次を整理します。</p>
-          <ul>
-            <li>新規かリニューアルか、必要なページ構成</li>
-            <li>写真・原稿の有無とご用意いただける範囲</li>
-            <li>ドメイン・サーバーの手配状況</li>
-            <li>公開後の更新方法（ご自身 / 依頼）</li>
-            <li>特別な機能（予約システム等）の要否</li>
+        <article class="plan plan--featured reveal reveal-delay-1" aria-labelledby="plan-b-title">
+          <p class="plan__badge">おすすめ</p>
+          <p class="plan__kicker">Plan B — 買い切り</p>
+          <h3 id="plan-b-title" class="plan__name">買い切りプラン</h3>
+          <p class="plan__lead">制作費は一度だけ。毎月の運用管理費は3,300円。長期運用を考える方におすすめです。</p>
+          <div class="plan__price-block">
+            <p class="plan__label">ホームページ制作費</p>
+            <p class="plan__price">
+              <span class="plan__num">49,800</span><span class="plan__unit">円<span class="plan__tax">（税込）</span></span>
+            </p>
+            <p class="plan__label">月額（ドメイン・サーバー・保守）</p>
+            <p class="plan__price plan__price--sub">
+              <span class="plan__num">3,300</span><span class="plan__unit">円<span class="plan__tax">（税込）</span></span>
+            </p>
+          </div>
+          <p class="plan__note">ホームページそのものは買い切り。公開・維持のためのドメイン、サーバー、保守管理が月額に含まれます。</p>
+          <ul class="plan__list">
+            <li>ホームページ制作費：49,800円</li>
+            <li>ドメイン費用：月額に込み</li>
+            <li>サーバー費用：月額に込み</li>
+            <li>保守管理：月額に込み</li>
+            <li>軽微な修正対応：月額に込み</li>
+            <li>大幅な変更・機能追加・ページ追加：別途相談</li>
           </ul>
-          <a class="btn btn--primary" href="#contact">費用について相談する <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--primary" href="#contact">買い切りプランを相談する <span class="btn__arrow" aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <div class="price-compare reveal">
+        <h3 class="price-compare__title">プラン比較</h3>
+        <div class="price-compare__scroll" tabindex="0" role="region" aria-label="料金プラン比較表">
+          <table class="price-compare__table">
+            <thead>
+              <tr>
+                <th scope="col">項目</th>
+                <th scope="col">月額プラン</th>
+                <th scope="col">買い切りプラン</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">制作費</th>
+                <td>0円</td>
+                <td>49,800円</td>
+              </tr>
+              <tr>
+                <th scope="row">月額料金</th>
+                <td>5,500円</td>
+                <td>3,300円</td>
+              </tr>
+              <tr>
+                <th scope="row">ドメイン</th>
+                <td>込み</td>
+                <td>込み</td>
+              </tr>
+              <tr>
+                <th scope="row">サーバー</th>
+                <td>込み</td>
+                <td>込み</td>
+              </tr>
+              <tr>
+                <th scope="row">保守管理</th>
+                <td>込み</td>
+                <td>込み</td>
+              </tr>
+              <tr>
+                <th scope="row">軽微な修正</th>
+                <td>込み</td>
+                <td>込み</td>
+              </tr>
+              <tr>
+                <th scope="row">大幅な変更</th>
+                <td>別途相談</td>
+                <td>別途相談</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <p class="price-compare__note">※すべて税込価格です。契約期間・解約条件など未確定の事項は、お問い合わせ時にご案内します。</p>
+      </div>
+
+      <div class="price-cta reveal">
+        <p>どのプランが合うか迷う場合も、現状をお聞きしたうえでご提案します。</p>
+        <a class="btn btn--primary" href="#contact">費用について相談する <span class="btn__arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -563,7 +661,7 @@ get_header();
             <span class="faq__icon" aria-hidden="true"></span>
           </button>
           <div class="faq__a" id="faq-a3" data-open="false">
-            ドメイン取得・サーバー・メール設定・追加ページ・大きな仕様変更などは別途かかる場合があります。お見積りの段階で、確定している費用と確認が必要な項目を分けてご説明します。
+            料金プランによります。月額プラン・買い切りプランとも、ドメイン・サーバー・保守管理・軽微な修正は月額に含まれます。大幅なデザイン変更・機能追加・ページ追加などは別途相談・見積もりです。詳細は料金セクションをご覧ください。
           </div>
         </div>
 

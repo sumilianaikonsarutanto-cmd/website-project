@@ -74,16 +74,26 @@ python3 -m http.server 4321
 ### その他
 
 - **ブランド名 / タグライン / 住所** … 同パネルの「ブランド」
-- **実績制作価格の表示** … 「価格表示」（既定 `49,800`）。通常価格ではありません
 - 本番ドメインは WordPress のサイト URL が OGP / canonical に使われます
 
 サーバーサイドのメール送信（Contact Form 7 等）が必要な場合は、別途プラグイン設定が必要です。現状のフォームはメール設定後に `mailto:` で下書きを開きます。
 
 ---
 
+## 料金プラン（サイト掲載）
+
+| プラン | 制作費 | 月額（税込） | ドメイン/サーバー/保守/軽微な修正 |
+| --- | --- | --- | --- |
+| 月額サブスク（実績制作価格） | 0円 | 5,500円 | 込み |
+| 買い切り（おすすめ） | 49,800円 | 3,300円 | 込み |
+
+大幅な変更・機能追加・ページ追加は両プランとも別途相談。契約期間・解約条件は未確定のため断定掲載していません。
+
+---
+
 ## 静的版の連絡先設定
 
-WordPress を使わない場合は、従来どおり `index.html` の meta または `TSUNAGU_CONTACT` を設定してください（詳細は以前の手順と同じ）。
+WordPress を使わない場合は、従来どおり `index.html` の meta または `TSUNAGU_CONTACT` を設定してください。
 
 ---
 
@@ -91,17 +101,6 @@ WordPress を使わない場合は、従来どおり `index.html` の meta ま�
 
 `assets/css/style.css`（静的）または  
 `wp-content/themes/tsunagu-web/assets/css/style.css`（WP）先頭の `:root` がトークンです。
-
-```css
-:root {
-  --bg: #101110;
-  --bg-sub: #1B1D1A;
-  --bg-light: #F0EEE6;
-  --text: #F5F3EC;
-  --accent: #C8F169;
-  --text-mute: #AAAFA5;
-}
-```
 
 ---
 

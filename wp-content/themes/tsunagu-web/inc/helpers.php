@@ -16,7 +16,6 @@ function tsn_defaults() {
         'tel_display'   => '',
         'line_url'      => '',
         'address'       => '',
-        'price_ref'     => '49,800',
     );
 }
 

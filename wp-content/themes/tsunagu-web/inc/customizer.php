@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 add_action('customize_register', function ($wp_customize) {
     $wp_customize->add_panel('tsn_panel', array(
         'title'       => 'ツナグWEB製作',
-        'description' => 'ブランド名・連絡先をここで変更すると、サイト全体に反映されます。未設定の連絡先は表示・送信しません。',
+        'description' => 'ブランド名・連絡先をここで変更すると、サイト全体に反映されます。未設定の連絡先は表示・送信しません。料金プランはテーマテンプレートに定義されています。',
         'priority'    => 30,
     ));
 
@@ -21,12 +21,6 @@ add_action('customize_register', function ($wp_customize) {
         'panel'       => 'tsn_panel',
     ));
 
-    $wp_customize->add_section('tsn_price', array(
-        'title'       => '価格表示',
-        'description' => '実績制作価格の参考表示です。全案件がこの金額という意味ではありません。',
-        'panel'       => 'tsn_panel',
-    ));
-
     $fields = array(
         'tsn_brand' => array(
             'brand_name'    => array('ブランド名', 'text'),
@@ -38,9 +32,6 @@ add_action('customize_register', function ($wp_customize) {
             'tel'         => array('電話番号（リンク用・数字）', 'text'),
             'tel_display' => array('電話番号（表示）', 'text'),
             'line_url'    => array('LINE URL', 'url'),
-        ),
-        'tsn_price' => array(
-            'price_ref' => array('実績制作価格（円・税込・カンマ可）', 'text'),
         ),
     );
 

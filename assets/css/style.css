@@ -688,6 +688,7 @@ h4 {
   text-transform: uppercase;
   color: var(--text-mute);
   writing-mode: horizontal-tb;
+  max-width: calc(100% - 5rem);
 }
 
 @media (min-width: 900px) {
@@ -701,6 +702,11 @@ h4 {
     align-items: end;
     min-height: calc(100svh - var(--header-h) - 4rem);
     padding-bottom: 5rem;
+  }
+
+  .hero__content {
+    /* 縦書きタグライン用の余白。本文と絶対に重ねない */
+    padding-inline-start: 2.75rem;
   }
 
   .hero__side {
@@ -737,9 +743,12 @@ h4 {
   }
 
   .hero__tagline {
+    position: absolute;
     writing-mode: vertical-rl;
-    left: calc((100vw - min(100vw, var(--container))) / 2 + 4px);
-    bottom: 18%;
+    left: max(var(--gutter), calc((100vw - min(100vw, var(--container))) / 2));
+    bottom: 22%;
+    margin: 0;
+    max-height: 42vh;
   }
 }
 
@@ -940,9 +949,10 @@ h4 {
 
 .service {
   display: grid;
-  gap: 1.25rem;
+  gap: 0.85rem 1.25rem;
   padding: 2.2rem 0;
   border-top: 1px solid var(--line-dark);
+  align-items: start;
 }
 
 .service:last-child {
@@ -957,20 +967,26 @@ h4 {
   color: #6a8a2a;
 }
 
+.service__head {
+  min-width: 0;
+}
+
 .service__title {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
   font-weight: 600;
   letter-spacing: 0.05em;
-  line-height: 1.4;
+  line-height: 1.45;
   line-break: strict;
   word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .service__text {
   color: var(--text-dark-mute);
   max-width: 40em;
   font-size: 0.98rem;
+  min-width: 0;
 }
 
 .service__meta {
@@ -979,18 +995,19 @@ h4 {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #7a7f74;
+  margin-top: 0.45rem;
 }
 
 @media (min-width: 880px) {
   .service {
-    grid-template-columns: 5rem 1.1fr 1.3fr;
-    align-items: start;
-    gap: 2rem;
+    grid-template-columns: 4.5rem minmax(0, 0.95fr) minmax(0, 1.25fr);
+    column-gap: 2.25rem;
+    row-gap: 0.5rem;
     padding: 2.6rem 0;
   }
 
   .service__title {
-    max-width: 10em;
+    max-width: none;
   }
 }
 
@@ -1183,20 +1200,21 @@ h4 {
   overflow: hidden;
 }
 
-/* Concept mock: construction */
+/* Concept mock: painting */
 .mock-a {
-  background: #f4f1ea;
+  background: #f7f4ef;
   color: #1c1a16;
   height: 100%;
-  padding: 8% 7%;
+  padding: 6% 6%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  gap: 6%;
+  gap: 4%;
 }
 
 .mock-a__nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: clamp(0.45rem, 1.1vw, 0.7rem);
   letter-spacing: 0.12em;
 }
@@ -1207,43 +1225,80 @@ h4 {
   padding-bottom: 2px;
 }
 
+.mock-a__nav-links {
+  display: flex;
+  gap: 0.85em;
+  color: #6a655c;
+}
+
 .mock-a__hero {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1.05fr;
   gap: 5%;
-  align-items: end;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.mock-a__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  padding-bottom: 2%;
 }
 
 .mock-a__title {
   font-family: var(--font-display);
-  font-size: clamp(0.9rem, 2.4vw, 1.7rem);
+  font-size: clamp(0.9rem, 2.3vw, 1.55rem);
   line-height: 1.3;
   letter-spacing: 0.04em;
 }
 
+.mock-a__lead {
+  font-size: clamp(0.4rem, 0.95vw, 0.58rem);
+  color: #6a655c;
+  line-height: 1.6;
+}
+
 .mock-a__photo {
   background:
-    linear-gradient(160deg, rgba(28, 26, 22, 0.15), rgba(28, 26, 22, 0.45)),
+    linear-gradient(160deg, rgba(28, 26, 22, 0.08), rgba(28, 26, 22, 0.22)),
     url("../img/atmosphere/paint.jpg") center / cover;
   min-height: 100%;
+  border-radius: 2px;
 }
 
 .mock-a__bar {
   display: flex;
-  gap: 4%;
-  font-size: clamp(0.4rem, 1vw, 0.62rem);
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  font-size: clamp(0.4rem, 0.95vw, 0.58rem);
   letter-spacing: 0.08em;
   color: #6a655c;
+  border-top: 1px solid rgba(28, 26, 22, 0.12);
+  padding-top: 3%;
 }
 
-/* Concept mock: auto */
+.mock-a__cta {
+  display: inline-block;
+  margin-top: 0.2rem;
+  padding: 0.35rem 0.7rem;
+  background: #c45a1a;
+  color: #fff;
+  font-size: clamp(0.4rem, 0.95vw, 0.55rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  width: fit-content;
+}
+
+/* Concept mock: auto — brighter workshop tone */
 .mock-b {
-  background: #0e1116;
-  color: #eef1f5;
+  background: linear-gradient(160deg, #2c3848 0%, #3d4b5e 52%, #334152 100%);
+  color: #f7f9fc;
   height: 100%;
-  padding: 7%;
+  padding: 6% 6%;
   display: grid;
-  gap: 5%;
+  gap: 4%;
 }
 
 .mock-b__top {
@@ -1255,13 +1310,19 @@ h4 {
 }
 
 .mock-b__logo {
-  color: #7ec8ff;
+  color: #9ad4ff;
   font-weight: 700;
+}
+
+.mock-b__nav {
+  color: rgba(243, 246, 250, 0.72);
+  display: flex;
+  gap: 0.75em;
 }
 
 .mock-b__main {
   display: grid;
-  grid-template-columns: 1fr 0.75fr;
+  grid-template-columns: 1.05fr 0.95fr;
   gap: 5%;
   align-items: center;
   min-height: 0;
@@ -1269,30 +1330,47 @@ h4 {
 
 .mock-b__copy h4 {
   font-family: var(--font-display);
-  font-size: clamp(0.85rem, 2.2vw, 1.55rem);
+  font-size: clamp(0.85rem, 2.2vw, 1.5rem);
   line-height: 1.35;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 .mock-b__copy p {
   font-size: clamp(0.4rem, 1vw, 0.62rem);
-  color: #9aa3ad;
-  line-height: 1.6;
+  color: rgba(243, 246, 250, 0.78);
+  line-height: 1.65;
+}
+
+.mock-b__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.mock-b__chips span {
+  font-size: clamp(0.35rem, 0.85vw, 0.5rem);
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid rgba(154, 212, 255, 0.35);
+  color: #cfe9ff;
 }
 
 .mock-b__visual {
   aspect-ratio: 1;
   background:
-    linear-gradient(to top, rgba(14, 17, 22, 0.55), transparent 45%),
-    url("../img/atmosphere/auto.jpg") center / cover;
+    linear-gradient(to top, rgba(44, 56, 72, 0.25), transparent 48%),
+    url("../img/atmosphere/auto.jpg") center 40% / cover;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  filter: brightness(1.18) contrast(1.04) saturate(1.05);
 }
 
 .mock-b__cta {
   display: inline-block;
-  margin-top: 0.6rem;
-  padding: 0.35rem 0.7rem;
-  background: #7ec8ff;
-  color: #0e1116;
+  margin-top: 0.7rem;
+  padding: 0.4rem 0.75rem;
+  background: #9ad4ff;
+  color: #12202c;
   font-size: clamp(0.4rem, 0.95vw, 0.58rem);
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1300,13 +1378,13 @@ h4 {
 
 /* Concept mock: salon */
 .mock-c {
-  background: #faf7f4;
+  background: #fbf8f4;
   color: #2a2420;
   height: 100%;
-  padding: 7% 8%;
+  padding: 5% 5% 5% 6%;
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 6%;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 4%;
 }
 
 .mock-c__side {
@@ -1314,7 +1392,7 @@ h4 {
   flex-direction: column;
   justify-content: space-between;
   border-right: 1px solid rgba(42, 36, 32, 0.12);
-  padding-right: 8%;
+  padding-right: 10%;
 }
 
 .mock-c__brand {
@@ -1332,28 +1410,52 @@ h4 {
 
 .mock-c__main {
   display: grid;
-  align-content: center;
-  gap: 5%;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 3%;
+  min-height: 0;
 }
 
 .mock-c__main h4 {
   font-family: var(--font-display);
-  font-size: clamp(0.95rem, 2.4vw, 1.7rem);
+  font-size: clamp(0.9rem, 2.2vw, 1.55rem);
   line-height: 1.35;
   letter-spacing: 0.08em;
 }
 
-.mock-c__main p {
+.mock-c__main > p {
   font-size: clamp(0.4rem, 1vw, 0.62rem);
   color: #7a716a;
   line-height: 1.7;
 }
 
 .mock-c__strip {
-  height: 38%;
-  min-height: 48px;
-  background: url("../img/atmosphere/salon.jpg") center / cover;
-  margin-top: 4%;
+  min-height: 0;
+  height: 100%;
+  background:
+    linear-gradient(to top, rgba(251, 248, 244, 0.15), transparent 40%),
+    url("../img/atmosphere/salon-interior.jpg") center / cover;
+}
+
+.mock-c__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-size: clamp(0.38rem, 0.9vw, 0.52rem);
+  letter-spacing: 0.1em;
+  color: #8a7f76;
+  border-top: 1px solid rgba(42, 36, 32, 0.1);
+  padding-top: 3%;
+}
+
+.mock-c__reserve {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  background: #2a2420;
+  color: #fbf8f4;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .work__phone {
@@ -1380,20 +1482,21 @@ h4 {
 
 .phone-a {
   background:
-    linear-gradient(to top, #1a120c 20%, transparent 55%),
-    url("../img/atmosphere/paint.jpg") center / cover;
+    linear-gradient(to top, #1a120c 18%, transparent 55%),
+    url("../img/atmosphere/paint-house.jpg") center / cover;
 }
 
 .phone-b {
   background:
-    linear-gradient(to top, #0e1116 25%, transparent 60%),
-    url("../img/atmosphere/auto.jpg") center / cover;
+    linear-gradient(to top, rgba(44, 56, 72, 0.4) 18%, transparent 58%),
+    url("../img/atmosphere/auto.jpg") center 35% / cover;
+  filter: brightness(1.15) contrast(1.04);
 }
 
 .phone-c {
   background:
-    linear-gradient(to top, #2a2420 20%, transparent 55%),
-    url("../img/atmosphere/salon.jpg") center / cover;
+    linear-gradient(to top, #2a2420 18%, transparent 55%),
+    url("../img/atmosphere/salon-interior.jpg") center / cover;
 }
 
 .work__badge {
@@ -1504,116 +1607,251 @@ h4 {
 }
 
 /* ==========================================================================
-   14 Price
+   14 Price / Plans
    ========================================================================== */
-.price__layout {
+.plans {
   display: grid;
-  gap: 2.5rem;
+  gap: 1.25rem;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 @media (min-width: 900px) {
-  .price__layout {
+  .plans {
     grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
-    align-items: start;
+    gap: 1.5rem;
+    align-items: stretch;
   }
 }
 
-.price__panel {
+.plan {
+  position: relative;
   border: 1px solid var(--line);
-  padding: clamp(1.5rem, 4vw, 2.25rem);
+  padding: clamp(1.5rem, 3.5vw, 2.1rem);
   background: rgba(245, 243, 236, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.price__kicker {
+.plan--featured {
+  border-color: rgba(200, 241, 105, 0.55);
+  background: linear-gradient(165deg, rgba(200, 241, 105, 0.08), rgba(245, 243, 236, 0.02) 42%);
+  box-shadow: 0 0 0 1px rgba(200, 241, 105, 0.12);
+}
+
+.plan__badge {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
   font-family: var(--font-en);
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  background: var(--accent);
+  padding: 0.35rem 0.7rem;
+}
+
+.plan__kicker {
+  font-family: var(--font-en);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 1rem;
 }
 
-.price__amount {
+.plan__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  padding-right: 4.5rem;
+}
+
+.plan__lead {
+  color: var(--text-mute);
+  font-size: 0.94rem;
+  line-height: 1.85;
+}
+
+.plan__price-block {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.plan__label {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text-mute);
+  margin-top: 0.55rem;
+}
+
+.plan__label:first-child {
+  margin-top: 0;
+}
+
+.plan__price {
   display: flex;
   align-items: baseline;
-  gap: 0.35rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.85rem;
-}
-
-.price__amount strong {
-  font-family: var(--font-en);
-  font-size: clamp(2.6rem, 7vw, 4rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  flex-wrap: nowrap;
+  gap: 0.3rem;
   line-height: 1;
 }
 
-.price__amount span {
+.plan__num {
+  font-family: "Syne", "Zen Kaku Gothic New", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  color: var(--text);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.plan__price--zero .plan__num {
+  color: var(--accent);
+}
+
+.plan__price--sub .plan__num {
+  font-size: clamp(1.85rem, 4.5vw, 2.4rem);
+}
+
+.plan__unit {
   font-size: 1rem;
   color: var(--text-mute);
+  white-space: nowrap;
+  transform: translateY(-0.1em);
 }
 
-.price__caption {
+.plan__tax {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.plan__note {
   color: var(--text-mute);
-  font-size: 0.95rem;
-  line-height: 1.85;
-  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
 }
 
-.price__checks {
+.plan__list {
   display: grid;
-  gap: 0.7rem;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+  flex: 1;
 }
 
-.price__checks li {
+.plan__list li {
   display: grid;
-  grid-template-columns: 1rem 1fr;
-  gap: 0.7rem;
-  font-size: 0.92rem;
+  grid-template-columns: 0.75rem 1fr;
+  gap: 0.65rem;
+  font-size: 0.9rem;
   color: var(--text-mute);
+  line-height: 1.6;
 }
 
-.price__checks li::before {
+.plan__list li::before {
   content: "";
-  width: 8px;
+  width: 7px;
   height: 1px;
   background: var(--accent);
-  margin-top: 0.85rem;
+  margin-top: 0.75rem;
 }
 
-.price__aside h3 {
+.plan .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.price-compare {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.price-compare__title {
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.15rem;
 }
 
-.price__aside p {
-  color: var(--text-mute);
-  font-size: 0.96rem;
-  margin-bottom: 1rem;
+.price-compare__scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--line);
 }
 
-.price__aside ul {
-  display: grid;
-  gap: 0.65rem;
-  margin-bottom: 1.75rem;
-}
-
-.price__aside li {
-  padding-left: 1rem;
-  position: relative;
-  color: var(--text-mute);
+.price-compare__table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
   font-size: 0.92rem;
 }
 
-.price__aside li::before {
-  content: "・";
-  position: absolute;
-  left: 0;
+.price-compare__table th,
+.price-compare__table td {
+  padding: 0.95rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.price-compare__table thead th {
+  font-family: var(--font-en);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--accent);
+  background: rgba(200, 241, 105, 0.05);
+}
+
+.price-compare__table tbody th {
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.price-compare__table td {
+  color: var(--text-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+.price-compare__table tbody tr:last-child th,
+.price-compare__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.price-compare__table tbody td:last-child {
+  color: var(--text);
+}
+
+.price-compare__note {
+  margin-top: 0.9rem;
+  color: var(--text-mute);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.price-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.price-cta p {
+  color: var(--text-mute);
+  font-size: 0.96rem;
+  max-width: 28em;
 }
 
 /* ==========================================================================
